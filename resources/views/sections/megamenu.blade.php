@@ -24,6 +24,12 @@
                                     <li><a href="#">Lighting and Horns</a></li>
                                     <li><a href="#">Electrical parts & Accessories</a></li>
                                     <li><a href="#">Tires and Mags</a></li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">Vehicle Rentals</li>
+                                    <li><a href="#">Van For Rent</a></li>
+                                    <li><a href="#">Car For Rent</a></li>
+                                    <li><a href="#">Bus For Rent</a></li>
+                                    <li><a href="#">Other Vehicles</a></li>
                                     <li><a href="#" class="btn btn-primary cars-for-sale">Cars for Sale</a></li>
                                 </ul>
                             </div>
@@ -37,6 +43,10 @@
                                     <li><a href="#">Steering Wheel</a></li>
                                     <li><a href="#">Breaks and Accessories</a></li>
                                     <li><a href="#">Upholstery, Seatcovers & Car Interior Designs</a></li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">Motorbikes</li>
+                                    <li><a href="#">Motorbikes for Sale</a></li>
+                                    <li><a href="#">Motorbike Parts and Accessories </a></li>
                                 </ul>
                             </div>
                             <div class="col">
@@ -285,6 +295,134 @@
                                     <li><a href="#">Perfumes, Nail Care and Others</a></li>
                                     <li><a href="#">Hair Care</a></li>
                                     <li><a href="#">Men's Grooming</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item dropdown megamenu-list">
+                    <a class="dropdown-toggle btn btn-link megamenu-category" role="button" href="#" id="mega-4"
+                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        Even More  <i class="mdi mdi-unfold-more-horizontal" aria-hidden="true"></i><span class="caret"></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right animate slideIn megamenu-item shadow"
+                        aria-labelledby="mega-4">
+                        <div class="row">
+                            <div class="col border-right">
+                                <ul class="sub-category-list">
+                                    <li class="dropdown-header">Babies and Kids</li>
+                                    <li><a href="#">Strollers, Bags and Carries</a></li>
+                                    <li><a href="#">Girls Apparel</a></li>
+                                    <li><a href="#">Boys Apparel</a></li>
+                                    <li><a href="#">Cribs</a></li>
+                                    <li><a href="#">Nursing and Feeding</a></li>
+                                    <li><a href="#">Toys for Babies</a></li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">Home and Furniture</li>
+                                    <li><a href="#">Home Appliances</a></li>
+                                    <li><a href="#">Home Tools and Accessories</a></li>
+                                    <li><a href="#">Furniture and Fixtures</a></li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">Travel Essentials</li>
+                                    <li><a href="#">Luggages</a></li>
+                                    <li><a href="#">Travel Accessories</a></li>
+                                    <li><a href="#">Outdoor and Camping</a></li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">Photography</li>
+                                    <li><a href="#">...</a></li>
+                                </ul>
+                            </div>
+                            <div class="col border-right">
+                                <ul class="sub-category-list">
+                                    <li class="dropdown-header">Sports</li>
+                                    <li><a href="#">Bicycles</a></li>
+                                    <li><a href="#">Airsoft</a></li>
+                                    <li><a href="#">Body Building</a></li>
+                                    <li><a href="#">Racket Sports</a></li>
+                                    <li><a href="#">Water Sports</a></li>
+                                    <li><a href="#">Sports Clothing</a></li>
+                                    <li><a href="#">Billiards and Bowling</a></li>
+                                    <li><a href="#">Combat Sports</a></li>
+                                    <li><a href="#">Field Sports</a></li>
+                                    <li><a href="#">Outdoor Sports</a></li>
+                                    <li><a href="#">Indoor Sports</a></li>
+                                    <li><a href="#">Scooters, Unicycles and Skateboards and Accessories</a></li>
+                                    <li><a href="#">Other Sports</a></li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">Music and Media</li>
+                                    <li><a href="#">Musical Instruments</a></li>
+                                    <li><a href="#">Musical Accessories</a></li>
+                                    <li><a href="#">CD, DVD and Other Media</a></li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">Arts and Craft</li>
+                                    <li><a href="#">Handcraft Accessories</a></li>
+                                    <li><a href="#">Artwork</a></li>
+                                    <li><a href="#">Craft Supplies and Tools</a></li>
+                                    <li><a href="#">Paintings and Designs</a></li>
+                                </ul>
+                            </div>
+                            <div class="col border-right">
+                                <ul class="sub-category-list">
+                                    <li class="dropdown-header">Books</li>
+                                    <li><a href="#">Books</a></li>
+                                    <li><a href="#">Childrens Books</a></li>
+                                    <li><a href="#">Magazines</a></li>
+                                    <li><a href="#">Song Hits</a></li>
+                                    <li><a href="#">Comics and Manga</a></li>
+                                    <li><a href="#">Business Books</a></li>
+                                    <li><a href="#">Textbook</a></li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">Construction and Industrial</li>
+                                    <li><a href="#">Construction Tools and Euipments</a></li>
+                                    <li><a href="#">Construction and Building Materials</a></li>
+                                    <li><a href="#">Industrial Equipment</a></li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">Pets and Supplies</li>
+                                    <li><a href="#">Pet Accessories</a></li>
+                                    <li><a href="#">Pet Food</a></li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">Tickets and Vouchers</li>
+                                    <li><a href="#">Even Tickets</a></li>
+                                    <li><a href="#">Airline Tickets</a></li>
+                                    <li><a href="#">Attractions</a></li>
+                                    <li><a href="#">Gift Cards and Vouchers</a></li>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <ul class="sub-category-list">
+                                    <li class="dropdown-header">Community</li>
+                                    <li><a href="#">Activities</a></li>
+                                    <li><a href="#">Groups</a></li>
+                                    <li><a href="#">Churches</a></li>
+                                    <li><a href="#">Free Stuffs</a></li>
+                                    <li><a href="#">Bayanihan</a></li>
+                                    <li><a href="#">Garage Sales</a></li>
+                                    <li><a href="#">Local News</a></li>
+                                    <li><a href="#">Lost and Found</a></li>
+                                    <li><a href="#">Politics</a></li>
+                                    <li><a href="#">Volunteer</a></li>
+                                    <li><a href="#">Others</a></li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">Video Gaming</li>
+                                    <li><a href="#">Video Games</a></li>
+                                    <li><a href="#">Gaming Console and Accessories</a></li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">Toys and Games</li>
+                                    <li><a href="#">Board and Card Games</a></li>
+                                    <li><a href="#">Toys</a></li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">Antiques</li>
+                                    <li><a href="#">Furnitures</a></li>
+                                    <li><a href="#">Stamps</a></li>
+                                    <li><a href="#">Currency</a></li>
+                                    <li><a href="#">Vintage Collectibles</a></li>
+                                    <li><a href="#">Vintage Accessories</a></li>
+                                    <li><a href="#">Vintage Others</a></li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">Gardening</li>
+                                    <li><a href="#">Flower and Plants</a></li>
+                                    <li><a href="#">Feeds and Seeds</a></li>
+                                    <li><a href="#">Garden Tools and Supplies</a></li>
                                 </ul>
                             </div>
                         </div>
