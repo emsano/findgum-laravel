@@ -1,6 +1,7 @@
 // Findgum CSS
 * {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 body {
@@ -15,6 +16,7 @@ body {
 .navbar-collapse {
     .search-bar {
         width: -webkit-fill-available;
+        width: -moz-available;;
 
         li {
             width: 80%;
@@ -38,16 +40,23 @@ body {
     .login,
     .register,
     .profile {
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
         display: inline-flex;
-        align-self: center;
+        -ms-flex-item-align: center;
+            align-self: center;
 
         span {
-            align-self: center;
+            -ms-flex-item-align: center;
+                -ms-grid-row-align: center;
+                align-self: center;
         }
     }
 
     .dropdown-toggle::after {
-        align-self: center;
+        -ms-flex-item-align: center;
+            -ms-grid-row-align: center;
+            align-self: center;
     }
 
     .sell-btn-container {
@@ -64,7 +73,10 @@ body {
 // Megamenu
 .megamenu {
     .navbar-nav {
-        flex-direction: row;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
     }
 
     li.nav-item {
@@ -73,6 +85,8 @@ body {
     }
 
     .megamenu-item {
+        width: -webkit-max-content;
+        width: -moz-max-content;
         width: max-content;
     }
 
@@ -82,12 +96,15 @@ body {
 
     i {
         font-size: 20px;
-        align-self: center;
+        -ms-flex-item-align: center;
+            -ms-grid-row-align: center;
+            align-self: center;
     }
 
     .megamenu-category:hover {
         background-color: #e63c5c;
-        text-decoration: wavy;
+        -webkit-text-decoration: wavy;
+                text-decoration: wavy;
         color: #f1f1f1;
     }
 
@@ -111,9 +128,7 @@ body {
     }
 
     .dropdown-menu.a {
-        // left: 50% !important;
-        // transform: translateX(-50%) !important;
-        // top: 100% !important;
+        
     }
 
     .cars-for-sale {
@@ -138,11 +153,15 @@ body {
     }
 
     .logo-nc {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
     }
 
     .copyright {
-        align-self: center;
+        -ms-flex-item-align: center;
+            -ms-grid-row-align: center;
+            align-self: center;
         padding-left: 1rem;
     }
 
@@ -152,7 +171,7 @@ body {
     }
 
     i {
-        // color: blue;
+        
         height: 1rem;
         font-size: 1.5rem;
     }
@@ -179,8 +198,11 @@ body {
 }
 
 // Product 
+.finds-list .product-card {
+    display: none;
+}
 .product-card-img {
-    border-radius: 10px;;
+    
 }
 
 .product-card-location {
@@ -193,10 +215,29 @@ body {
     width: -webkit-fill-available;
     img {
         height: 3rem;
-        border-radius: 30px;
+        width: 3rem;
+        // border-radius: 30px;
     }
 
     .posted-by {
         text-align: left;
     }
+}
+
+.product-title {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
+}
+
+.product-desc {
+    
+
+    display: -webkit-box;
+    display: -moz-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
 }
