@@ -17,6 +17,9 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/posting', function () {
+    return view('single-post');
+})->name('single-post');
 
 Auth::routes();
 

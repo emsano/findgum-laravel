@@ -20,88 +20,89 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom">
-            <div class="container mx-1 mw-100">
-                <a class="navbar-brand p-0" href="{{ url('/') }}">
-                    <img alt="{{ config('app.name', 'Home') }}" src="./images/findgum_logo.png">
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+        <div class="stick-together position-sticky">
+            <nav class="navbar navbar-expand-md top-bar navbar-light bg-white border-bottom">
+                <div class="container mx-1 mw-100">
+                    <a class="navbar-brand p-0" href="{{ url('/') }}">
+                        <img alt="{{ config('app.name', 'Home') }}" src="./images/findgum_logo.png">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="{{ __('Toggle navigation') }}">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav search-bar mx-auto">
-                        <li class="mx-auto">
-                            <!-- Search form -->
-                            <input class="form-control mx-auto mt-1" id="search" type="text" placeholder="Search"
-                                aria-label="Search">
-                        </li>
-                    </ul>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <!-- Left Side Of Navbar -->
+                        <ul class="navbar-nav search-bar mx-auto">
+                            <li class="mx-auto">
+                                <!-- Search form -->
+                                <input class="form-control mx-auto mt-1" id="search" type="text" placeholder="Search"
+                                    aria-label="Search">
+                            </li>
+                        </ul>
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                        <li class="nav-item">
-                            {{-- <a class="nav-link login" href="{{ route('login') }}"> --}}
-                                <a class="nav-link login" href="#">
-                                <span>{{ __('Login') }}</span>
-                                <svg viewBox="0 0 24 24">
-                                    <path fill="currentColor"
-                                        d="M10 17v-3H3v-4h7V7l5 5-5 5m0-15h9a2 2 0 012 2v16a2 2 0 01-2 2h-9a2 2 0 01-2-2v-2h2v2h9V4h-9v2H8V4a2 2 0 012-2z" />
-                                </svg>
-                            </a>
-                        </li>
-                        @if (Route::has('register'))
-                        <li class="nav-item">
-                            {{-- <a class="nav-link register" href="{{ route('register') }}"> --}}
-                                <a class="nav-link register" href="#">
+                        <!-- Right Side Of Navbar -->
+                        <ul class="navbar-nav ml-auto">
+                            <!-- Authentication Links -->
+                            @guest
+                            <li class="nav-item">
+                                {{-- <a class="nav-link login" href="{{ route('login') }}"> --}}
+                                    <a class="nav-link login" href="#">
+                                    <span>{{ __('Login') }}</span>
+                                    <svg viewBox="0 0 24 24">
+                                        <path fill="currentColor"
+                                            d="M10 17v-3H3v-4h7V7l5 5-5 5m0-15h9a2 2 0 012 2v16a2 2 0 01-2 2h-9a2 2 0 01-2-2v-2h2v2h9V4h-9v2H8V4a2 2 0 012-2z" />
+                                    </svg>
+                                </a>
+                            </li>
+                            @if (Route::has('register'))
+                            <li class="nav-item">
+                                {{-- <a class="nav-link register" href="{{ route('register') }}"> --}}
+                                    <a class="nav-link register" href="#">
 
-                                <span>{{ __('Register') }}</span>
-                            </a>
-                        </li>
-                        @endif
-                        @else
-                        <li class="nav-item dropdown">
-                            <a class="profile nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <span>Hello </span>
-                                <svg viewBox="0 0 24 24">
-                                    <path fill="currentColor"
-                                        d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4m-5 8h2v2H7v-2m4 0h2v2h-2v-2m4 0h2v2h-2v-2z" />
-                                </svg>
-                            </a>
-
-                            <div class="dropdown-menu dropdown-menu-right animate slideIn"
-                                aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                    document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
+                                    <span>{{ __('Register') }}</span>
+                                </a>
+                            </li>
+                            @endif
+                            @else
+                            <li class="nav-item dropdown">
+                                <a class="profile nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <span>Hello </span>
+                                    <svg viewBox="0 0 24 24">
+                                        <path fill="currentColor"
+                                            d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4m-5 8h2v2H7v-2m4 0h2v2h-2v-2m4 0h2v2h-2v-2z" />
+                                    </svg>
                                 </a>
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                    style="display: none;">
-                                    @csrf
-                                </form>
-                            </div>
-                        </li>
-                        @endguest
-                        <li class="nav-item">
-                            <div class="sell-btn-container mx-2">
-                                <a href="#" type="button" class="nav-link btn btn-danger sell-item">Sell</a>
-                            </div>
-                        </li>
-                    </ul>
+                                <div class="dropdown-menu dropdown-menu-right animate slideIn"
+                                    aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                        style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                            @endguest
+                            <li class="nav-item">
+                                <div class="sell-btn-container mx-2">
+                                    <a href="#" type="button" class="nav-link btn btn-danger sell-item">Sell</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
 
-        {{-- MegaMenu --}}
-        @include('sections.megamenu')
-
+            {{-- MegaMenu --}}
+            @include('sections.megamenu')
+        </div>
         {{-- Main Content --}}
         <main class="py-4">
             @yield('content')

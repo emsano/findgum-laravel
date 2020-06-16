@@ -16,7 +16,7 @@ mix.js([
     'node_modules/popper.js/dist/popper.js',
     'resources/js/custom.js'
     ], 
-    'public/js').sourceMap();
+    'public/js').sourceMaps();
 
 mix.sass('resources/sass/app.scss', 'public/css');
 
