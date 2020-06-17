@@ -21,6 +21,10 @@ Route::get('/posting', function () {
     return view('single-post');
 })->name('single-post');
 
+Route::get('/messages', function () {
+    return view('messages');
+})->name('messages');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

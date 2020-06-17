@@ -17,7 +17,7 @@ body {
 
 .stick-together {
     top: 0;
-    z-index: 9999;
+    z-index: 999;
 }
 
 .navbar-collapse {
@@ -430,10 +430,11 @@ body {
 
 .popover {
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+
     .popover-header {
         background-color: #fffa99;
     }
-    
+
     .popover-body {
         font-weight: bolder;
         text-align: center;
@@ -441,5 +442,106 @@ body {
 
     .arrow::after {
         border-bottom-color: #fffa99;
+    }
+}
+
+
+// Messages
+.messages {
+    .conversation-list {
+        ul {
+            height: calc(100vh / 2); 
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+        li {
+            cursor: pointer;
+        }
+    }
+
+    .conversation-list ul::-webkit-scrollbar {
+        width: 8px;
+        background: #e8e8e8;
+        border-radius: 10px;
+    }
+
+    .conversation-list ul::-webkit-scrollbar-thumb {
+        background-color: #1d5079;
+        border-radius: 10px;
+    }
+
+    button:focus {
+        outline-color: transparent;
+    }
+
+    .active {
+        color: black;
+        background-color: #d3e4f6;
+        border-color: #d3e4f6;
+    }
+
+    .sender-meta {
+        width: inherit;
+    }
+
+    .messages-list {
+        ul {
+            list-style: none;
+            height: calc(100vh / 2); 
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+
+        li {
+            display: inline-block;
+            clear: both;
+            float: left;
+            width: calc(100% - 25px);
+        }
+
+        li p {
+            border-radius: 10px;
+            padding: .5rem;
+            width: auto;
+        }
+
+        .sent {
+            p {
+                background: #e6eaea;
+            }
+        }
+
+        .replies {
+            p {
+                background: #034d93;
+                color: whitesmoke;
+                float: right;
+            }
+        }
+
+        .conversation.active {
+            display: block;
+            background-color: inherit;
+        }
+
+        .conversation:not(.active) {
+            display: none;
+        }
+    }
+
+    .messages-list ul::-webkit-scrollbar {
+        width: 8px;
+        background: #e8e8e8;
+        border-radius: 10px;
+    }
+
+    .messages-list ul::-webkit-scrollbar-thumb {
+        background-color: #1d5079;
+        border-radius: 10px;
+    }
+
+    .send-offer {
+        background-color: #08907b;
+        color: whitesmoke;
     }
 }

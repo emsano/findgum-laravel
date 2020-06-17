@@ -76,27 +76,33 @@ $(document).ready(function () {
 
 
     // Share Buttons ----------
-    var twitterShare = document.querySelector('[data-js="twitter-share"]');
-    twitterShare.onclick = function (e) {
-        e.preventDefault();
-        var twitterWindow = window.open('https://twitter.com/share?url=' + document.URL, 'twitter-popup', 'height=350,width=600');
-        if (twitterWindow.focus) {
-            twitterWindow.focus();
-        }
-        return false;
-    }
-
-    var facebookShare = document.querySelector('[data-js="facebook-share"]');
-    facebookShare.onclick = function (e) {
-        e.preventDefault();
-        var facebookWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + document.URL, 'facebook-popup', 'height=350,width=600');
-        if (facebookWindow.focus) {
-            facebookWindow.focus();
+    try {
+        var twitterShare = document.querySelector('[data-js="twitter-share"]');
+        twitterShare.onclick = function (e) {
+            e.preventDefault();
+            var twitterWindow = window.open('https://twitter.com/share?url=' + document.URL, 'twitter-popup', 'height=350,width=600');
+            if (twitterWindow.focus) {
+                twitterWindow.focus();
+            }
+            return false;
         }
 
-        console.log(document.URL);
-        return false;
+        var facebookShare = document.querySelector('[data-js="facebook-share"]');
+        facebookShare.onclick = function (e) {
+            e.preventDefault();
+            var facebookWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + document.URL, 'facebook-popup', 'height=350,width=600');
+            if (facebookWindow.focus) {
+                facebookWindow.focus();
+            }
+
+            // console.log(document.URL);
+            return false;
+        }
+    } catch (err) {
+        // document.getElementById("demo").innerHTML = err.message;
     }
+
+
     // End Share Buttons  ----------
 
     // For star rating, to be modified
@@ -135,4 +141,28 @@ $(document).ready(function () {
         }
     });
     // End Show more safety tips ----------
+
+    // Message Switcher
+    // temporary function to showcase UI
+    $('.conversation-list .list-group-item-action').click( function (e) {
+        
+        //Select the conversation to be displayed
+        var convo_selector = '#' + $(this)[0].dataset.conversation;
+        
+        //Hide current conversation
+        $('.conversation.active').removeClass('active');
+        $('.list-group-item-action.active').removeClass('active');
+
+        // Show clicked conversation
+        $(this).addClass('active')
+        $(convo_selector).addClass('active');
+
+        //scroll to bottom
+        $(convo_selector + " ul")[0].scrollTop = $(convo_selector + " ul")[0].scrollHeight;   
+    });
+
+    // Scroll to bottom on page load
+    var objDiv = $(".messages-list ul");
+    objDiv[0].scrollTop = objDiv[0].scrollHeight;
+    // End Message Switcher
 });

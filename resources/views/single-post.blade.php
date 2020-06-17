@@ -52,19 +52,22 @@
                         <!-- Indicators -->
                         <ul class="carousel-indicators list-inline mx-auto px-2">
                             <li class="list-inline-item active">
-                                <a id="carousel-selector-0" class="selected" data-target="#post-carousel" data-slide-to="0">
+                                <a id="carousel-selector-0" class="selected" data-target="#post-carousel"
+                                    data-slide-to="0">
                                     <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png"
                                         alt="Vans" class="img-fluid">
                                 </a>
                             </li>
                             <li class="list-inline-item ">
-                                <a id="carousel-selector-1" class="selected" data-target="#post-carousel" data-slide-to="1">
+                                <a id="carousel-selector-1" class="selected" data-target="#post-carousel"
+                                    data-slide-to="1">
                                     <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png"
                                         class="img-fluid">
                                 </a>
                             </li>
                             <li class="list-inline-item ">
-                                <a id="carousel-selector-2" class="selected" data-target="#post-carousel" data-slide-to="2">
+                                <a id="carousel-selector-2" class="selected" data-target="#post-carousel"
+                                    data-slide-to="2">
                                     <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png"
                                         class="img-fluid">
                                 </a>
@@ -81,15 +84,18 @@
                         <div class="card-body">
                             <h5 class="card-title">Special title treatment</h5>
                             <p class="card-text p-1">
-                                The Vans All-Weather MTE Collection features footwear and apparel designed to withstand the
+                                The Vans All-Weather MTE Collection features footwear and apparel designed to withstand
+                                the
                                 elements whilst still looking cool. <br>
 
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut
                                 labore et dolore magna aliqua. Condimentum id venenatis a condimentum. <br>
 
                                 Adipiscing enim eu turpis egestas pretium aenean. <br>
 
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut
                                 labore et dolore magna aliqua. Condimentum id venenatis a condimentum. <br>
 
                                 Adipiscing enim eu turpis egestas pretium aenean.
@@ -103,15 +109,16 @@
                                     <div class="col px-0 text-right">
                                         <p class="py-0 my-0">Posted by: <a href="#"><strong
                                                     class="posted-by">shoesph</strong></a></p>
-                                        <p class="py-0 my-0">Posted <span class="time-posted"> January 10, 2020 </span></p>
+                                        <p class="py-0 my-0">Posted <span class="time-posted"> January 10, 2020 </span>
+                                        </p>
                                     </div>
                                 </div>
                                 <div class="row border-top">
                                     <div class="col pt-3 px-0 share-post"> Share on:
-                                        <span class="twitter-share p-2" data-js="twitter-share">
+                                        <span class="twitter-share p-2 my-1" data-js="twitter-share">
                                             <i class="mdi mdi-twitter" aria-hidden="true"></i> Twitter
                                         </span>
-                                        <span class="facebook-share p-2" data-js="facebook-share">
+                                        <span class="facebook-share p-2 my-1" data-js="facebook-share">
                                             <i class="mdi mdi-facebook" aria-hidden="true"></i> Facebook
                                         </span>
                                     </div>
@@ -135,7 +142,7 @@
                             <div class="row d-flex justify-content-around">
                                 <div class="col-auto">
                                     {{-- <img class="rounded-circle" src="https://i.imgur.com/nUNhspp.jpg" width="133" height="133"> --}}
-                                    <img class="rounded-circle" src="{{ asset('images/test.jpg') }}" width="133" height="133">
+                                    <img class="rounded-circle profile-img" src="{{ asset('images/test.jpg') }}" width="133" height="133">
                                 </div>
                             </div>
                         </div>
@@ -161,10 +168,18 @@
                                         <div class="btn-group btn-group-lg seller-btn-group" role="group"
                                             aria-label="seller-offer">
                                             <button type="button"
-                                                class="btn btn-light seller-chat border font-weight-bolder">Chat</button>
-                                            <button type="button" class="btn btn-danger seller-make-offer">Make
-                                                Offer</button>
-                                            <button type="button" class="btn seller-show-number" data-toggle="popover" title="Seller Contact Number" data-placement="bottom" data-content="09091231233">Show Number</button>
+                                                class="btn btn-light seller-chat border font-weight-bolder">
+                                                Chat
+                                            </button>
+                                            <button type="button" class="btn btn btn-danger seller-make-offer"
+                                                data-toggle="modal" data-target="#make-offer-modal">
+                                                Make Offer
+                                            </button>
+                                            {{-- <button type="button" class="btn seller-show-number" data-toggle="popover"
+                                                title="Seller Contact Number" data-placement="bottom"
+                                                data-content="09091231233">Show Number</button> --}}
+
+                                            <button type="button" class="btn seller-show-number">Show Number</button>
                                         </div>
 
                                         {{-- <button type="button" class="btn btn-light seller-chat border font-weight-bolder">Chat</button>
@@ -242,7 +257,8 @@
                                                 Vestibulum at eros</li>
                                         </ul>
                                         <div class="text-right">
-                                            <button class="btn btn-outline-secondary next-tips mx-auto mt-2">Show More</button>
+                                            <button class="btn btn-outline-secondary next-tips mx-auto mt-2">Show
+                                                More</button>
                                         </div>
                                     </div>
                                 </div>
@@ -264,10 +280,8 @@
                         <hr>
                     </div>
                 </div>
-                @for ($a = 0 ; $a < 4; $a++ )
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
-                    @for ($b = 0 ; $b < 4 ; $b++ )
-                    <div class="col mb-4 post-card">
+                @for ($a = 0 ; $a < 4; $a++ ) <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+                    @for ($b = 0 ; $b < 4 ; $b++ ) <div class="col mb-4 post-card">
                         <div class="card">
                             <div class="card-header px-3 py-0">
                                 <a href="#" class="btn card-profile-image">
@@ -277,35 +291,79 @@
                                         </div>
                                         <div class="col posted-by">
                                             HUSTLER PH Branch
-                                            <small class="text-muted"><p class="mb-1 posted-ago"><i class="mdi mdi-chevron-double-up text-info"></i> Spotlight </p></small>
+                                            <small class="text-muted">
+                                                <p class="mb-1 posted-ago"><i
+                                                        class="mdi mdi-chevron-double-up text-info"></i> Spotlight </p>
+                                            </small>
                                         </div>
                                     </div>
                                 </a>
                             </div>
-                            <img class="card-img post-card-img"
-                                src="http://i.imgur.com/I5ABT2v.jpg" alt="Vans">
+                            <img class="card-img post-card-img" src="http://i.imgur.com/I5ABT2v.jpg" alt="Vans">
                             <div class="card-body">
-                                <h5 class="card-title post-title"><a href="#" class="card-link text-danger like">Vanguard Power</a></h5>
+                                <h5 class="card-title post-title"><a href="#"
+                                        class="card-link text-danger like">Vanguard Power</a></h5>
                                 <p class="card-text post-desc">
-                                    If you need a tough, commercial grade engine that makes you more productive, look to Vanguard.</p>
+                                    If you need a tough, commercial grade engine that makes you more productive, look to
+                                    Vanguard.</p>
                             </div>
                             <div class="card-footer bg-transparent border-success">
                                 <p class="post-price mb-0">&#8369; 999999 </p>
-                                <p class="post-card-location mb-0"><i class="mdi mdi-google-maps"></i><span> Pampanga</span></p>
+                                <p class="post-card-location mb-0"><i class="mdi mdi-google-maps"></i><span>
+                                        Pampanga</span></p>
                             </div>
                         </div>
-                    </div>
-                    @endfor
-                </div>
-                @endfor
-                
-                <div class="row load-more-container">
-                    <div class="col text-center">
-                        <button type="button" class="btn btn-outline-danger mx-auto load-more-related">Load More</button>
-                    </div>
-                </div> 
-            </div> 
+            </div>
+            @endfor
+        </div>
+        @endfor
+
+        <div class="row load-more-container">
+            <div class="col text-center">
+                <button type="button" class="btn btn-outline-danger mx-auto load-more-related">Load More</button>
+            </div>
         </div>
     </div>
 </div>
-        @endsection
+</div>
+</div>
+
+<!-- Make Offer Modal -->
+<div class="modal fade p-0 mt-5" id="make-offer-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="col-auto my-">
+                    <img class="rounded-circle" src="{{ asset('images/test.jpg') }}" width="40" height="40">
+                </div>
+                <h5 class="modal-title" id="exampleModalLabel">
+                    <span class="seller-name font-weight-bolder">shoesph</span> is selling <span class="post-title">Vans
+                        Sk8-Hi MTE Shoes</span> for <span class="post-price text-danger">&#8369; 5000</span>
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="buyer-offer col-md-8 mx-auto">
+                    <h3 class="text-center">You are offering </h3>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">&#8369;</span>
+                        </div>
+                        <input type="text" class="form-control" id="buyer-offer-amount" name="buyer-offer-amount" aria-label="Amount (to the nearest Philippine Peso)">
+                        <div class="input-group-append">
+                            <span class="input-group-text">.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <a type="button" class="btn btn-danger" href="{{ route('messages') }}">Send Offer</a>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

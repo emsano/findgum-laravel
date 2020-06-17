@@ -32704,7 +32704,7 @@ body {
 
 .stick-together {
   top: 0;
-  z-index: 9999;
+  z-index: 999;
 }
 
 .navbar-collapse .search-bar {
@@ -33109,5 +33109,95 @@ body {
 
 .popover .arrow::after {
   border-bottom-color: #fffa99;
+}
+
+.messages .conversation-list ul {
+  height: calc(100vh / 2);
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.messages .conversation-list li {
+  cursor: pointer;
+}
+
+.messages .conversation-list ul::-webkit-scrollbar {
+  width: 8px;
+  background: #e8e8e8;
+  border-radius: 10px;
+}
+
+.messages .conversation-list ul::-webkit-scrollbar-thumb {
+  background-color: #1d5079;
+  border-radius: 10px;
+}
+
+.messages button:focus {
+  outline-color: transparent;
+}
+
+.messages .active {
+  color: black;
+  background-color: #d3e4f6;
+  border-color: #d3e4f6;
+}
+
+.messages .sender-meta {
+  width: inherit;
+}
+
+.messages .messages-list ul {
+  list-style: none;
+  height: calc(100vh / 2);
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.messages .messages-list li {
+  display: inline-block;
+  clear: both;
+  float: left;
+  width: calc(100% - 25px);
+}
+
+.messages .messages-list li p {
+  border-radius: 10px;
+  padding: 0.5rem;
+  width: auto;
+}
+
+.messages .messages-list .sent p {
+  background: #e6eaea;
+}
+
+.messages .messages-list .replies p {
+  background: #034d93;
+  color: whitesmoke;
+  float: right;
+}
+
+.messages .messages-list .conversation.active {
+  display: block;
+  background-color: inherit;
+}
+
+.messages .messages-list .conversation:not(.active) {
+  display: none;
+}
+
+.messages .messages-list ul::-webkit-scrollbar {
+  width: 8px;
+  background: #e8e8e8;
+  border-radius: 10px;
+}
+
+.messages .messages-list ul::-webkit-scrollbar-thumb {
+  background-color: #1d5079;
+  border-radius: 10px;
+}
+
+.messages .send-offer {
+  background-color: #08907b;
+  color: whitesmoke;
 }
 
