@@ -135,7 +135,7 @@
         </div>
 
         <div class="col-md-4 col-sm-12">
-            <div class="row seller-profile">
+            <div class="row seller-profile mt-3">
                 <div class="col">
                     <div class="card shadow-sm text-center">
                         <div class="card-header border-0 bg-white">

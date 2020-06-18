@@ -88,14 +88,6 @@
                             <span class="post-price text-danger">&#8369; 5000 </span>
                             <span class="post-title"><strong>Vans Sk8-Hi MTE Shoes</strong></span>
                         </div>
-                        <div class="col">
-                            <div class="input-group mb-3">
-                                <input type="number" class="form-control offer">
-                                <div class="input-group-append">
-                                    <button class="btn send-offer" type="button">Make Offer</button>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     <ul>
                         <li class="sent">
@@ -141,14 +133,6 @@
                         <div class="col">
                             <span class="post-price text-danger">&#8369; 99999 </span>
                             <span class="post-title"><strong>Vanguard Power</strong></span>
-                        </div>
-                        <div class="col">
-                            <div class="input-group mb-3">
-                                <input type="number" class="form-control offer">
-                                <div class="input-group-append">
-                                    <button class="btn send-offer" type="button">Make Offer</button>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <ul>

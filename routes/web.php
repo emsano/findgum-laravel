@@ -25,6 +25,14 @@ Route::get('/messages', function () {
     return view('messages');
 })->name('messages');
 
+Route::get('/favorites', function () {
+    return view('favorites');
+})->name('favorites');
+
+Route::get('/filtered', function () {
+    return view('filtered-posts');
+})->name('filtered-posts');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

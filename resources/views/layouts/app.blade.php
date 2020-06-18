@@ -110,11 +110,11 @@
             @include('sections.megamenu')
         </div>
         {{-- Main Content --}}
-        <main class="py-4">
+        <main class="py-3">
             @yield('content')
         </main>
 
-        <div class="container footer mx-auto">
+        <div class="container-fluid footer mx-auto">
             <footer class="pt-4 my-md-5 pt-md-5 border-top">
                 <div class="row">
                     <div class="col-12 col-md logo-nc">
@@ -140,7 +140,7 @@
                     </div>
 
                     <div class="col-6 col-md social-media-links">
-                        <ul class="list-unstyled text-small">
+                        <ul class="list-unstyled text-small align-self-center mx-auto">
                             <li><a href="#" class="facebook"><i class="mdi mdi-facebook"
                                         aria-hidden="true"></i><span></span></a></li>
                             <li><a href="#" class="ig"><i class="mdi mdi-instagram"

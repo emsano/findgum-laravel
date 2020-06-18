@@ -162,7 +162,11 @@ $(document).ready(function () {
     });
 
     // Scroll to bottom on page load
-    var objDiv = $(".messages-list ul");
-    objDiv[0].scrollTop = objDiv[0].scrollHeight;
+    try {
+        var objDiv = $(".messages-list ul");
+        objDiv[0].scrollTop = objDiv[0].scrollHeight;
+    } catch (err) {
+        // document.getElementById("demo").innerHTML = err.message;
+    }
     // End Message Switcher
 });
