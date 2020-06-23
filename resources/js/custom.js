@@ -5,8 +5,15 @@ $(document).ready(function () {
     $(function () {
         $('[data-toggle="popover"]').popover()
     })
+
+    // Collapse on click, outside
+    $(document).click(function(event) {
+        $(event.target).closest(".top-bar").length || $(".top-bar .navbar-collapse.show").length && $(".top-bar .navbar-collapse.show").collapse("hide")
+      });
+     // End Collapse on click, outside  ----------
+
     // Megamenu dropdown animation ----------
-    $(".dropdown").hover(
+    $(".dropdown").click(
         function () {
             $(".dropdown-menu", this)
                 .not(".in .dropdown-menu")

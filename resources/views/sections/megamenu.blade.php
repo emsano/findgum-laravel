@@ -1,6 +1,6 @@
-<div class="container mx-1 mw-100 shadow-sm">
+<div class="container mx-1 mw-100 shadow-sm bg-white">
     <nav class="navbar navbar-expand-md navbar-light bg-white megamenu my-0 py-0">
-        <div class="collapse navbar-collapse" id="navbarSupportedContentBelow">
+        <div class="collapse navbar-collapse" id="navbar-supported-content">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item dropdown megamenu-list">
                     <a class="dropdown-toggle btn btn-link megamenu-category" role="button" href="#" id="mega-1"
@@ -9,7 +9,7 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-left animate slideIn megamenu-item shadow"
                         aria-labelledby="mega-1">
-                        <div class="row">
+                        <div class="row ">
                             <div class="col">
                                 <ul class="sub-category-list">
                                     <li class="dropdown-header">Car Parts & Accessories</li>
@@ -303,7 +303,7 @@
                 <li class="nav-item dropdown megamenu-list">
                     <a class="dropdown-toggle btn btn-link megamenu-category" role="button" href="#" id="mega-4"
                         role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        Even More  <i class="mdi mdi-unfold-more-horizontal" aria-hidden="true"></i><span class="caret"></span>
+                        Even More <i class="mdi mdi-unfold-more-horizontal" aria-hidden="true"></i><span class="caret"></span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right animate slideIn megamenu-item shadow"
                         aria-labelledby="mega-4">

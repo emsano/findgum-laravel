@@ -32704,7 +32704,12 @@ body {
 
 .stick-together {
   top: 0;
-  z-index: 999;
+  z-index: 9999;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus {
+  color: #0038a7;
 }
 
 .navbar-collapse .search-bar {
@@ -32713,7 +32718,7 @@ body {
 }
 
 .navbar-collapse .search-bar li {
-  width: 80%;
+  width: 100%;
 }
 
 .navbar-collapse .search-bar input {
@@ -32756,6 +32761,18 @@ body {
   background-color: #ef2942;
   border-color: #ef2942;
   color: honeydew !important;
+}
+
+.right-nav {
+  width: auto;
+}
+
+.right-nav li {
+  width: inherit;
+}
+
+.right-nav i {
+  font-size: 1rem;
 }
 
 .megamenu .navbar-nav {
@@ -32809,6 +32826,17 @@ body {
 
 .megamenu .dropdown-header {
   font-weight: bolder;
+}
+
+@media only screen and (max-width: 959px) {
+  #navbar-supported-content {
+    overflow-x: auto;
+  }
+
+  .right-nav,
+  .search-bar {
+    padding-top: 1rem;
+  }
 }
 
 .footer {

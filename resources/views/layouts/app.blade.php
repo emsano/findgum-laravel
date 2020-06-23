@@ -26,9 +26,9 @@
 
 <body>
     <div id="app">
-        <div class="stick-together position-sticky">
-            <nav class="navbar navbar-expand-md top-bar navbar-light bg-white border-bottom">
-                <div class="container mx-1 mw-100">
+        <div class="stick-together w-100">
+            <nav class="navbar navbar-expand-sm top-bar navbar-light bg-white border-bottom">
+                <div class="container mx-auto px-0">
                     <a class="navbar-brand p-0" href="{{ url('/') }}">
                         <img alt="{{ config('app.name', 'Home') }}" src="./images/findgum_logo.png">
                     </a>
@@ -40,39 +40,43 @@
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!-- Left Side Of Navbar -->
-                        <ul class="navbar-nav search-bar mx-auto">
+                        <ul class="navbar-nav search-bar mx-auto mt-1">
                             <li class="mx-auto">
-                                <!-- Search form -->
-                                <input class="form-control mx-auto mt-1" id="search" type="text" placeholder="Search"
-                                    aria-label="Search">
+                                <div class="input-group">
+                                    <!-- Search form -->
+                                    <input class="form-control mx-auto" id="search" type="text" placeholder="Search" aria-label="Search">
+                                    <div class="input-group-append p-0 border-0 bg-white">
+                                        <span class="input-group-text py-0  border-0 bg-white" id="basic-addon2">
+                                            <img src="{{ asset('./images/flag.jpg') }}" class="img-fluid" width="50" height="40">
+                                        </span>
+                                    </div>
+                                </div>
                             </li>
                         </ul>
 
                         <!-- Right Side Of Navbar -->
-                        <ul class="navbar-nav ml-auto">
+                        <ul class="navbar-nav right-nav d-inline-flex flex-row mx-auto list-inline">
                             <!-- Authentication Links -->
                             @guest
-                            <li class="nav-item">
+                            <li class="nav-item list-inline-item">
                                 {{-- <a class="nav-link login" href="{{ route('login') }}"> --}}
                                     <a class="nav-link login" href="#">
                                     <span>{{ __('Login') }}</span>
-                                    <svg viewBox="0 0 24 24">
-                                        <path fill="currentColor"
-                                            d="M10 17v-3H3v-4h7V7l5 5-5 5m0-15h9a2 2 0 012 2v16a2 2 0 01-2 2h-9a2 2 0 01-2-2v-2h2v2h9V4h-9v2H8V4a2 2 0 012-2z" />
-                                    </svg>
+                                    <i class="mdi mdi-login-variant"></i>
                                 </a>
                             </li>
                             @if (Route::has('register'))
-                            <li class="nav-item">
+                            <li class="nav-item list-inline-item">
                                 {{-- <a class="nav-link register" href="{{ route('register') }}"> --}}
                                     <a class="nav-link register" href="#">
 
                                     <span>{{ __('Register') }}</span>
+                                    <i class="mdi mdi-book-plus"></i>
                                 </a>
                             </li>
                             @endif
                             @else
-                            <li class="nav-item dropdown">
+                            <li class="nav-item dropdown list-inline-item">
                                 <a class="profile nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     <span>Hello </span>
@@ -96,10 +100,16 @@
                                 </div>
                             </li>
                             @endguest
-                            <li class="nav-item">
+                            <li class="nav-item list-inline-item">
                                 <div class="sell-btn-container mx-2">
-                                    <a href="#" type="button" class="nav-link btn btn-danger sell-item">Sell</a>
+                                    <a href="#" type="button" class="nav-link btn btn-danger sell-item px-2">Sell</a>
                                 </div>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav d-sm-block d-md-none d-lg-none d-xl-none mt-3">
+                            <li class="nav-item">
+                                {{-- MegaMenu Mobile--}}
+                                @include('sections.megamenu-mobile')
                             </li>
                         </ul>
                     </div>

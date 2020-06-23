@@ -17,7 +17,11 @@ body {
 
 .stick-together {
     top: 0;
-    z-index: 999;
+    z-index: 9999;
+}
+
+.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
+    color: #0038a7;
 }
 
 .navbar-collapse {
@@ -27,7 +31,7 @@ body {
         ;
 
         li {
-            width: 80%;
+            width: 100%;
         }
 
         input {
@@ -75,6 +79,17 @@ body {
         background-color: #ef2942;
         border-color: #ef2942;
         color: honeydew !important;
+    }
+}
+
+.right-nav {
+    width: auto;
+    li {
+       width: inherit;
+    }
+
+    i {
+        font-size: 1rem;
     }
 }
 
@@ -137,9 +152,17 @@ body {
         font-weight: bolder;
     }
 
-    .dropdown-menu {}
+    
+}
 
-    .dropdown-menu.a {}
+@media only screen and (max-width: 959px) {
+    #navbar-supported-content {
+        overflow-x: auto;
+    }
+
+    .right-nav, .search-bar {
+        padding-top: 1rem;
+    }
 }
 
 // Footer

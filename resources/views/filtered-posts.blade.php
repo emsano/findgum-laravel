@@ -26,7 +26,7 @@
                 <div class="card mb-2">
                     <div class="card-header font-weight-bolder border-0">
                         <button class="btn btn-light w-100" type="button" data-toggle="collapse" data-target="#collapse-filter" aria-expanded="false">
-                            Filters
+                            Filters <i class="mdi mdi-arrow-collapse"></i>
                         </button>
                     </div>
                     <div class="card-body collapse show" id="collapse-filter">
