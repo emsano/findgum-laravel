@@ -164,9 +164,15 @@ $(document).ready(function () {
         $(this).addClass('active')
         $(convo_selector).addClass('active');
 
+        $('.message-between').addClass('visible');
+
         //scroll to bottom
         $(convo_selector + " ul")[0].scrollTop = $(convo_selector + " ul")[0].scrollHeight;   
     });
+    $('.back-btn button').on('click', function(e) {
+        e.preventDefault()
+        $('.message-between').removeClass("visible")
+    })
 
     // Scroll to bottom on page load
     try {

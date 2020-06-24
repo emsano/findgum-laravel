@@ -7,8 +7,8 @@
             <h3><span class="">Messages</span></h3>
         </div>
     </div> --}}
-    <div class="row mt-2 p-4 messages-row-box shadow">
-        <div class="col-5 sidepanel border-right">
+    <div class="row mt-2 p-2 messages-row-box shadow">
+        <div class="col-md-5 col-sm-12 sidepanel border-right">
             <div class="profile">
                 <div class="wrap row mb-4">
                     
@@ -45,7 +45,7 @@
                                     <p class="preview m-0 text-truncate">Quis viverra nibh cras pulvinar mattis nunc sed.</p>
                                 </div>
                             </div>
-                            <div class="col-2">
+                            <div class="col-3">
                                 <small class="text-muted when">06/20</small>
                                 <img class="rounded profile-img mb-2 d-block m-auto" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png"  width="50" height="50">
                             </div>
@@ -64,7 +64,7 @@
                                     <p class="preview m-0 text-truncate">Elit pellentesque habitant morbi tristique.</p>
                                 </div>
                             </div>
-                            <div class="col-2">
+                            <div class="col-3">
                                 <small class="text-muted when">05/20</small>
                                 <img class="rounded profile-img mb-2 d-block m-auto" src="{{ asset('images/2p9VXAn.jpg') }}"  width="50" height="50">
                             </div>
@@ -77,19 +77,26 @@
         <div class="col message-between">
             <div class="messages-list">
                 <div class="conversation active" id="seller1-buyer1-item1">
-                    <div class="messenger-name">
-                        <h3 class="font-weight-bolder sender-name">Louis Litt</h3>
+                    <div class="back-btn px-3">
+                        <button class="btn btn-icon btn-light d-md-none d-lg-none d-xl-none px-0" type="button" data-close="">
+                            <i class="mdi mdi-arrow-left"></i>
+                        </button>
                     </div>
-                    <div class="row mb-2">
-                        <div class="col-2">
-                            <img class="rounded profile-img mb-2 d-block m-auto" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png"  width="50" height="50">
+                    <div class="conversation-header px-2">
+                        <div class=" messenger-name">
+                            <h3 class="font-weight-bolder sender-name">Louis Litt</h3>
                         </div>
-                        <div class="col">
-                            <span class="post-price text-danger">&#8369; 5000 </span>
-                            <span class="post-title"><strong>Vans Sk8-Hi MTE Shoes</strong></span>
+                        <div class="row mb-2 item-posted">
+                            <div class="col-2">
+                                <img class="rounded profile-img mb-2 d-block m-auto" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png"  width="50" height="50">
+                            </div>
+                            <div class="col">
+                                <span class="post-price text-danger">&#8369; 5000 </span>
+                                <span class="post-title"><strong>Vans Sk8-Hi MTE Shoes</strong></span>
+                            </div>
                         </div>
                     </div>
-                    <ul>
+                    <ul class="exchange-list">
                         <li class="sent">
                             <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         </li>
@@ -123,19 +130,26 @@
                     </ul>
                 </div>
                 <div class="conversation" id="seller1-buyer2-item1">
-                    <div class="messenger-name">
-                        <h3 class="font-weight-bolder sender-name">Matt Reees</h3>
+                    <div class="back-btn px-3">
+                        <button class="btn btn-icon btn-light d-md-none d-lg-none d-xl-none px-0" type="button" data-close="">
+                            <i class="mdi mdi-arrow-left"></i>
+                        </button>
                     </div>
-                    <div class="row mb-2">
-                        <div class="col-2">
-                            <img class="rounded profile-img mb-2 d-block m-auto" src="{{ asset('images/2p9VXAn.jpg') }}"  width="50" height="50">
+                    <div class="conversation-header px-2">
+                        <div class="messenger-name">
+                            <h3 class="font-weight-bolder sender-name">Matt Reees</h3>
                         </div>
-                        <div class="col">
-                            <span class="post-price text-danger">&#8369; 99999 </span>
-                            <span class="post-title"><strong>Vanguard Power</strong></span>
+                        <div class="row mb-2 item-posted">
+                            <div class="col-2">
+                                <img class="rounded profile-img mb-2 d-block m-auto" src="{{ asset('images/2p9VXAn.jpg') }}"  width="50" height="50">
+                            </div>
+                            <div class="col">
+                                <span class="post-price text-danger">&#8369; 99999 </span>
+                                <span class="post-title"><strong>Vanguard Power</strong></span>
+                            </div>
                         </div>
                     </div>
-                    <ul>
+                    <ul class="exchange-list">
                         <li class="sent">
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         </li>
