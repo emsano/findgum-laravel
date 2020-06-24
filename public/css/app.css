@@ -33281,3 +33281,83 @@ body {
   }
 }
 
+.login .welcome-img {
+  width: 13%;
+}
+
+.login .divider {
+  padding: 0;
+  border: none;
+  border-top: solid 1px #e8ebf3;
+  color: #333;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.login .divider:after {
+  content: "or";
+  display: inline-block;
+  position: relative;
+  top: -0.9em;
+  font-size: 1.2em;
+  padding: 0 0.25em;
+  background: white;
+}
+
+.login .btn-google {
+  color: #fff;
+  background-color: #f35243;
+  border-color: #f35243;
+}
+
+.login .btn-facebook {
+  color: #fff;
+  background-color: #1c51dc;
+  border-color: #1c51dc;
+}
+
+.login .card .form-group {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.register .welcome-img {
+  width: 13%;
+}
+
+.register .card .form-group {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.register .divider {
+  padding: 0;
+  border: none;
+  border-top: solid 1px #e8ebf3;
+  color: #333;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.register .divider:after {
+  content: "or";
+  display: inline-block;
+  position: relative;
+  top: -0.9em;
+  font-size: 1.2em;
+  padding: 0 0.25em;
+  background: white;
+}
+
+.register .btn-google {
+  color: #fff;
+  background-color: #f35243;
+  border-color: #f35243;
+}
+
+.register .btn-facebook {
+  color: #fff;
+  background-color: #1c51dc;
+  border-color: #1c51dc;
+}
+
