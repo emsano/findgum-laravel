@@ -33,6 +33,15 @@ Route::get('/filtered', function () {
     return view('filtered-posts');
 })->name('filtered-posts');
 
+Route::get('/profile', function () {
+    return view('profile');
+})->name('profile');
+
+Route::get('/settings', function () {
+    return view('settings');
+})->name('settings');
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

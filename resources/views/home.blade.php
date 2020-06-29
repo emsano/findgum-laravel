@@ -2,6 +2,35 @@
 
 @section('content')
 <div class="container finds-list">
+    <div class="ad-carousel d-sm-none d-md-block d-lg-block  mb-2">
+        <div id="carousel-banners" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators">
+				<li data-target="#carousel-banners" data-slide-to="0" class="active"></li>
+				<li data-target="#carousel-banners" data-slide-to="1"></li>
+				<li data-target="#carousel-banners" data-slide-to="2"></li>
+			  </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="https://via.placeholder.com/1110x200?text=Example+Banner+Image+1" alt="First slide">
+                </div>
+                <div class="carousel-item">
+					<img class="d-block w-100" src="https://via.placeholder.com/1110x200?text=Example+Banner+Image+2" alt="First slide">
+                </div>
+                <div class="carousel-item">
+					<img class="d-block w-100" src="https://via.placeholder.com/1110x200?text=Example+Banner+Image+3" alt="First slide">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carousel-banners" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel-banners" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
 	<div class="latest-finds mb-2">
 		<div class="row">
 			<div class="col">
@@ -34,7 +63,7 @@
 							The Vans All-Weather MTE Collection features footwear and apparel designed to withstand the elements whilst still looking cool. </p>
 					</div>
 					<div class="card-footer bg-transparent border-success">
-						<p class="post-price mb-0">&#8369; 5000 </p>
+						<p class="post-price mb-0">&#8369; 5000 </p><span class="post-condition float-right font-weight-bolder">New</span>
 						<p class="post-card-location mb-0"><i class="mdi mdi-google-maps"></i><span>Baguio City</span></p>
 					</div>
 				</div>

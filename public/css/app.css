@@ -32713,8 +32713,7 @@ body {
 }
 
 .navbar-collapse .search-bar {
-  width: -webkit-fill-available;
-  width: -moz-available;
+  width: 65%;
 }
 
 .navbar-collapse .search-bar li {
@@ -32828,17 +32827,6 @@ body {
   font-weight: bolder;
 }
 
-@media only screen and (max-width: 959px) {
-  #navbar-supported-content {
-    overflow-x: auto;
-  }
-
-  .right-nav,
-  .search-bar {
-    padding-top: 1rem;
-  }
-}
-
 .footer {
   bottom: 0;
   position: static;
@@ -32893,6 +32881,21 @@ body {
 
 .footer .youtube i {
   color: crimson;
+}
+
+.finds-list .ad-carousel .carousel-indicators > li {
+  border-radius: 50%;
+  height: 10px;
+  width: 10px;
+}
+
+.finds-list .ad-carousel .carousel-item {
+  height: 12rem;
+}
+
+.finds-list .ad-carousel img {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .finds-list .post-card {
@@ -33229,58 +33232,6 @@ body {
   color: whitesmoke;
 }
 
-@media only screen and (max-width: 959px) {
-  .message-between {
-    padding-top: 1rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 500;
-    visibility: hidden;
-    transform: translateX(100%);
-    transition: transform 0.3s ease, visibility 0.3s ease;
-    background: #fafbfd;
-  }
-
-  .message-between.visible {
-    visibility: visible;
-    transform: translateX(0);
-  }
-
-  .message-input {
-    bottom: 0;
-    position: absolute;
-    right: 0;
-    left: 0;
-    padding: 1rem;
-  }
-
-  .messages .messages-list ul {
-    height: calc(100vh / 1.5);
-    padding: 0;
-    padding-left: 1rem;
-  }
-
-  .messenger-name .sender-name {
-    font-size: 1.3rem;
-  }
-
-  .back-btn i {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-
-  .back-btn button {
-    outline: transparent !important;
-    border: transparent !important;
-    box-shadow: none !important;
-    background-color: transparent !important;
-  }
-}
-
 .login .welcome-img {
   width: 13%;
 }
@@ -33359,5 +33310,134 @@ body {
   color: #fff;
   background-color: #1c51dc;
   border-color: #1c51dc;
+}
+
+.profile .banner {
+  height: 10rem;
+  overflow: hidden;
+  display: flex;
+}
+
+.profile .banner img {
+  width: 100%;
+  height: auto;
+  align-self: center;
+}
+
+.profile .profile-picture img {
+  height: auto;
+  width: 65%;
+  align-self: center;
+  margin-top: -5rem;
+  border: solid white 5px;
+}
+
+.profile .follow-btn {
+  border-color: #dae0e5;
+}
+
+.profile .profile-address {
+  color: #a28b2d;
+}
+
+.profile .profile-description .card {
+  border: none;
+}
+
+.profile .profile-listings .post-card {
+  display: none;
+}
+
+.profile .profile-reviews .card {
+  border: none;
+}
+
+.profile .rating-cacl {
+  font-size: 1.2rem;
+}
+
+.profile .mdi-star.checked {
+  color: #0c8f76;
+}
+
+.profile .review-text {
+  display: -webkit-box;
+  display: -moz-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 959px) {
+  #navbar-supported-content {
+    overflow-x: auto;
+  }
+
+  .right-nav,
+  .search-bar {
+    padding-top: 1rem;
+  }
+
+  .message-between {
+    padding-top: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 500;
+    visibility: hidden;
+    transform: translateX(100%);
+    transition: transform 0.3s ease, visibility 0.3s ease;
+    background: #fafbfd;
+  }
+
+  .message-between.visible {
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .message-input {
+    bottom: 0;
+    position: absolute;
+    right: 0;
+    left: 0;
+    padding: 1rem;
+  }
+
+  .messages .messages-list ul {
+    height: calc(100vh / 1.5);
+    padding: 0;
+    padding-left: 1rem;
+  }
+
+  .messenger-name .sender-name {
+    font-size: 1.3rem;
+  }
+
+  .back-btn i {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .back-btn button {
+    outline: transparent !important;
+    border: transparent !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+  }
+
+  .profile .banner {
+    height: 10rem;
+  }
+
+  .profile .profile-picture img {
+    height: auto;
+    width: 50%;
+    align-self: center;
+    margin-top: -7rem;
+    border: solid white 5px;
+  }
 }
 

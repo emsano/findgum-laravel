@@ -44,7 +44,7 @@
                             <li class="mx-auto">
                                 <div class="input-group">
                                     <!-- Search form -->
-                                    <input class="form-control mx-auto" id="search" type="text" placeholder="Search" aria-label="Search">
+                                    <input class="form-control mx-auto rounded" id="search" type="text" placeholder="Search" aria-label="Search">
                                     <div class="input-group-append p-0 border-0 bg-white">
                                         <span class="input-group-text py-0  border-0 bg-white" id="basic-addon2">
                                             <img src="{{ asset('./images/flag.jpg') }}" class="img-fluid" width="50" height="40">
@@ -101,8 +101,8 @@
                             </li>
                             @endguest
                             <li class="nav-item list-inline-item">
-                                <div class="sell-btn-container mx-2">
-                                    <a href="#" type="button" class="nav-link btn btn-danger sell-item px-2">Sell</a>
+                                <div class="sell-btn-container">
+                                    <a href="#" type="button" class="nav-link btn btn-danger sell-item px-2">Post FREE AD</a>
                                 </div>
                             </li>
                         </ul>
@@ -128,7 +128,7 @@
             <footer class="pt-4 my-md-5 pt-md-5 border-top">
                 <div class="row">
                     <div class="col-12 col-md logo-nc">
-                        <img class="mb-2" src="./images/logo-no-text.png" alt="Findgum Logo">
+                        <img class="mb-2" src="{{ asset('images/logo-no-text-2.png') }}" alt="Findgum Logo">
                         <small class="d-block mb-3 text-muted copyright"> © 2020 Findgum</small>
                     </div>
                     <div class="col-6 col-md">
