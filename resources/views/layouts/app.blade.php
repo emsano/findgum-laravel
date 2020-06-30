@@ -30,7 +30,7 @@
             <nav class="navbar navbar-expand-sm top-bar navbar-light bg-white border-bottom">
                 <div class="container mx-auto px-0">
                     <a class="navbar-brand p-0" href="{{ url('/') }}">
-                        <img alt="{{ config('app.name', 'Home') }}" src="./images/findgum_logo.png">
+                        <img alt="{{ config('app.name', 'Home') }}" src="{{ asset('images/findgum_logo.png') }}">
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -79,7 +79,7 @@
                             <li class="nav-item dropdown list-inline-item">
                                 <a class="profile nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    <span>Hello </span>
+                                    <span>{{{ Auth::user()->fname }}}</span>
                                     <svg viewBox="0 0 24 24">
                                         <path fill="currentColor"
                                             d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4m-5 8h2v2H7v-2m4 0h2v2h-2v-2m4 0h2v2h-2v-2z" />
@@ -124,7 +124,7 @@
             @yield('content')
         </main>
 
-        <div class="container-fluid footer mx-auto">
+        <div class="container footer mx-auto">
             <footer class="pt-4 my-md-5 pt-md-5 border-top">
                 <div class="row">
                     <div class="col-12 col-md logo-nc">

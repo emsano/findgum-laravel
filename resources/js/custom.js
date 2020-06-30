@@ -201,4 +201,12 @@ $(document).ready(function () {
         // document.getElementById("demo").innerHTML = err.message;
     }
     // End Message Switcher
+
+    // Profile Settings 
+    var maxLength = 255;
+    $('.about-me').keyup(function() {
+        var length = $(this).val().length;
+        var length = maxLength-length;
+        $('#about-me-chars').text(length);
+    });
 });

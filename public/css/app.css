@@ -33368,6 +33368,25 @@ body {
   overflow: hidden;
 }
 
+.settings .profile-picture {
+  height: 12rem;
+}
+
+.settings .profile-picture img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.settings .file-upload-label {
+  padding: 1em 2em;
+}
+
+.settings .file-upload-label:hover {
+  cursor: pointer;
+  background: #f45e71;
+  border-color: #f45e71;
+}
+
 @media only screen and (max-width: 959px) {
   #navbar-supported-content {
     overflow-x: auto;
@@ -33376,6 +33395,8 @@ body {
   .right-nav,
   .search-bar {
     padding-top: 1rem;
+    width: -webkit-fill-available !important;
+    width: -moz-available !important;
   }
 
   .message-between {
@@ -33438,6 +33459,13 @@ body {
     align-self: center;
     margin-top: -7rem;
     border: solid white 5px;
+  }
+
+  .settings .file-upload-label {
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
+    width: 100%;
   }
 }
 

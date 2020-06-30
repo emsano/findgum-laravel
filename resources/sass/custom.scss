@@ -30,6 +30,7 @@ body {
         // width: -webkit-fill-available;
         // width: -moz-available;
         width: 65%;
+
         li {
             width: 100%;
         }
@@ -220,20 +221,22 @@ body {
 // Post 
 .finds-list {
     .ad-carousel {
-        .carousel-indicators > li {
+        .carousel-indicators>li {
             border-radius: 50%;
             height: 10px;
             width: 10px;
-          }
-        .carousel-item{
+        }
+
+        .carousel-item {
             height: 12rem;
         }
+
         img {
             max-width: 100%;
-            max-height: 100%;   
+            max-height: 100%;
         }
     }
-    
+
 }
 
 .finds-list .post-card {
@@ -601,8 +604,9 @@ body {
         text-align: center;
         margin: 1.5rem 0;
 
-        
+
     }
+
     .divider:after {
         content: "or";
         display: inline-block;
@@ -653,8 +657,9 @@ body {
         text-align: center;
         margin: 1.5rem 0;
 
-        
+
     }
+
     .divider:after {
         content: "or";
         display: inline-block;
@@ -698,7 +703,8 @@ body {
             width: 65%;
             align-self: center;
             margin-top: -5rem;
-            border: solid white 5px;;
+            border: solid white 5px;
+            ;
         }
     }
 
@@ -710,20 +716,19 @@ body {
         color: #a28b2d;
     }
 
-    .profile-description{
+    .profile-description {
         .card {
             border: none;
 
-            .card-header {
-                
-            }
+            .card-header {}
         }
     }
+
     .profile-listings .post-card {
         display: none;
     }
 
-    .profile-reviews{
+    .profile-reviews {
         .card {
             border: none;
 
@@ -744,5 +749,26 @@ body {
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
         overflow: hidden;
+    }
+}
+
+// Settings
+.settings {
+    .profile-picture {
+        height: 12rem;
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+
+    .file-upload-label {
+        padding: 1em 2em;
+        &:hover {
+            cursor: pointer;
+            background: #f45e71;
+            border-color: #f45e71;
+        }
     }
 }
