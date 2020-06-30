@@ -18,7 +18,7 @@
             <div class="border-success">
                 <h2 class="post-price text-danger">&#8369; 5000 </h2>
                 <h3 class="post-title"><strong>Vans Sk8-Hi MTE Shoes</strong></h3>
-                <p class="post-card-location mb-0"><i class="mdi mdi-google-maps"></i><span> Baguio City</span></p>
+                <p class="post-card-location mb-0"><i class="mdi mdi-google-maps"></i><span> Baguio City</span> <button class="btn float-right p-0 add-to-fav"><i class="mdi mdi-heart-outline"></i> Add to Favorites</button></p>
             </div>
 
             <div class="row mt-2">

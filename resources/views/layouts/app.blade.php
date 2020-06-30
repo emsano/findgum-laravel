@@ -60,7 +60,7 @@
                             @guest
                             <li class="nav-item list-inline-item">
                                 {{-- <a class="nav-link login" href="{{ route('login') }}"> --}}
-                                    <a class="nav-link login" href="#">
+                                    <a class="nav-link login pr-0" href="#">
                                     <span>{{ __('Login') }}</span>
                                     <i class="mdi mdi-login-variant"></i>
                                 </a>
@@ -68,7 +68,7 @@
                             @if (Route::has('register'))
                             <li class="nav-item list-inline-item">
                                 {{-- <a class="nav-link register" href="{{ route('register') }}"> --}}
-                                    <a class="nav-link register" href="#">
+                                    <a class="nav-link register pl-0" href="#">
 
                                     <span>{{ __('Register') }}</span>
                                     <i class="mdi mdi-book-plus"></i>
@@ -77,20 +77,19 @@
                             @endif
                             @else
                             <li class="nav-item dropdown list-inline-item">
-                                <a class="profile nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                <a class="profile nav-link dropdown-toggle px-0 py-0" href="#" id="navbarDropdownProfile" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    <span>{{{ Auth::user()->fname }}}</span>
-                                    <svg viewBox="0 0 24 24">
-                                        <path fill="currentColor"
-                                            d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4m-5 8h2v2H7v-2m4 0h2v2h-2v-2m4 0h2v2h-2v-2z" />
-                                    </svg>
+                                    {{-- <span>{{{ Auth::user()->fname }}}</span> --}}
+                                    <i class="mdi mdi-account-box"></i>
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-right animate slideIn"
-                                    aria-labelledby="navbarDropdown">
+                                <div class="dropdown-menu dropdown-menu-right animate slideIn profile-menu-drop shadow"
+                                    aria-labelledby="navbarDropdownProfile">
+                                    <a class="dropdown-item border-bottom" href="{{ route('settings') }}"><i class="mdi mdi-cog"></i> Profile Settings</a>
+
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        <i class="mdi mdi-logout"></i> {{ __('Logout') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST"
@@ -99,10 +98,121 @@
                                     </form>
                                 </div>
                             </li>
+                            <li class="nav-item dropdown list-inline-item">
+                                <a class="nav-link dropdown-toggle px-0 py-0 d-none d-md-block d-lg-block" href="#" id="dropdownFav" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <i class="mdi mdi-heart-multiple text-danger"></i>
+                                </a>
+
+                                <a class="nav-link dropdown-toggle px-0 py-0 d-inline-flex d-md-none d-lg-none" href="{{ route('favorites') }}">
+                                    <i class="mdi mdi-heart-multiple text-danger"></i>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right animate slideIn shadow"
+                                    aria-labelledby="navbarDropdownProfile">
+                                    <p class="align-self-center text-center m-0 bg-danger text-light">Favorites</p>
+                                    <a class="dropdown-item border-bottom" href="#">
+                                        <div class="row">
+                                            <div class="col pl-0 d-flex flex-row align-items-center">
+                                                <div class="sender-meta d-inline text-truncate" id="sender-2">
+                                                    <p class="name mb-0">Matt Reees</p>
+                                                    <p class="posted-item mb-0 font-weight-bolder">Vanguard Power</p>
+                                                    <p class="preview m-0 text-truncate">Elit pellentesque habitant morbi tristique.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-3">
+                                                <small class="text-muted when">05/20</small>
+                                                <img class="rounded product-img mb-2 d-block m-auto" src="{{ asset('images/2p9VXAn.jpg') }}"  width="50" height="50">
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a class="dropdown-item border-bottom" href="#">
+                                        <div class="row">
+                                            <div class="col pl-0 d-flex flex-row align-items-center">
+                                                <div class="sender-meta d-inline text-truncate" id="sender-2">
+                                                    <p class="name mb-0">Matt Reees</p>
+                                                    <p class="posted-item mb-0 font-weight-bolder">Vanguard Power</p>
+                                                    <p class="preview m-0 text-truncate">Elit pellentesque habitant morbi tristique.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-3">
+                                                <small class="text-muted when">05/20</small>
+                                                <img class="rounded product-img mb-2 d-block m-auto" src="{{ asset('images/2p9VXAn.jpg') }}"  width="50" height="50">
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a class="dropdown-item border-bottom" href="#">
+                                        <div class="row">
+                                            <div class="col pl-0 d-flex flex-row align-items-center">
+                                                <div class="sender-meta d-inline text-truncate" id="sender-2">
+                                                    <p class="name mb-0">Matt Reees</p>
+                                                    <p class="posted-item mb-0 font-weight-bolder">Vanguard Power</p>
+                                                    <p class="preview m-0 text-truncate">Elit pellentesque habitant morbi tristique.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-3">
+                                                <small class="text-muted when">05/20</small>
+                                                <img class="rounded product-img mb-2 d-block m-auto" src="{{ asset('images/2p9VXAn.jpg') }}"  width="50" height="50">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown list-inline-item">
+                                <a class="nav-link dropdown-toggle pl-0  py-0 d-none d-md-block d-lg-block" href="#" id="dropdownMsg" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <i class="mdi mdi-message text-info"></i>
+                                </a>
+
+                                <a class="nav-link dropdown-toggle pl-0 py-0 d-inline-flex d-md-none d-lg-none" href="{{ route('messages') }}">
+                                    <i class="mdi mdi-message text-info"></i>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right animate slideIn shadow"
+                                    aria-labelledby="navbarDropdownMsg">
+                                    <p class="align-self-center text-center m-0 bg-info text-light">Messages</p>
+                                    <a class="dropdown-item border-bottom" href="{{ route('messages') }}">
+                                        <div class="wrap row">
+                                            <div class="col-auto px-2">
+                                                <img class="rounded-circle profile-img mb-2 d-block m-auto" src="{{ asset('images/prof1.jpg') }}"  width="40" height="40">
+                                            </div>
+                                            <div class="col pl-0 d-flex flex-row align-items-center">
+                                                <div class="sender-meta d-inline text-truncate" id="sender-1">
+                                                    <p class="name mb-0">Louis Litt</p>
+                                                    <p class="posted-item mb-0 font-weight-bolder">Vans Sk8-Hi MTE Shoes</p>
+                                                    <p class="preview m-0 text-truncate">Quis viverra nibh cras pulvinar mattis nunc sed.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-3">
+                                                <small class="text-muted when">06/20</small>
+                                                <img class="rounded product-img mb-2 d-block m-auto" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png"  width="50" height="50">
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a class="dropdown-item border-bottom" href="{{ route('messages') }}">
+                                        <div class="wrap row">
+                                            <div class="col-auto px-2">
+                                                <img class="rounded-circle profile-img mb-2 d-block m-auto" src="{{ asset('images/prof2.jpg') }}"  width="40" height="40">
+                                            </div>
+                                            <div class="col pl-0 d-flex flex-row align-items-center">
+                                                <div class="sender-meta d-inline text-truncate" id="sender-2">
+                                                    <p class="name mb-0">Matt Reees</p>
+                                                    <p class="posted-item mb-0 font-weight-bolder">Vanguard Power</p>
+                                                    <p class="preview m-0 text-truncate">Elit pellentesque habitant morbi tristique.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-3">
+                                                <small class="text-muted when">05/20</small>
+                                                <img class="rounded product-img mb-2 d-block m-auto" src="{{ asset('images/2p9VXAn.jpg') }}"  width="50" height="50">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
                             @endguest
-                            <li class="nav-item list-inline-item">
-                                <div class="sell-btn-container">
-                                    <a href="#" type="button" class="nav-link btn btn-danger sell-item px-2">Post FREE AD</a>
+                            <li class="nav-item list-inline-item align-self-center">
+                                <div class="sell-btn-container align-self-center">
+                                    <a href="#" type="button" class="nav-link btn btn-danger sell-item px-2">Post Free Ad</a>
                                 </div>
                             </li>
                         </ul>

@@ -32698,6 +32698,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.container {
+  max-width: 1200px;
+}
+
 .navbar-brand img {
   height: 2rem;
 }
@@ -32724,8 +32728,12 @@ body {
   background-color: #e8e8e8;
 }
 
-.navbar-collapse .nav-item {
-  padding: 0.1rem;
+.navbar-collapse .nav-item a {
+  align-self: center;
+}
+
+.navbar-collapse .nav-item i {
+  align-self: center;
 }
 
 .navbar-collapse svg {
@@ -32753,7 +32761,7 @@ body {
 }
 
 .navbar-collapse .sell-btn-container {
-  text-align: center;
+  text-align: right;
 }
 
 .navbar-collapse .sell-item {
@@ -32762,16 +32770,34 @@ body {
   color: honeydew !important;
 }
 
+.navbar-collapse .dropdown-toggle::after {
+  display: none;
+}
+
 .right-nav {
   width: auto;
 }
 
-.right-nav li {
+.right-nav li:last-child {
   width: inherit;
 }
 
+.right-nav li:last-child a {
+  display: inline-flex;
+  width: inherit;
+  align-self: center;
+}
+
 .right-nav i {
-  font-size: 1rem;
+  font-size: 1.7rem;
+  margin-left: auto;
+  margin-right: auto;
+  align-self: center;
+}
+
+.right-nav .dropdown-menu i {
+  font-size: initial !important;
+  padding-right: 1rem;
 }
 
 .megamenu .navbar-nav {
@@ -33397,6 +33423,19 @@ body {
     padding-top: 1rem;
     width: -webkit-fill-available !important;
     width: -moz-available !important;
+  }
+
+  .right-nav .profile-menu-drop {
+    position: absolute;
+    /* will-change: transform; */
+    top: 0px;
+    left: 0px;
+    right: auto;
+    transform: translate3d(0, 35%, 0);
+  }
+
+  .right-nav .nav-item {
+    padding: 0.5rem;
   }
 
   .message-between {

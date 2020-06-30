@@ -10,6 +10,10 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+.container {
+    max-width: 1200px;
+}
+
 // Navbar
 .navbar-brand img {
     height: 2rem;
@@ -41,7 +45,16 @@ body {
     }
 
     .nav-item {
-        padding: 0.1rem;
+        // padding: 0.5rem;
+
+        a {
+            align-self: center;
+        }
+
+        i {
+            // font-size: 1.5rem;
+            align-self: center;
+        }
     }
 
 
@@ -73,7 +86,7 @@ body {
     }
 
     .sell-btn-container {
-        text-align: center;
+        text-align: right;
     }
 
     .sell-item {
@@ -81,17 +94,37 @@ body {
         border-color: #ef2942;
         color: honeydew !important;
     }
+
+    .dropdown-toggle::after {
+        display: none;
+    }
 }
 
 .right-nav {
     width: auto;
 
-    li {
+    li:last-child {
         width: inherit;
+
+        a {
+            display: inline-flex;
+            width: inherit;
+            align-self: center;
+        }
     }
 
     i {
-        font-size: 1rem;
+        font-size: 1.7rem;
+        margin-left: auto;
+        margin-right: auto;
+        align-self: center;
+    }
+
+    .dropdown-menu {
+        i {
+            font-size: initial !important;
+            padding-right: 1rem;
+        }
     }
 }
 

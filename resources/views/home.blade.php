@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container finds-list">
-    <div class="ad-carousel d-sm-none d-md-block d-lg-block  mb-2">
+    <div class="ad-carousel d-none d-md-block d-lg-block  mb-2">
         <div id="carousel-banners" class="carousel slide" data-ride="carousel">
 			<ol class="carousel-indicators">
 				<li data-target="#carousel-banners" data-slide-to="0" class="active"></li>

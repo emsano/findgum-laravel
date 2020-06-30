@@ -25,6 +25,22 @@
         width: -moz-available !important;
     }
 
+    .right-nav {
+        .profile-menu-drop {
+            position: absolute;
+            /* will-change: transform; */
+            top: 0px;
+            left: 0px;
+            right: auto;
+            transform: translate3d(0, 35%, 0);
+        }
+
+        .nav-item {
+            padding: 0.5rem;
+        }
+    }
+    
+
     // 
 
     .message-between {

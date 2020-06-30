@@ -47,7 +47,7 @@
                             </div>
                             <div class="col-3">
                                 <small class="text-muted when">06/20</small>
-                                <img class="rounded profile-img mb-2 d-block m-auto" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png"  width="50" height="50">
+                                <img class="rounded product-img mb-2 d-block m-auto" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png"  width="50" height="50">
                             </div>
                         </div>
                     </button>
@@ -66,7 +66,7 @@
                             </div>
                             <div class="col-3">
                                 <small class="text-muted when">05/20</small>
-                                <img class="rounded profile-img mb-2 d-block m-auto" src="{{ asset('images/2p9VXAn.jpg') }}"  width="50" height="50">
+                                <img class="rounded product-img mb-2 d-block m-auto" src="{{ asset('images/2p9VXAn.jpg') }}"  width="50" height="50">
                             </div>
                         </div>
                     </button>
