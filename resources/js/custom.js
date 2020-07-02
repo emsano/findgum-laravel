@@ -7,10 +7,10 @@ $(document).ready(function () {
     })
 
     // Collapse on click, outside
-    $(document).click(function(event) {
+    $(document).click(function (event) {
         $(event.target).closest(".top-bar").length || $(".top-bar .navbar-collapse.show").length && $(".top-bar .navbar-collapse.show").collapse("hide")
-      });
-     // End Collapse on click, outside  ----------
+    });
+    // End Collapse on click, outside  ----------
 
     // Megamenu dropdown animation ----------
     $(".dropdown").click(
@@ -170,11 +170,11 @@ $(document).ready(function () {
 
     // Message Switcher
     // temporary function to showcase UI
-    $('.conversation-list .list-group-item-action').click( function (e) {
-        
+    $('.conversation-list .list-group-item-action').click(function (e) {
+
         //Select the conversation to be displayed
         var convo_selector = '#' + $(this)[0].dataset.conversation;
-        
+
         //Hide current conversation
         $('.conversation.active').removeClass('active');
         $('.list-group-item-action.active').removeClass('active');
@@ -186,9 +186,9 @@ $(document).ready(function () {
         $('.message-between').addClass('visible');
 
         //scroll to bottom
-        $(convo_selector + " ul")[0].scrollTop = $(convo_selector + " ul")[0].scrollHeight;   
+        $(convo_selector + " ul")[0].scrollTop = $(convo_selector + " ul")[0].scrollHeight;
     });
-    $('.back-btn button').on('click', function(e) {
+    $('.back-btn button').on('click', function (e) {
         e.preventDefault()
         $('.message-between').removeClass("visible")
     })
@@ -204,9 +204,79 @@ $(document).ready(function () {
 
     // Profile Settings 
     var maxLength = 255;
-    $('.about-me').keyup(function() {
+    $('.about-me').keyup(function () {
         var length = $(this).val().length;
-        var length = maxLength-length;
+        var length = maxLength - length;
         $('#about-me-chars').text(length);
+    });
+
+    // Simple WYSIWYG
+    $('#editControls a').click(function (e) {
+        e.preventDefault();
+        switch ($(this).data('role')) {
+            case 'h1':
+            case 'h2':
+            case 'h3':
+            case 'p':
+                document.execCommand('formatBlock', false, $(this).data('role'));
+                break;
+            default:
+                document.execCommand($(this).data('role'), false, null);
+                break;
+        }
+
+        var textval = $("#editor").html();
+        $("#editorCopy").val(textval);
+    });
+
+    $("#editor").keyup(function () {
+        var value = $(this).html();
+        $("#editorCopy").val(value);
+    }).keyup();
+
+    $('#checkIt').click(function (e) {
+        e.preventDefault();
+        alert($("#editorCopy").val());
+    });
+
+    var content_id = 'editor';  
+    max = 1000;
+    //binding keyup/down events on the contenteditable div
+    $('#'+content_id).keyup(function(e){ check_charcount(content_id, max, e); });
+    $('#'+content_id).keydown(function(e){ check_charcount(content_id, max, e); });
+
+    function check_charcount(content_id, max, e)
+    {   
+        if(e.which != 8 && $('#'+content_id).text().length > max)
+        {
+        // $('#'+content_id).text($('#'+content_id).text().substring(0, max));
+        e.preventDefault();
+        alert('Max Characters Inputed.')
+
+        }
+    }
+
+    // Post Item Image Upload on Edit
+    var url1 = 'http://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png';
+    $("#item-img-upload").fileinput({
+        uploadUrl:"upload-images",
+        deleteUrl:"delete-images",
+        initialPreview: [url1],
+        initialPreviewAsData: true,
+        overwriteInitial: false,
+        allowedFileTypes: ['image'],
+        maxFileCount: 10,
+        maxTotalFileCount: 10,
+        multiple:true,
+        dragDrop:true,
+        showPreview:true,
+        showDelete: true,
+        filePlural: true,
+        initialPreviewShowDelete: true,
+        showRemove: true,
+        fileActionSettings: {
+            initialPreviewShowDelete: true,
+            showRemove: true
+        }
     });
 });

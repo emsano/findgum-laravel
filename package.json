@@ -27,6 +27,8 @@
     },
     "dependencies": {
         "@mdi/font": "^5.3.45",
-        "materialize-css": "^1.0.0-rc.2"
+        "bootstrap-fileinput": "^5.1.1",
+        "materialize-css": "^1.0.0-rc.2",
+        "owp.glyphicons": "^1.1.0"
     }
 }

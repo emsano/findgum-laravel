@@ -314,6 +314,7 @@ body {
     overflow: hidden;
 }
 
+// 
 .single-post {
     .carousel-inner {
         height: auto;
@@ -326,7 +327,6 @@ body {
             object-fit: cover;
         }
     }
-
 
     .carousel-item {
         height: auto;
@@ -493,6 +493,19 @@ body {
 
     .related-post .post-card {
         display: none;
+    }
+}
+
+.report-check {
+    font-size: 10rem;
+}
+
+.report-success {
+    .close {
+        float: right;
+        right: 0;
+        position: absolute;
+        padding: 1rem;
     }
 }
 
@@ -783,7 +796,104 @@ body {
         -webkit-box-orient: vertical;
         overflow: hidden;
     }
+
+    .item-desc-container {
+
+        /* ==========================================================================
+   WYSIWYG
+   ========================================================================== */
+        #editor {
+            resize: vertical;
+            overflow: auto;
+            line-height: 1.5;
+            background-color: #fafafa;
+            background-image: none;
+            border: 0;
+            border: 1px solid #ced4da;
+            ;
+            border-bottom: 1px solid #3b8dbd;
+            min-height: 150px;
+            box-shadow: none;
+            padding: 8px 16px;
+            margin: 0 auto;
+            font-size: 14px;
+            transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+        }
+
+        #editor:focus {
+            background-color: #f0f0f0;
+            border-color: #38af5b;
+            box-shadow: none;
+            outline: 0 none;
+        }
+
+        /* ==========================================================================
+   Buttons
+   ========================================================================== */
+        .btn {
+            font-family: "Raleway", sans-serif;
+            font-weight: 300;
+            font-size: 1em;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            border: none;
+            border-bottom: .15em solid black;
+            padding: 0.65em 1.3em;
+        }
+
+        .btn-xs {
+            font-size: .80em;
+            padding: .25em .75em;
+        }
+
+        .btn-default {
+            border-color: #d9d9d9;
+            background-image: linear-gradient(#ffffff, #f2f2f2);
+        }
+
+        .btn-default:hover {
+            background: linear-gradient(#f2f2f2, #e6e6e6);
+        }
+    }
+
+    #edit-item-post {
+        .modal-dialog {
+            width: 50%;
+            max-width: none;
+        }
+    }
+
+    .post-menu-secondary {
+        .dropdown-toggle::after {
+            display: none;
+        }
+
+        .dropdown-toggle::before {
+            display: none;
+        }
+    }
+
+    .dropdown-menu {
+        // will-change: auto !important;
+    
+        backface-visibility: hidden;
+        -webkit-font-smoothing: subpixel-antialiased;
+        &.show{
+            display: block !important;
+        }
+        button {
+            backface-visibility: hidden;
+            -webkit-font-smoothing: subpixel-antialiased;
+        }
+    
+        i {
+            backface-visibility: hidden;
+            -webkit-font-smoothing: subpixel-antialiased;
+        }
+    }
 }
+
+
 
 // Settings
 .settings {
@@ -798,6 +908,7 @@ body {
 
     .file-upload-label {
         padding: 1em 2em;
+
         &:hover {
             cursor: pointer;
             background: #f45e71;

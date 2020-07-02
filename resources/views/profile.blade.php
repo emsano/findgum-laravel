@@ -170,7 +170,130 @@
         <div class="col-md-9 col-sm-12 mt-2 profile-listings">
             <h4 class="font-weight-bolder">Shop <i class="mdi mdi-store"></i></h4>
             <div class="col">
-                @for ($a = 0 ; $a < 8; $a++ )
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+                    <div class="col mb-4 post-card">
+                        <div class="card">
+                            <img class="card-img post-card-img"
+                                src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" alt="Vans">
+                            <p class="bg-danger text-white text-center w-100 p-1 position-absolute">SOLD</p>
+                            <div class="card-body p-2">
+                                <h5 class="card-title post-title"><a href="{{ route('single-post') }}" class="card-link text-danger like">Vans Sk8-Hi MTE Shoes</a></h5>
+                                <p class="card-text post-desc">
+                                    The Vans All-Weather MTE Collection features footwear and apparel designed to withstand the elements whilst still looking cool. </p>
+                            </div>
+                            <div class="card-footer bg-transparent border-success p-2">
+                                <p class="post-price mb-0">&#8369; 5000 </p>
+                                <div class="post-card-location mb-2">
+                                    <i class="mdi mdi-google-maps"></i>
+                                    <span>Baguio City</span>
+                                    <div class="dropdown dropleft post-menu-secondary float-right">
+                                        <button class="btn btn-light dropdown-toggle p-0" type="button" id="post-menu-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="mdi mdi-dots-vertical"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="post-menu-1">
+                                            <button class="dropdown-item btn repost-item" data-toggle="modal" data-target="#repost-item-post"><i class="mdi mdi-clipboard-arrow-up"></i> Repost</button>
+                                            <button class="dropdown-item btn edit-item" data-toggle="modal" data-target="#edit-item-post" disabled><i class="mdi mdi-file-edit"></i> Edit</button>
+                                            <button class="dropdown-item btn mark-as-sold" data-toggle="modal" data-target="#mark-as-sold-post" ><i class="mdi mdi-handshake"></i> Mark as Sold</button>
+                                            <button class="dropdown-item btn delete-item text-danger" data-toggle="modal" data-target="#delete-item-post"><i class="mdi mdi-trash-can"></i> Delete</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-4 post-card">
+                        <div class="card">
+                            <img class="card-img post-card-img"
+                                src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" alt="Vans">
+                            <p class="bg-danger text-white text-center w-100 p-1 position-absolute">SOLD</p>
+                            <div class="card-body p-2">
+                                <h5 class="card-title post-title"><a href="{{ route('single-post') }}" class="card-link text-danger like">Vans Sk8-Hi MTE Shoes</a></h5>
+                                <p class="card-text post-desc">
+                                    The Vans All-Weather MTE Collection features footwear and apparel designed to withstand the elements whilst still looking cool. </p>
+                            </div>
+                            <div class="card-footer bg-transparent border-success p-2">
+                                <p class="post-price mb-0">&#8369; 5000 </p>
+                                <div class="post-card-location mb-2">
+                                    <i class="mdi mdi-google-maps"></i>
+                                    <span>Baguio City</span>
+                                    <div class="dropdown dropleft post-menu-secondary float-right">
+                                        <button class="btn btn-light dropdown-toggle p-0" type="button" id="post-menu-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="mdi mdi-dots-vertical"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="post-menu-1">
+                                            <button class="dropdown-item btn repost-item" data-toggle="modal" data-target="#repost-item-post"><i class="mdi mdi-clipboard-arrow-up"></i> Repost</button>
+                                            <button class="dropdown-item btn edit-item" data-toggle="modal" data-target="#edit-item-post" disabled><i class="mdi mdi-file-edit"></i> Edit</button>
+                                            <button class="dropdown-item btn mark-as-sold" data-toggle="modal" data-target="#mark-as-sold-post" ><i class="mdi mdi-handshake"></i> Mark as Sold</button>
+                                            <button class="dropdown-item btn delete-item text-danger" data-toggle="modal" data-target="#delete-item-post"><i class="mdi mdi-trash-can"></i> Delete</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-4 post-card">
+                        <div class="card">
+                            <img class="card-img post-card-img"
+                                src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" alt="Vans">
+                            <p class="bg-danger text-white text-center w-100 p-1 position-absolute">SOLD</p>
+                            <div class="card-body p-2">
+                                <h5 class="card-title post-title"><a href="{{ route('single-post') }}" class="card-link text-danger like">Vans Sk8-Hi MTE Shoes</a></h5>
+                                <p class="card-text post-desc">
+                                    The Vans All-Weather MTE Collection features footwear and apparel designed to withstand the elements whilst still looking cool. </p>
+                            </div>
+                            <div class="card-footer bg-transparent border-success p-2">
+                                <p class="post-price mb-0">&#8369; 5000 </p>
+                                <div class="post-card-location mb-2">
+                                    <i class="mdi mdi-google-maps"></i>
+                                    <span>Baguio City</span>
+                                    <div class="dropdown dropleft post-menu-secondary float-right">
+                                        <button class="btn btn-light dropdown-toggle p-0" type="button" id="post-menu-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="mdi mdi-dots-vertical"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="post-menu-1">
+                                            <button class="dropdown-item btn repost-item" data-toggle="modal" data-target="#repost-item-post"><i class="mdi mdi-clipboard-arrow-up"></i> Repost</button>
+                                            <button class="dropdown-item btn edit-item" data-toggle="modal" data-target="#edit-item-post" disabled><i class="mdi mdi-file-edit"></i> Edit</button>
+                                            <button class="dropdown-item btn mark-as-sold" data-toggle="modal" data-target="#mark-as-sold-post" ><i class="mdi mdi-handshake"></i> Mark as Sold</button>
+                                            <button class="dropdown-item btn delete-item text-danger" data-toggle="modal" data-target="#delete-item-post"><i class="mdi mdi-trash-can"></i> Delete</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-4 post-card">
+                        <div class="card">
+                            <img class="card-img post-card-img"
+                                src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" alt="Vans">
+                            <p class="bg-danger text-white text-center w-100 p-1 position-absolute">SOLD</p>
+                            <div class="card-body p-2">
+                                <h5 class="card-title post-title"><a href="{{ route('single-post') }}" class="card-link text-danger like">Vans Sk8-Hi MTE Shoes</a></h5>
+                                <p class="card-text post-desc">
+                                    The Vans All-Weather MTE Collection features footwear and apparel designed to withstand the elements whilst still looking cool. </p>
+                            </div>
+                            <div class="card-footer bg-transparent border-success p-2">
+                                <p class="post-price mb-0">&#8369; 5000 </p>
+                                <div class="post-card-location mb-2">
+                                    <i class="mdi mdi-google-maps"></i>
+                                    <span>Baguio City</span>
+                                    <div class="dropdown dropleft post-menu-secondary float-right">
+                                        <button class="btn btn-light dropdown-toggle p-0" type="button" id="post-menu-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="mdi mdi-dots-vertical"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="post-menu-1">
+                                            <button class="dropdown-item btn repost-item" data-toggle="modal" data-target="#repost-item-post"><i class="mdi mdi-clipboard-arrow-up"></i> Repost</button>
+                                            <button class="dropdown-item btn edit-item" data-toggle="modal" data-target="#edit-item-post" disabled><i class="mdi mdi-file-edit"></i> Edit</button>
+                                            <button class="dropdown-item btn mark-as-sold" data-toggle="modal" data-target="#mark-as-sold-post" ><i class="mdi mdi-handshake"></i> Mark as Sold</button>
+                                            <button class="dropdown-item btn delete-item text-danger" data-toggle="modal" data-target="#delete-item-post"><i class="mdi mdi-trash-can"></i> Delete</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                @for ($a = 0 ; $a < 4; $a++ )
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
                     @for ($b = 0 ; $b < 4 ; $b++ )
                     <div class="col mb-4 post-card">
@@ -197,7 +320,21 @@
                             </div>
                             <div class="card-footer bg-transparent border-success p-2">
                                 <p class="post-price mb-0">&#8369; 5000 </p>
-                                <p class="post-card-location mb-0"><i class="mdi mdi-google-maps"></i><span>Baguio City</span></p>
+                                <div class="post-card-location mb-0">
+                                    <i class="mdi mdi-google-maps"></i>
+                                    <span>Baguio City</span>
+                                    <div class="dropdown dropleft post-menu-secondary float-right">
+                                        <button class="btn btn-light dropdown-toggle p-0" type="button" id="post-menu-{{ $a }}-{{ $b }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="mdi mdi-dots-vertical"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="post-menu-{{ $a }}-{{ $b }}">
+                                            <button class="dropdown-item btn repost-item" data-toggle="modal" data-target="#repost-item-post" disabled><i class="mdi mdi-clipboard-arrow-up"></i> Repost</button>
+                                            <button class="dropdown-item btn edit-item" data-toggle="modal" data-target="#edit-item-post"><i class="mdi mdi-file-edit"></i> Edit</button>
+                                            <button class="dropdown-item btn mark-as-sold" data-toggle="modal" data-target="#mark-as-sold-post" ><i class="mdi mdi-handshake"></i> Mark as Sold</button>
+                                            <button class="dropdown-item btn delete-item text-danger" data-toggle="modal" data-target="#delete-item-post"><i class="mdi mdi-trash-can"></i> Delete</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -212,5 +349,13 @@
             </div>
         </div>
     </div>
+
+    {{-- Edit Modal --}}
+    @include('sections.edit-post-modal')
+    {{-- End Edit Modal --}}
+
+    {{-- Repost Modal --}}
+    @include('sections.repost-item-modal')
+    {{-- End Repost Modal --}}
 </div>
 @endsection

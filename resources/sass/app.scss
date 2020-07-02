@@ -9,6 +9,11 @@
 
 @import '~@mdi/font/scss/materialdesignicons';
 
+@import '~bootstrap-fileinput/scss/fileinput';
+@import '~bootstrap-fileinput/scss/themes/explorer-fas/theme';
+
+@import "~owp.glyphicons/glyphicons.css";
+
 @import 'slide-animation';
 @import 'mega-menu';
 @import 'custom'; 

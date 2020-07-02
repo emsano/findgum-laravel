@@ -33,4 +33,9 @@ const app = new Vue({
 
 console.log('Strapped in');
 
+
+require('../../node_modules/bootstrap-fileinput/js/fileinput.js');
+require('../../node_modules/bootstrap-fileinput/themes/explorer-fas/theme.js')
+// require('../../node_modules/bootstrap-fileinput/themes/fas/theme.js')
+
 require ('./custom.js');
