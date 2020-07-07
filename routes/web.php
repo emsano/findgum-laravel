@@ -41,6 +41,23 @@ Route::get('/settings', function () {
     return view('settings');
 })->name('settings');
 
+// Route::get('/admin/posts', function () {
+//     $admin_posts_active = 'active';
+//     $admin_posts_show = 'show';
+
+//     return view('admin.posts', compact('admin_posts_active', 'admin_posts_show'));
+// })->name('admin-posts');
+
+
+Route::group(['namespace' => 'Api'], function () {
+    Route::get('/admin', 'AdminController@dashboardIndex')->name('admin');
+
+    Route::get('admin/posts/{selected}','AdminController@postsIndex')->name('admin-posts');
+
+    Route::get('/admin/posting-options/sub-categories', 'AdminController@subCategIndex')->name('admin-posting-options-sub-categories');
+    Route::get('/admin/posting-options/categories', 'AdminController@categIndex')->name('admin-posting-options-categories');
+});
+
 
 Auth::routes();
 

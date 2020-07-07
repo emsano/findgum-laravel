@@ -11,10 +11,12 @@
 
 @import '~bootstrap-fileinput/scss/fileinput';
 @import '~bootstrap-fileinput/scss/themes/explorer-fas/theme';
-
+@import "~datatables.net-bs4/css/dataTables.bootstrap4.css";
+@import "~datatables.net-buttons-bs4/css/buttons.bootstrap4.css";
 @import "~owp.glyphicons/glyphicons.css";
 
 @import 'slide-animation';
 @import 'mega-menu';
 @import 'custom'; 
 @import 'custom-mobile';
+@import 'admin';

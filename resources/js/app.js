@@ -39,3 +39,4 @@ require('../../node_modules/bootstrap-fileinput/themes/explorer-fas/theme.js')
 // require('../../node_modules/bootstrap-fileinput/themes/fas/theme.js')
 
 require ('./custom.js');
+require ('./admin.js');

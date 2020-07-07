@@ -61,7 +61,7 @@ $(document).ready(function () {
             // }, 100);
         });
     });
-    // Related Posts   
+    // Related Posts
     $(function () {
         $(".related-post .post-card").slice(0, 8).show();
         $("body").on('click', '.related-post .load-more-related', {
@@ -76,10 +76,10 @@ $(document).ready(function () {
             console.log("related");
             // $('html,body').animate({
             //     scrollTop: $(this).offset().top
-            // }, 100);  
+            // }, 100);
         });
     });
-    // 
+    //
     // Profile Listings
     $(function () {
         $(".profile-listings .post-card").slice(0, 12).show();
@@ -95,7 +95,7 @@ $(document).ready(function () {
             console.log("listings");
             // $('html,body').animate({
             //     scrollTop: $(this).offset().top
-            // }, 100);  
+            // }, 100);
         });
     });
     // End Load More ----------
@@ -202,7 +202,7 @@ $(document).ready(function () {
     }
     // End Message Switcher
 
-    // Profile Settings 
+    // Profile Settings
     var maxLength = 255;
     $('.about-me').keyup(function () {
         var length = $(this).val().length;
@@ -239,14 +239,14 @@ $(document).ready(function () {
         alert($("#editorCopy").val());
     });
 
-    var content_id = 'editor';  
+    var content_id = 'editor';
     max = 1000;
     //binding keyup/down events on the contenteditable div
     $('#'+content_id).keyup(function(e){ check_charcount(content_id, max, e); });
     $('#'+content_id).keydown(function(e){ check_charcount(content_id, max, e); });
 
     function check_charcount(content_id, max, e)
-    {   
+    {
         if(e.which != 8 && $('#'+content_id).text().length > max)
         {
         // $('#'+content_id).text($('#'+content_id).text().substring(0, max));
@@ -280,3 +280,4 @@ $(document).ready(function () {
         }
     });
 });
+
