@@ -1,11 +1,11 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container-fluid ">
+@include('admin.posts')
+{{-- <div class="container-fluid ">
     <div class="card shadow">
         <h5 class="card-header bg-white"><i class="mdi mdi-timer-sand"></i> Pending Postings</h5>
         <div class="card-body">
-            {{-- <h5 class="card-title">Special title treatment</h5> --}}
             <div class="row">
                 <div class="col">
                     <div class="row">
@@ -31,7 +31,6 @@
                                     <label class="form-check-label" for="inlineRadio2">Require Approval for new
                                         Posts</label>
                                 </div>
-                                {{-- <button type="submit" class="btn btn-primary">Save</button> --}}
                             </form>
                         </div>
                     </div>
@@ -118,5 +117,5 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 @endsection

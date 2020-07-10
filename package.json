@@ -30,6 +30,7 @@
         "bootstrap-fileinput": "^5.1.1",
         "datatables.net-bs4": "^1.10.21",
         "datatables.net-buttons-bs4": "^1.6.2",
+        "js-base64": "^2.6.3",
         "materialize-css": "^1.0.0-rc.2",
         "owp.glyphicons": "^1.1.0"
     }

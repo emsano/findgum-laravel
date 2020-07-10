@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -56,6 +57,10 @@ Route::group(['namespace' => 'Api'], function () {
 
     Route::get('/admin/posting-options/sub-categories', 'AdminController@subCategIndex')->name('admin-posting-options-sub-categories');
     Route::get('/admin/posting-options/categories', 'AdminController@categIndex')->name('admin-posting-options-categories');
+
+
+    Route::get('admin/view-post/{id}','AdminController@viewPostIndex')->name('view-post');
+    Route::get('admin/view-post/uploads/products/{img}', 'AdminController@getPostImages')->name('get-post-images');
 });
 
 

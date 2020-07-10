@@ -257,8 +257,10 @@ $(document).ready(function () {
     }
 
     // Post Item Image Upload on Edit
+    // To be edited
     var url1 = 'http://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png';
     $("#item-img-upload").fileinput({
+        uploadExtraData: {_token:"{{csrf_token()}}"},
         uploadUrl:"upload-images",
         deleteUrl:"delete-images",
         initialPreview: [url1],

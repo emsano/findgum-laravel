@@ -13,6 +13,7 @@ try {
     require('bootstrap');
     require('datatables.net-bs4');
     require('datatables.net-buttons-bs4');
+    var Base64 = require('js-base64').Base64;
 } catch (e) {}
 
 /**

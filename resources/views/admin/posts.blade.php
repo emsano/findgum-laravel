@@ -1,9 +1,9 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container-fluid ">
+<div class="container-fluid admin-posts">
     <div class="card shadow">
-        <h5 class="card-header bg-white"><i class="mdi mdi-storefront-outline"></i> {{ $where }}</h5>
+        <h5 class="card-header bg-dark text-white"><i class="mdi mdi-storefront-outline"></i> {{ $where }}</h5>
         <div class="card-body">
             <div class="row">
                 <div class="col">
@@ -25,7 +25,7 @@
             </div>
             <div class="table-responsive mt-2">
                 {{-- {{ dd($cdata) }} --}}
-                <table class="table" id="post-table">
+                <table class="table table-striped dt-responsive" id="post-table">
                     <thead>
                         <tr>
                             {{-- <th scope="col">#</th> --}}
@@ -35,11 +35,12 @@
                             <th scope="col">Location</th>
                             <th scope="col">Status</th>
                             @if ($reported_posts_active ?? '')
-                            <th class="bg-warning" scope="col">Report</th>
-                            <th class="bg-warning" scope="col">Reported By</th>
+                                <th class="bg-warning" scope="col">Report</th>
+                                <th class="bg-warning" scope="col">Message</th>
+                                <th class="bg-warning" scope="col">Reported By</th>
                             @endif
                             <th scope="col">Date</th>
-                            <th scope="col">Action</th>
+                            <th class="nosort" scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -47,7 +48,7 @@
                         <tr>
                             {{-- <th scope="row">1</th> --}}
                             <td>
-                                <a name="" id="" class="btn btn-link text-left" href="#" role="button">
+                                <a name="" id="" class="btn btn-link text-left post-what" href="{{ route('view-post', $post->PostingId) }}" role="button">
                                     @if (!empty($post->Posting))
                                        {!! $post->Posting !!}
                                     @elseif (!empty($post->ShortDescription) && empty($post->Posting))
@@ -63,24 +64,28 @@
                             <td>{{ $post->PostingStatus }}</td>
                             @if ($reported_posts_active ?? '')
                                 <td class="bg-warning">{{ $post->Reason }}</td>
+                                <td class="bg-warning">{{ $post->Message }}</td>
                                 <td class="bg-warning">{{ $post->Reporter }}</td>
                             @endif
                             <td>{{ $post->DateCreated }}</td>
                             <td>
                                 <div class="btn-group" role="group" aria-label="Post Controls">
                                     @if ( $pending_posts_active ?? '')
-                                        <button type="button" class="btn btn-sm btn-primary">Approve</button>
+                                        <button type="button" class="btn btn-sm btn-primary approve-post" data-approve="{{ $post->PostingId }}">Approve</button>
                                     @endif
                                     @if ( $expired_posts_active ?? '')
-                                        <button type="button" class="btn btn-sm btn-success">Edit</button>
+                                        <button type="button" class="btn btn-sm btn-success" data-repost="{{ $post->PostingId }}">Repost</button>
                                     @endif
                                     @if ( $drafts_posts_active ?? '')
-                                        <button type="button" class="btn btn-sm btn-info">Edit</button>
+                                        <button type="button" class="btn btn-sm btn-info" data-edit="{{ $post->PostingId }}">Edit</button>
+                                    @endif
+                                    @if ( $reported_posts_active ?? '')
+                                        <button type="button" class="btn btn-sm btn-info" data-edit-report="{{ $post->PostingId }}">Edit</button>
                                     @endif
                                     @if ( $deleted_posts_active ?? '')
-                                        <button type="button" class="btn btn-sm btn-info">Repost</button>
+                                        <button type="button" class="btn btn-sm btn-info" data-repost="{{ $post->PostingId }}">Repost</button>
                                     @endif
-                                    <button type="button" class="btn btn-sm btn-danger">Delete</button>
+                                    <button type="button" class="btn btn-sm btn-danger delete-post" data-delete="{{ $post->PostingId }}">Delete</button>
                                 </div>
                             </td>
                         </tr>
@@ -92,4 +97,8 @@
         </div>
     </div>
 </div>
+
+@include('admin.sections.post-delete-modal')
+@include('admin.sections.post-approve-modal')
+
 @endsection

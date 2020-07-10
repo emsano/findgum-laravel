@@ -4,6 +4,10 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Response;
 use App\User;
 
 // use Datatables;
@@ -26,7 +30,27 @@ class AdminController extends Controller
     public function dashboardIndex()
     {
         $admin_dashboard_active = 'active';
-        return view('admin.dashboard', compact('admin_dashboard_active'));
+
+        $pending_posts_active = 'active';
+        $where = 'Pending Approval';
+
+        $cdata = DB::connection('mysql2')
+        ->table('posting')
+        ->join('user', 'posting.CreatedBy', '=', 'user.UserId')
+        ->join('posting_template', 'posting.PostingTemplateId', '=', 'posting_template.PostingTemplateId')
+        ->join('sub_categories', 'posting_template.SubCategoryId', '=' , 'sub_categories.SubCategoryId')
+        ->join('cities', 'posting.CityId', '=', 'cities.CityId')
+        ->join('posting_status', 'posting.StatusCode', '=', 'posting_status.StatusCode')
+        ->select('Posting', 'posting.PostingId', 'posting.ShortDescription','user.FirstName', 'user.UserId', 'sub_categories.Description', 'cities.City', 'posting_status.PostingStatus', 'posting.DateCreated');
+
+
+        $cdata = $cdata
+            ->where([
+                ['posting_status.StatusCode', '=', 'G'],
+            ])
+            ->get();
+
+        return view('admin.dashboard', compact('admin_dashboard_active', 'where', 'cdata'));
     }
 
     public function postsIndex($selected)
@@ -41,7 +65,7 @@ class AdminController extends Controller
         ->join('sub_categories', 'posting_template.SubCategoryId', '=' , 'sub_categories.SubCategoryId')
         ->join('cities', 'posting.CityId', '=', 'cities.CityId')
         ->join('posting_status', 'posting.StatusCode', '=', 'posting_status.StatusCode')
-        ->select('Posting', 'posting.ShortDescription','user.FirstName', 'user.UserId', 'sub_categories.Description', 'cities.City', 'posting_status.PostingStatus', 'posting.DateCreated');
+        ->select('Posting', 'posting.PostingId', 'posting.ShortDescription','user.FirstName', 'user.UserId', 'sub_categories.Description', 'cities.City', 'posting_status.PostingStatus', 'posting.DateCreated');
 
         switch ($selected) {
             case 'all':
@@ -49,9 +73,6 @@ class AdminController extends Controller
                 $where = 'All Posts';
 
                 $cdata = $cdata
-                    // ->where([
-                    //     ['user.UserId', '=', 17],
-                    // ])
                     ->get();
                 break;
             case 'active':
@@ -92,7 +113,7 @@ class AdminController extends Controller
                     ->join('posting_reports', 'posting.PostingId', '=', 'posting_reports.PostingId')
                     ->join('user as user2', 'posting_reports.ReportedBy', '=', 'user2.UserId')
                     ->join('report_reasons', 'posting_reports.ReportReasonId', '=', 'report_reasons.ReportReasonId')
-                    ->select('Posting', 'posting.ShortDescription','user.FirstName', 'user.UserId', 'sub_categories.Description', 'cities.City', 'posting_status.PostingStatus', 'posting.DateCreated', 'report_reasons.Reason', 'user2.FirstName as Reporter')
+                    ->select('Posting', 'posting.PostingId', 'posting.ShortDescription','user.FirstName', 'user.UserId', 'sub_categories.Description', 'cities.City', 'posting_status.PostingStatus', 'posting.DateCreated', 'report_reasons.Reason', 'user2.FirstName as Reporter', 'posting_reports.Message')
                     // ->where([
                     //     ['posting_status.StatusCode', '=', 'E'],
                     // ])
@@ -177,5 +198,62 @@ class AdminController extends Controller
     public function getSubCategories (Request $request)
     {
         return DB::connection('mysql2')->table('categories')->select(['CategoryId', 'Category', 'CategoryCode']);
+    }
+
+
+    public function viewPostIndex($id) {
+        $where = 'View Post';
+        $postId = $id;
+
+        $img = DB::connection('mysql2')
+        ->table('posting')
+        ->join('user', 'posting.CreatedBy', '=', 'user.UserId')
+        // ->join('posting_template', 'posting.PostingTemplateId', '=', 'posting_template.PostingTemplateId')
+        ->join('posting_images', 'posting.PostingId', '=', 'posting_images.PostingId')
+        // ->join('sub_categories', 'posting_template.SubCategoryId', '=' , 'sub_categories.SubCategoryId')
+        // ->join('cities', 'posting.CityId', '=', 'cities.CityId')
+        // ->join('posting_status', 'posting.StatusCode', '=', 'posting_status.StatusCode')
+        // ->select('Posting', 'posting.PostingId', 'posting.ShortDescription', 'posting_images.ImageUrl','user.FirstName', 'user.UserId', 'sub_categories.Description', 'cities.City', 'posting_status.PostingStatus', 'posting.DateCreated')
+        ->select('posting_images.ImageUrl')
+        ->where('posting.PostingId', '=', $id)
+        ->get();
+
+        $item = DB::connection('mysql2')
+        ->table('posting')
+        ->join('user', 'posting.CreatedBy', '=', 'user.UserId')
+        ->join('posting_template', 'posting.PostingTemplateId', '=', 'posting_template.PostingTemplateId')
+        // ->join('posting_images', 'posting.PostingId', '=', 'posting_images.PostingId')
+        ->join('sub_categories', 'posting_template.SubCategoryId', '=' , 'sub_categories.SubCategoryId')
+        ->join('cities', 'posting.CityId', '=', 'cities.CityId')
+        ->join('posting_status', 'posting.StatusCode', '=', 'posting_status.StatusCode')
+        ->select('Posting', 'posting.PostingId', 'posting.UnitPrice','posting.ShortDescription', 'posting.Description as PostDesc', 'user.FirstName', 'user.UserId', 'sub_categories.Description', 'cities.City', 'posting_status.PostingStatus', 'posting_status.StatusCode','posting.DateCreated')
+        ->where('posting.PostingId', '=', $id)
+        ->get();
+
+        $item[0]->PostDesc = base64_encode($item[0]->PostDesc);
+
+        // $img = $img->toJson();
+        // $item = $item->toJson();
+
+        return view('admin.view-post')->with(
+            compact('where', 'postId', 'img', 'item')
+        );
+    }
+
+
+    public function getPostImages($img) {
+        $path = public_path().'/uploads/products/'.$img;
+
+        if (!File::exists($path)) {
+            return response()->json(['message' => $path ], 404);
+        }
+
+        $file = File::get($path);
+        $type = File::mimeType($path);
+
+        $response = Response::make($file, 200);
+        $response->header("Content-Type", $type);
+
+        return $response;
     }
 }

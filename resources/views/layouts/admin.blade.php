@@ -137,8 +137,8 @@
         <div class="py-3" id="content">
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
-                    <button type="button" id="sidebarCollapse" class="btn btn-light">
-                        <i class="mdi mdi-menu"></i>
+                    <button type="button" id="sidebarCollapse" class="btn btn-light border shadow-sm">
+                        <i class="mdi mdi-menu"> Toggle Sidebar</i>
                     </button>
 
                     @guest
@@ -148,7 +148,7 @@
                     </a>
                     @else
 
-                    <button class="btn profile dropdown-toggle d-inline-flex" href="#" id="navbarDropdownProfile"
+                    <button class="btn profile dropdown-toggle d-inline-flex  shadow" href="#" id="navbarDropdownProfile"
                         role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         <span>{{{ Auth::user()->fname }}}</span>
                         <i class="mdi mdi-account-box"></i>
