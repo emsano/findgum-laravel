@@ -77,13 +77,13 @@
                                         <button type="button" class="btn btn-sm btn-success" data-repost="{{ $post->PostingId }}">Repost</button>
                                     @endif
                                     @if ( $drafts_posts_active ?? '')
-                                        <button type="button" class="btn btn-sm btn-info" data-edit="{{ $post->PostingId }}">Edit</button>
+                                        <a href="{{ route('view-post', $post->PostingId) }}" type="button" class="btn btn-sm btn-info text-white" data-edit="{{ $post->PostingId }}">Edit</a>
                                     @endif
                                     @if ( $reported_posts_active ?? '')
-                                        <button type="button" class="btn btn-sm btn-info" data-edit-report="{{ $post->PostingId }}">Edit</button>
+                                        <a href="{{ route('view-post', $post->PostingId) }}" type="button" class="btn btn-sm btn-info text-white" data-edit-report="{{ $post->PostingId }}">Edit</a>
                                     @endif
                                     @if ( $deleted_posts_active ?? '')
-                                        <button type="button" class="btn btn-sm btn-info" data-repost="{{ $post->PostingId }}">Repost</button>
+                                        <button type="button" class="btn btn-sm btn-info repost-post" data-repost="{{ $post->PostingId }}">Repost</button>
                                     @endif
                                     <button type="button" class="btn btn-sm btn-danger delete-post" data-delete="{{ $post->PostingId }}">Delete</button>
                                 </div>
@@ -100,5 +100,6 @@
 
 @include('admin.sections.post-delete-modal')
 @include('admin.sections.post-approve-modal')
+@include('admin.sections.post-repost-modal')
 
 @endsection

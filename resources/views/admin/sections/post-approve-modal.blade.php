@@ -1,7 +1,7 @@
 <div id="post-approve-modal" class="modal modal-danger fade" tabindex="-1" role="dialog" aria-labelledby="custom-width-modalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
         <div class="modal-content">
-             <form action="#" method="POST" class="approve-post-model">
+             <form action="#" method="POST" class="approve-post-modal">
                {{ csrf_field() }}
 
                 <div class="modal-header">

@@ -97,24 +97,24 @@
                         </li>
                     </ul>
                 </li>
-                <li class="list-group-item lig-i p-0">
-                    <a class="sidebar-btn dropdown-toggle btn btn-outline px-4 w-100" href="#users-submenu" data-toggle="collapse"
+                <li class="list-group-item lig-i p-0 {{ $user_maint_active ?? ''}}">
+                    <a class="sidebar-btn dropdown-toggle btn btn-outline px-4 w-100 {{ $user_maint_active ?? ''}}" href="#users-submenu" data-toggle="collapse"
                         aria-expanded="false">
                         <i class="mdi mdi-account-multiple"></i>
                         User Maintenance
                     </a>
-                    <ul class="collapse list-unstyled submenu-list" id="users-submenu" data-parent='#list-tab'>
+                    <ul class="collapse list-unstyled submenu-list {{ $user_maint_show ?? ''}}" id="users-submenu" data-parent='#list-tab'>
                         <li class="list-group-item py-0">
-                            <a class="btn btn-light" href="#">Buyers/Sellers</a>
+                            <a class="list-group-item btn btn-light {{ $buyerseller_active ?? ''}}" href="{{ route('user-maintenance', 'buyerseller') }}">Buyers/Sellers</a>
                         </li>
                         <li class="list-group-item py-0">
-                            <a class="btn btn-light" href="#">Reported Users</a>
+                            <a class="list-group-item btn btn-light {{ $reported_active ?? ''}}" href="{{ route('user-maintenance', 'reported') }}">Reported Users</a>
                         </li>
                         <li class="list-group-item py-0">
-                            <a class="btn btn-light" href="#">Subscribers</a>
+                            <a class="list-group-item btn btn-light {{ $subscribers_active ?? ''}}" href="{{ route('user-maintenance', 'subscribers') }}">Subscribers</a>
                         </li>
                         <li class="list-group-item py-0">
-                            <a class="btn btn-light" href="#">Admin Users</a>
+                            <a class="list-group-item btn btn-light {{ $admin_active ?? ''}}" href="{{ route('user-maintenance', 'admin') }}">Admin Users</a>
                         </li>
                     </ul>
                 </li>
@@ -136,7 +136,7 @@
         {{-- Main Content --}}
         <div class="py-3" id="content">
             <nav class="navbar navbar-expand-lg">
-                <div class="container-fluid">
+                <div class="container-fluid px-0">
                     <button type="button" id="sidebarCollapse" class="btn btn-light border shadow-sm">
                         <i class="mdi mdi-menu"> Toggle Sidebar</i>
                     </button>

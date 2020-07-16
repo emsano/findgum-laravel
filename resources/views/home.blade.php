@@ -41,7 +41,7 @@
 		<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
 			@for ($b = 0 ; $b < 4 ; $b++ )
 			<div class="col mb-4 post-card">
-				<div class="card">
+				<div class="card shadow">
 					<div class="card-header px-3 py-0">
 						<a href="#" class="btn card-profile-image">
 							<div class="row">
@@ -122,12 +122,12 @@
 			@endfor
 		</div>
 		@endfor
-		
+
 		<div class="row load-more-container">
 			<div class="col text-center">
 				<button type="button" class="btn btn-outline-danger mx-auto load-more-fresh">Load More</button>
 			</div>
-		</div> 
+		</div>
 	</div> --}}
 </div>
 @endsection

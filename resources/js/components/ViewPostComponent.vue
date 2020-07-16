@@ -5,8 +5,9 @@
             <div class="card-body">
                 <form action="#" method="post">
                     <div class="form-group">
-                        <label for="view-post-title">Title</label>
-                        <input type="text" class="form-control" id="post-title" placeholder="" :value='postItem[0].Posting'>
+                        <label for="view-post-title font-weight-bolder">Title</label>
+                        <input type="text" class="form-control" id="post-title" placeholder=""
+                            :value='postItem[0].Posting'>
                     </div>
                     <div class="form-group item-desc-container">
                         <label class="font-weight-bolder" for="item-desc">Description</label>
@@ -47,7 +48,8 @@
                                             class="mdi mdi-format-paragraph"></i></a>
                                 </div>
                             </div>
-                            <div class="border" id="editor" maxlength="1000" contenteditable v-html="postItem[0].PostDesc">
+                            <div class="border" id="editor" maxlength="1000" contenteditable
+                                v-html="postItem[0].PostDesc">
                                 {{  postItem[0].PostDesc  }}
                             </div>
                             <textarea class="item-desc" name="ticketDesc" id="editorCopy" required="required"
@@ -57,17 +59,24 @@
                     </div>
                     <div class="form-group">
                         <div class="input-group mb-3">
-                            <label class="mx-2 align-self-center font-weight-bolder" for="item-price">Item Price</label>
+                            <label class="align-self-center font-weight-bolder" for="item-price">Item Price &nbsp;</label>
                             <div class="input-group-prepend">
                                 <span class="input-group-text">&#8369; </span>
                             </div>
-                            <input type="Number" class="form-control" id="item-price" placeholder="" :value='postItem[0].UnitPrice'>
+                            <input type="Number" class="form-control" id="item-price" placeholder=""
+                                :value='postItem[0].UnitPrice'>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="mx-2 align-self-center font-weight-bolder" for="item-price">Item Location <i
+                        <label class="align-self-center font-weight-bolder" for="item-price">Item Location <i
                                 class="mdi mdi-google-maps"></i></label>
-                        <input type="text" class="form-control" id="item-location" placeholder="" :value='postItem[0].City'>
+                        <input type="text" class="form-control" id="item-location" placeholder=""
+                            :value='postItem[0].City'>
+                    </div>
+                    <div class="form-group">
+                        <label class="align-self-center font-weight-bolder" for="post-user">Posted By</label>
+                        <!-- <input type="text" class="form-control" id="post-user" value="" disabled readonly> -->
+                        <a name="post-user" id="post-user" class="btn btn-warning" :href='postUserRoute'>{{ postItem[0].FirstName }}</a>
                     </div>
                     <div class="form-group">
                         <input type="file" class="fcustom-file-input" name="item-img-upload" id="post-item-img-upload"
@@ -86,18 +95,18 @@
                 </form>
             </div>
             <div class="card-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save Changes</button>
-                </div>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        props: ['where', 'post-id', 'post-images', 'post-item'],
+        props: ['where', 'post-id', 'post-images', 'post-item', 'post-user-route'],
         methods: {
-            getImages: function() {
+            getImages: function () {
                 var img = [];
                 this.postImages.forEach(element => {
                     img.push(element.ImageUrl);
@@ -105,18 +114,20 @@
                 // this.img = img;
 
                 $("#post-item-img-upload").fileinput({
-                    uploadExtraData: {_token:"{{csrf_token()}}"},
-                    uploadUrl:"upload-images",
-                    deleteUrl:"delete-images",
+                    uploadExtraData: {
+                        _token: "{{csrf_token()}}"
+                    },
+                    uploadUrl: "upload-images",
+                    deleteUrl: "delete-images",
                     initialPreview: img,
                     initialPreviewAsData: true,
                     overwriteInitial: false,
                     allowedFileTypes: ['image'],
                     maxFileCount: 10,
                     maxTotalFileCount: 10,
-                    multiple:true,
-                    dragDrop:true,
-                    showPreview:true,
+                    multiple: true,
+                    dragDrop: true,
+                    showPreview: true,
                     showDelete: true,
                     filePlural: true,
                     initialPreviewShowDelete: true,
@@ -128,16 +139,16 @@
                 });
             },
             decodeDesc: function () {
-		        this.postItem[0].PostDesc = Base64.decode(this.postItem[0].PostDesc);
+                this.postItem[0].PostDesc = Base64.decode(this.postItem[0].PostDesc);
+                this.postItem[0].City = Base64.decode(this.postItem[0].City);
             }
         },
-        created: function() {
-            console.log(this);
+        created: function () {
             this.decodeDesc();
         },
         mounted() {
             this.getImages();
-            console.log('Admin View Post Component mounted.')
+            // console.log('Admin View Post Component mounted.')
         },
         data() {
             return {
@@ -145,4 +156,5 @@
             }
         }
     }
+
 </script>

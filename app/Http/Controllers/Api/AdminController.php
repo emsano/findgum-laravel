@@ -195,13 +195,130 @@ class AdminController extends Controller
         );
     }
 
+    public function userMaintenanceIndex($selected)
+    {
+        $user_maint_active = 'active';
+        $user_maint_show = 'show';
+
+        $cdata = DB::connection('mysql2')
+            ->table('user')
+            ->join('role', 'role.RoleId', '=', 'user.RoleId');
+
+        switch ($selected) {
+            case 'buyerseller':
+                $buyerseller_active = 'active';
+                $where = 'Buyer/Seller';
+
+                $cdata = $cdata
+                    ->select('user.UserId', 'SID', 'Username', 'FirstName', 'LastName', 'EmailAddress', 'user.DateCreated', 'LastLogin', 'role.Role')
+                    ->where([
+                        ['Role', '=', 'Advertiser']
+                        ])
+                    ->orWhere([
+                        ['Role', '=', 'Power User']
+                    ])
+                    ->get();
+                break;
+            case 'reported':
+                $reported_active = 'active';
+                $where = 'Reported';
+
+                $cdata = $cdata
+                ->join('posting', 'posting.CreatedBy', '=', 'user.UserId')
+                ->join('posting_reports', 'posting_reports.PostingId', '=', 'posting.PostingId')
+                ->select('user.UserId', 'SID', 'Username', 'FirstName', 'LastName', 'EmailAddress', 'user.DateCreated', 'LastLogin', 'role.Role', 'posting.PostingId', 'posting.Posting')
+                ->get();
+                break;
+            case 'subscribers':
+                $subscribers_active = 'active';
+                $where = 'Subscribers';
+
+                $cdata = $cdata
+                    // ->join('subscribers', 'subscribers.EmailAddress', '=', 'user.EmailAddress')
+                    ->select('user.UserId', 'SID', 'Username', 'FirstName', 'LastName', 'user.EmailAddress', 'user.DateCreated', 'LastLogin', 'role.Role')
+                    ->where([
+                        ['user.IsSubscribe', '=', '1'],
+                    ])
+                    ->get();
+                break;
+            case 'admin':
+                $admin_active = 'active';
+                $where = 'Administrators';
+
+                $cdata = $cdata
+                    ->select('user.UserId', 'SID', 'Username', 'FirstName', 'LastName', 'EmailAddress', 'user.DateCreated', 'LastLogin', 'role.Role')
+                    ->where([
+                        ['Role', '=', 'Admin']
+                        ])
+                    ->orWhere([
+                        ['Role', '=', 'Power User']
+                    ])
+                    ->get();
+                break;
+            default:
+
+                break;
+        }
+
+        return view('admin.users', compact('user_maint_show',
+            'user_maint_active',
+            'where',
+            'buyerseller_active',
+            'reported_active',
+            'subscribers_active',
+            'admin_active',
+            'cdata'
+        ));
+    }
+
+    public function viewCateg ($id)
+    {
+        $where = 'Category';
+
+        $cdata = DB::connection('mysql2')
+        ->table('categories')
+        ->join('user', 'user.UserId', '=', 'categories.CreatedBy')
+        ->select('CategoryId', 'Category as CName','CategoryCode', 'IsCategoryActive', 'FirstName', 'categories.DateCreated')
+        ->where([
+            ['CategoryId', '=', $id]
+        ])
+        ->get();
+
+        return view('admin.view-categ')
+            ->with(compact('where', 'cdata'));
+    }
+
+    public function viewSubCateg ($id)
+    {
+        $where = 'Sub Category';
+
+        $cdata = DB::connection('mysql2')
+        ->table('sub_categories')
+        ->join('categories', 'categories.CategoryId', '=', 'sub_categories.CategoryId')
+        ->join('user', 'user.UserId', '=', 'sub_categories.CreatedBy')
+        ->select('SubCategoryId', 'Category', 'Description as CName','CategoryCode', 'IsCategoryActive', 'FirstName', 'categories.DateCreated')
+        ->where([
+            ['SubCategoryId', '=', $id]
+        ])
+        ->get();
+
+        $categs = DB::connection('mysql2')
+        ->table('categories')
+        ->select('CategoryId', 'Category', 'CategoryCode')
+        ->get();
+
+        return view('admin.view-categ')
+            ->with(compact('where', 'cdata', 'categs'));
+    }
+
     public function getSubCategories (Request $request)
     {
         return DB::connection('mysql2')->table('categories')->select(['CategoryId', 'Category', 'CategoryCode']);
     }
 
 
-    public function viewPostIndex($id) {
+    public function viewPostIndex($id)
+    {
         $where = 'View Post';
         $postId = $id;
 
@@ -226,11 +343,12 @@ class AdminController extends Controller
         ->join('sub_categories', 'posting_template.SubCategoryId', '=' , 'sub_categories.SubCategoryId')
         ->join('cities', 'posting.CityId', '=', 'cities.CityId')
         ->join('posting_status', 'posting.StatusCode', '=', 'posting_status.StatusCode')
-        ->select('Posting', 'posting.PostingId', 'posting.UnitPrice','posting.ShortDescription', 'posting.Description as PostDesc', 'user.FirstName', 'user.UserId', 'sub_categories.Description', 'cities.City', 'posting_status.PostingStatus', 'posting_status.StatusCode','posting.DateCreated')
+        ->select('user.UserId', 'user.FirstName', 'Posting', 'posting.PostingId', 'posting.UnitPrice','posting.ShortDescription', 'posting.Description as PostDesc', 'user.FirstName', 'user.UserId', 'sub_categories.Description', 'cities.City', 'posting_status.PostingStatus', 'posting_status.StatusCode','posting.DateCreated')
         ->where('posting.PostingId', '=', $id)
         ->get();
 
         $item[0]->PostDesc = base64_encode($item[0]->PostDesc);
+        $item[0]->City = base64_encode($item[0]->City);
 
         // $img = $img->toJson();
         // $item = $item->toJson();
@@ -241,7 +359,8 @@ class AdminController extends Controller
     }
 
 
-    public function getPostImages($img) {
+    public function getPostImages($img)
+    {
         $path = public_path().'/uploads/products/'.$img;
 
         if (!File::exists($path)) {
@@ -255,5 +374,39 @@ class AdminController extends Controller
         $response->header("Content-Type", $type);
 
         return $response;
+    }
+
+    public function viewUserIndex($id) {
+        $adata = DB::connection('mysql2')
+            ->table('user')
+            ->join('role', 'role.RoleId', '=', 'user.RoleId');
+
+         $cdata = $adata->select('*')
+            ->where([
+                ['UserId', '=', $id]
+            ])
+            ->get();
+
+        $userPosts = $adata
+            ->join('posting', 'posting.CreatedBy', '=', 'user.UserId')
+            ->join('posting_template', 'posting.PostingTemplateId', '=', 'posting_template.PostingTemplateId')
+            // ->join('posting_images', 'posting.PostingId', '=', 'posting_images.PostingId')
+            ->join('sub_categories', 'posting_template.SubCategoryId', '=' , 'sub_categories.SubCategoryId')
+            ->join('cities', 'posting.CityId', '=', 'cities.CityId')
+            ->join('posting_status', 'posting.StatusCode', '=', 'posting_status.StatusCode')
+            ->select('Posting', 'posting.PostingId', 'posting.ShortDescription', 'posting.Description as Desc',
+                    'user.FirstName', 'user.UserId', 'user.AccountType', 'user.ImageUrl as ProfPhoto',
+                    'posting.FeaturedPhoto','sub_categories.Description', 'cities.City',
+                    'posting_status.PostingStatus', 'posting.DateCreated', 'posting.UnitPrice')
+            ->get();
+
+        $userPosts = json_decode(json_encode($userPosts), true);
+
+        $userMessages = $cdata;
+
+
+        return view('admin.view-user')->with(
+            compact('cdata', 'userPosts')
+        );
     }
 }
