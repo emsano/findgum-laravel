@@ -34,7 +34,7 @@
 	<div class="latest-finds mb-2">
 		<div class="row">
 			<div class="col">
-				<h3><span class="bd-content-title">Latest Finds</span></h3>
+				<h3 class="mt-2"><span class="bd-content-title">Latest Finds</span></h3>
 			</div>
 		</div>
 		@for ($a = 0 ; $a < 8; $a++ )

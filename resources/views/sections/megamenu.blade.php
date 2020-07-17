@@ -86,7 +86,7 @@
                                     <li><a href="#">Others</a></li>
                                 </ul>
                             </div>
-                            <div class="col">
+                            <div class="col border-right">
                                 <ul class="sub-category-list">
                                     <li class="dropdown-header">Electronics</li>
                                     <li><a href="#">Audio</a></li>
@@ -97,6 +97,17 @@
                                     <li><a href="#">Television</a></li>
                                     <li><a href="#">Speakers & Entertainment Systems</a></li>
                                     <li><a href="#">Other Electronics</a></li>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <ul class="sub-category-list">
+                                    <li class="dropdown-header">PC & Gadget Repair</li>
+                                    <li><a href="#">Desktop & Laptop Repair</a></li>
+                                    <li><a href="#">MAC Repair</a></li>
+                                    <li><a href="#">iPhone </a></li>
+                                    <li><a href="#">iPad </a></li>
+                                    <li><a href="#">Smartphone & Android</a></li>
+                                    <li><a href="#">Tablet Repair</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -291,7 +302,7 @@
                                 <ul class="sub-category-list">
                                     <li class="dropdown-header">Health & Beauty</li>
                                     <li><a href="#">Skin, Bath and Body</a></li>
-                                    <li><a href="#">Makeup</a></li>
+                                    <li><a href="#">Makeup, Eyelashes and Eyebrow</a></li>
                                     <li><a href="#">Perfumes, Nail Care and Others</a></li>
                                     <li><a href="#">Hair Care</a></li>
                                     <li><a href="#">Men's Grooming</a></li>
@@ -329,7 +340,12 @@
                                     <li><a href="#">Outdoor and Camping</a></li>
                                     <li class="divider"></li>
                                     <li class="dropdown-header">Photography</li>
-                                    <li><a href="#">...</a></li>
+                                    <li><a href="#">Photography Services</a></li>
+                                    <li><a href="#">Camera Equipment</a></li>
+                                    <li><a href="#">Camera Gears and Accessories</a></li>
+                                    <li><a href="#">Digital Camera</a></li>
+                                    <li><a href="#">360 Camera</a></li>
+                                    <li><a href="#">Others</a></li>
                                 </ul>
                             </div>
                             <div class="col border-right">
@@ -386,6 +402,17 @@
                                     <li><a href="#">Airline Tickets</a></li>
                                     <li><a href="#">Attractions</a></li>
                                     <li><a href="#">Gift Cards and Vouchers</a></li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">Foods and Beverages</li>
+                                    <li><a href="#">Water, Softdrinks & Juices</a></li>
+                                    <li><a href="#">Alcoholic Drinks</a></li>
+                                    <li><a href="#">Dairy Products</a></li>
+                                    <li><a href="#">Bread & Bakery Products</a></li>
+                                    <li><a href="#">Rice, Grains & Pasta</a></li>
+                                    <li><a href="#">AttrFruits and Vegetablesactions</a></li>
+                                    <li><a href="#">Meat, Poultry and Seafood</a></li>
+                                    <li><a href="#">Sugar and Coffee</a></li>
+                                    <li><a href="#">Others</a></li>
                                 </ul>
                             </div>
                             <div class="col">

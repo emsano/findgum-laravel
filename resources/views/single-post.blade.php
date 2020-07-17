@@ -192,7 +192,7 @@
                         </div>
                     </div>
 
-                    <div class="row Contact-seller mt-4">
+                    {{-- <div class="row Contact-seller mt-4">
                         <div class="col">
                             <div class="card w-100 shadow-sm">
                                 <div class="card-body">
@@ -229,7 +229,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="row safety-tips mt-4">
                         <div class="col">
                             <div class="card w-100 shadow-sm">
@@ -266,6 +266,75 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col mt-4 mx-3 pt-3 bg-white shadow-sm">
+            <h3><span class="bd-content-title">Comments</span></h3>
+            <div class="comment-wrapper">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+
+                    </div>
+                    <div class="panel-body">
+                        <form action="#" method="post">
+                            <div class="form-group">
+                              <label for=""></label>
+                              <textarea class="form-control" name="comment-box" id="comment-box" placeholder="Write a comment..." rows="3"></textarea>
+                            </div>
+                            <button type="button" class="btn btn-info pull-right">Post</button>
+                        </form>
+                        <div class="clearfix"></div>
+                        <hr>
+                        <ul class="media-list p-0">
+                            <li class="media">
+                                <a href="#" class="pull-left mr-2">
+                                    <img src="https://bootdey.com/img/Content/user_1.jpg" alt="" class="img-circle rounded-circle">
+                                </a>
+                                <div class="media-body">
+                                    <span class="text-muted pull-right">
+                                        <small class="text-muted">30 min ago</small>
+                                    </span>
+                                    <strong class="text-success">@MartinoMont</strong>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Lorem ipsum dolor sit amet, <a href="#">#consecteturadipiscing </a>.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="media">
+                                <a href="#" class="pull-left mr-2">
+                                    <img src="https://bootdey.com/img/Content/user_2.jpg" alt="" class="img-circle rounded-circle">
+                                </a>
+                                <div class="media-body">
+                                    <span class="text-muted pull-right">
+                                        <small class="text-muted">30 min ago</small>
+                                    </span>
+                                    <strong class="text-success">@LaurenceCorreil</strong>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Lorem ipsum dolor <a href="#">#ipsumdolor </a>adipiscing elit.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="media">
+                                <a href="#" class="pull-left mr-2">
+                                    <img src="https://bootdey.com/img/Content/user_3.jpg" alt="" class="img-circle rounded-circle">
+                                </a>
+                                <div class="media-body">
+                                    <span class="text-muted pull-right">
+                                        <small class="text-muted">30 min ago</small>
+                                    </span>
+                                    <strong class="text-success">@JohnNida</strong>
+                                    <p>
+                                        Lorem ipsum dolor <a href="#">#sitamet</a> sit amet, consectetur adipiscing elit.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

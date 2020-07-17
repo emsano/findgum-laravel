@@ -7,11 +7,11 @@
             <h3><span class="">Messages</span></h3>
         </div>
     </div> --}}
-    <div class="row mt-2 p-2 messages-row-box shadow">
-        <div class="col-md-5 col-sm-12 sidepanel border-right">
+    <div class="card row mt-2 p-2 messages-row-box shadow border-0">
+        <div class="col-md-5 col-sm-12 sidepanel border-right mt-3">
             <div class="profile">
                 <div class="wrap row mb-4">
-                    
+
                     <div class="col-auto">
                         <img class="rounded-circle profile-img mb-2 d-block m-auto" src="{{ asset('images/test.jpg') }}" width="60" height="60">
                     </div>
@@ -51,7 +51,7 @@
                             </div>
                         </div>
                     </button>
-                    
+
                     <button class="list-group-item list-group-item-action contact border-bottom" data-conversation="seller1-buyer2-item1">
                         <div class="wrap row">
                             <div class="col-auto px-2">
@@ -70,11 +70,11 @@
                             </div>
                         </div>
                     </button>
-                    
+
                 </ul>
             </div>
         </div>
-        <div class="col message-between">
+        <div class="col message-between mt-3">
             <div class="messages-list">
                 <div class="conversation active" id="seller1-buyer1-item1">
                     <div class="back-btn px-3">

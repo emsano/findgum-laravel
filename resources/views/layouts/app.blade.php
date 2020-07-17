@@ -59,17 +59,14 @@
                             <!-- Authentication Links -->
                             @guest
                             <li class="nav-item list-inline-item">
-                                {{-- <a class="nav-link login" href="{{ route('login') }}"> --}}
-                                    <a class="nav-link login pr-0" href="#">
+                                <a class="nav-link login pr-0" href="{{ route('login') }}">
                                     <span>{{ __('Login') }}</span>
                                     <i class="mdi mdi-login-variant"></i>
                                 </a>
                             </li>
                             @if (Route::has('register'))
                             <li class="nav-item list-inline-item">
-                                {{-- <a class="nav-link register" href="{{ route('register') }}"> --}}
-                                    <a class="nav-link register pl-0" href="#">
-
+                                <a class="nav-link register pl-0" href="{{ route('register') }}">
                                     <span>{{ __('Register') }}</span>
                                     <i class="mdi mdi-book-plus"></i>
                                 </a>
@@ -111,7 +108,7 @@
                                 <div class="dropdown-menu dropdown-menu-right animate slideIn shadow"
                                     aria-labelledby="navbarDropdownProfile">
                                     <p class="align-self-center text-center m-0 bg-danger text-light">Favorites</p>
-                                    <a class="dropdown-item border-bottom" href="#">
+                                    <a class="dropdown-item border-bottom" href="/favorites">
                                         <div class="row">
                                             <div class="col pl-0 d-flex flex-row align-items-center">
                                                 <div class="sender-meta d-inline text-truncate" id="sender-2">
@@ -126,7 +123,7 @@
                                             </div>
                                         </div>
                                     </a>
-                                    <a class="dropdown-item border-bottom" href="#">
+                                    <a class="dropdown-item border-bottom" href="/favorites">
                                         <div class="row">
                                             <div class="col pl-0 d-flex flex-row align-items-center">
                                                 <div class="sender-meta d-inline text-truncate" id="sender-2">
@@ -141,7 +138,7 @@
                                             </div>
                                         </div>
                                     </a>
-                                    <a class="dropdown-item border-bottom" href="#">
+                                    <a class="dropdown-item border-bottom" href="/favorites">
                                         <div class="row">
                                             <div class="col pl-0 d-flex flex-row align-items-center">
                                                 <div class="sender-meta d-inline text-truncate" id="sender-2">

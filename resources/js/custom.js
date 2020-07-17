@@ -149,7 +149,7 @@ $(document).ready(function () {
 
     // Show more safety tips ----------
     var list = $(".safety-tips .list li");
-    var numToShow = 5;
+    var numToShow = 10;
     var button = $(".safety-tips .next-tips");
     var numInList = list.length;
     list.hide();
