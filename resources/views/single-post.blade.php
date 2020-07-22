@@ -28,24 +28,19 @@
                 <div class="col">
                     <div id="post-carousel" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner mx-auto" role="listbox">
-                            @foreach ($img as $key=>$image)
-                                <div class="carousel-item @if($key==0) active @endif" data-interval="10000">
-                                    <img src="{{ asset($image->ImageUrl) }}"
+                            @if (!$img->isEmpty())
+                                @foreach ($img as $key=>$image)
+                                    <div class="carousel-item @if($key==0) active @endif" data-interval="10000">
+                                        <img src="{{ asset($image->ImageUrl) }}"
+                                            alt="Product Photo" class="mx-auto d-block">
+                                    </div>
+                                @endforeach
+                            @else
+                                <div class="active" data-interval="10000">
+                                    <img src="{{ asset($noImg) }}"
                                         alt="Product Photo" class="mx-auto d-block">
                                 </div>
-                            @endforeach
-                            {{-- <div class="carousel-item" data-interval="10000">
-                                <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png"
-                                    alt="Vans" class="">
-                            </div>
-                            <div class="carousel-item" data-interval="2000">
-                                <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png"
-                                    alt="..." class="">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png"
-                                    alt="..." class="">
-                            </div> --}}
+                            @endif
                         </div>
                         <a class="carousel-control carousel-control-prev" href="#post-carousel" role="button"
                             data-slide="prev">
@@ -60,36 +55,25 @@
 
                         <!-- Indicators -->
                         <ul class="carousel-indicators list-inline mx-auto px-2">
-                            @foreach ($img as $key=>$image)
-                                <li class="list-inline-item @if($key==0) active @endif">
-                                    <a id="carousel-selector-{{ $key }}" class="selected" data-target="#post-carousel"
-                                        data-slide-to="{{ $key }}">
-                                        <img src="{{ asset($image->ImageUrl) }}"
-                                            alt="Vans" class="img-fluid">
+                            @if (!$img->isEmpty())
+                                @foreach ($img as $key=>$image)
+                                    <li class="list-inline-item @if($key==0) active @endif">
+                                        <a id="carousel-selector-{{ $key }}" class="selected" data-target="#post-carousel"
+                                            data-slide-to="{{ $key }}">
+                                            <img src="{{ asset($image->ImageUrl) }}"
+                                                alt="Product Thumbnail" class="img-fluid">
+                                        </a>
+                                    </li>
+                                @endforeach
+                            @else
+                                <li class="list-inline-item active">
+                                    <a id="carousel-selector-0" class="selected" data-target="#post-carousel"
+                                        data-slide-to="0">
+                                        <img src="{{ asset($noImg) }}"
+                                            alt="Product Thumbnail" class="img-fluid">
                                     </a>
                                 </li>
-                            @endforeach
-                            {{-- <li class="list-inline-item active">
-                                <a id="carousel-selector-0" class="selected" data-target="#post-carousel"
-                                    data-slide-to="0">
-                                    <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png"
-                                        alt="Vans" class="img-fluid">
-                                </a>
-                            </li>
-                            <li class="list-inline-item ">
-                                <a id="carousel-selector-1" class="selected" data-target="#post-carousel"
-                                    data-slide-to="1">
-                                    <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png"
-                                        class="img-fluid">
-                                </a>
-                            </li>
-                            <li class="list-inline-item ">
-                                <a id="carousel-selector-2" class="selected" data-target="#post-carousel"
-                                    data-slide-to="2">
-                                    <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png"
-                                        class="img-fluid">
-                                </a>
-                            </li> --}}
+                            @endif
                         </ul>
                     </div>
                 </div>
@@ -170,7 +154,7 @@
                                             <span class="text-muted text-black-50">15</span>
                                         </div>
                                         <div class="col text-left">
-                                            <a href="#" class="font-weight-bolder">Seller Profile</a>
+                                            <a href="{{ route('profile', $data[0]->UserId) }}" class="font-weight-bolder">Seller Profile</a>
                                         </div>
                                     </div>
 

@@ -29,7 +29,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**
@@ -45,14 +45,14 @@ class HomeController extends Controller
         $latestPosts = $adata
             ->table('user')
             ->join('posting', 'posting.CreatedBy', '=', 'user.UserId')
-            ->join('posting_template', 'posting.PostingTemplateId', '=', 'posting_template.PostingTemplateId')
-            ->join('posting_images', 'posting.PostingId', '=', 'posting_images.PostingId')
-            ->join('sub_categories', 'posting_template.SubCategoryId', '=' , 'sub_categories.SubCategoryId')
+            // ->join('posting_template', 'posting.PostingTemplateId', '=', 'posting_template.PostingTemplateId')
+            // ->join('posting_images', 'posting.PostingId', '=', 'posting_images.PostingId')
+            // ->join('sub_categories', 'posting_template.SubCategoryId', '=' , 'sub_categories.SubCategoryId')
             ->join('cities', 'posting.CityId', '=', 'cities.CityId')
             ->join('posting_status', 'posting.StatusCode', '=', 'posting_status.StatusCode')
             ->select('Posting', 'posting.PostingId', 'posting.ShortDescription', 'posting.Description as Desc',
                     'user.FirstName', 'user.UserId', 'user.AccountType', 'user.ImageUrl as ProfPhoto',
-                    'posting.FeaturedPhoto','sub_categories.Description', 'cities.City',
+                    'posting.FeaturedPhoto', 'cities.City',
                     'posting_status.PostingStatus', 'posting.DateCreated', 'posting.UnitPrice',
                     DB::raw(
                         '(SELECT ImageUrl FROM posting_images

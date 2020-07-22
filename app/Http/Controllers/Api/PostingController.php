@@ -47,10 +47,12 @@ class PostingController extends Controller
         ->where('posting.PostingId', '=', $id)
         ->get();
 
+        $noImg = 'assets/images/noimage.png';
+
         return view('single-post')
         ->with(
             compact(
-                'data', 'img'
+                'data', 'img', 'noImg'
             )
         );
     }

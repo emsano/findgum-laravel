@@ -23,9 +23,19 @@ class AdminController extends Controller
 
     protected $htmlBuilder;
 
-    public function __construct(Builder $htmlBuilder) {
-        $this->htmlBuilder = $htmlBuilder;
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
     }
+
+    // public function __construct(Builder $htmlBuilder) {
+    //     $this->htmlBuilder = $htmlBuilder;
+    // }
 
     public function dashboardIndex()
     {
@@ -398,6 +408,9 @@ class AdminController extends Controller
                     'user.FirstName', 'user.UserId', 'user.AccountType', 'user.ImageUrl as ProfPhoto',
                     'posting.FeaturedPhoto','sub_categories.Description', 'cities.City',
                     'posting_status.PostingStatus', 'posting.DateCreated', 'posting.UnitPrice')
+            ->where([
+                ['UserId', '=', $id]
+            ])
             ->get();
 
         $userPosts = json_decode(json_encode($userPosts), true);

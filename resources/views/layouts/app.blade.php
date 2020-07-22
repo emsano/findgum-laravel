@@ -86,7 +86,7 @@
                                         <a class="dropdown-item border-bottom" href="{{ route('admin') }}"><i class="mdi mdi-monitor-dashboard"></i> Admin Dashboard</a>
                                     @endif
 
-                                    <a class="dropdown-item border-bottom" href="{{ route('profile') }}"><i class="mdi mdi-store-outline"></i> Your Shop</a>
+                                    <a class="dropdown-item border-bottom" href="{{ route('profile', Auth::user()->id) }}"><i class="mdi mdi-store-outline"></i> Your Shop</a>
 
                                     <a class="dropdown-item border-bottom" href="{{ route('settings') }}"><i class="mdi mdi-cog"></i> Profile Settings</a>
 

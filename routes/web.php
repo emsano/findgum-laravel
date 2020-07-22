@@ -22,6 +22,7 @@ Route::get('/home', 'HomeController@index');
 
 Route::namespace('Api')->group(function () {
     Route::get('/posting/{id}', 'PostingController@index')->name('single-post');
+    Route::get('/profile/{id}', 'ProfileController@index')->name('profile');
 
 });
 
@@ -37,9 +38,9 @@ Route::get('/filtered', function () {
     return view('filtered-posts');
 })->name('filtered-posts');
 
-Route::get('/profile', function () {
-    return view('profile');
-})->name('profile');
+// Route::get('/profile', function () {
+//     return view('profile');
+// })->name('profile');
 
 Route::get('/settings', function () {
     return view('settings');

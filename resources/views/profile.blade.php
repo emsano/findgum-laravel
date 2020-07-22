@@ -3,12 +3,12 @@
 @section('content')
 <div class="container profile">
     <div class="row mb-2">
-        <div class="col-12 banner rounded">
+        <div class="col-12 banner rounded shadow p-0">
             <img src="{{ asset('images/banner-test.jpg') }}" class="img-fluid rounded" alt="Profile Banner">
         </div>
     </div>
     <div class="row">
-        <div class="col-md-3 col-sm-12 border-right">
+        <div class="col-md-3 col-sm-12 card shadow">
             <div class="profile-picture p-3 d-flex">
                 <img src="{{ asset('images/test.jpg') }}" class="rounded-circle mx-auto" alt="Profile Picture">
             </div>
@@ -30,33 +30,6 @@
                     <div class="profile-write-review px-2">
                         <button type="button" class="btn btn-outline-info">Write Review</button>
                     </div>
-                    {{-- <div id="accordion" class="profile-description my-2">
-                        <div class="card">
-                            <div class="card-header d-sm-block d-md-none d-lg-none p-0" id="prof-desc-heading">
-                                <h5 class="mb-0">
-                                    <button class="btn btn-link w-100" data-toggle="collapse" data-target="#prof-desc-collapse"
-                                        aria-expanded="true" aria-controls="prof-desc-collapse">
-                                        About <i class="mdi mdi-menu-open"></i>
-                                    </button>
-                                </h5>
-                            </div>
-                            <div id="prof-desc-collapse" class="collapse show" aria-labelledby="prof-desc-heading"
-                                data-parent="#accordion">
-                                <div class="card-body">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt ut
-                                        labore et dolore magna aliqua.
-                                        Sem fringilla ut morbi tincidunt augue interdum velit. Nunc faucibus a
-                                        pellentesque sit amet
-                                        porttitor eget dolor morbi. Amet commodo nulla facilisi nullam vehicula ipsum a
-                                        arcu.
-                                        Ultrices sagittis orci a scelerisque purus semper eget duis at.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div> --}}
                     <div class="profile-description mt-4 px-2">
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
@@ -167,186 +140,68 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-9 col-sm-12 mt-2 profile-listings">
+        {{-- {{ dd($data) }} --}}
+        <div class="col-md-9 col-sm-12 mt-2 ">
             <h4 class="font-weight-bolder">Shop <i class="mdi mdi-store"></i></h4>
-            <div class="col">
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
-                    <div class="col mb-4 post-card">
-                        <div class="card">
-                            <img class="card-img post-card-img"
-                                src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" alt="Vans">
-                            <p class="bg-danger text-white text-center w-100 p-1 position-absolute">SOLD</p>
-                            <div class="card-body p-2">
-                                <h5 class="card-title post-title"><a href="{{ route('single-post', 1) }}" class="card-link text-danger like">Vans Sk8-Hi MTE Shoes</a></h5>
-                                <p class="card-text post-desc">
-                                    The Vans All-Weather MTE Collection features footwear and apparel designed to withstand the elements whilst still looking cool. </p>
-                            </div>
-                            <div class="card-footer bg-transparent border-success p-2">
-                                <p class="post-price mb-0">&#8369; 5000 </p>
-                                <div class="post-card-location mb-2">
-                                    <i class="mdi mdi-google-maps"></i>
-                                    <span>Baguio City</span>
-                                    <div class="dropdown dropleft post-menu-secondary float-right">
-                                        <button class="btn btn-light dropdown-toggle p-0" type="button" id="post-menu-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="mdi mdi-dots-vertical"></i>
-                                        </button>
-                                        <div class="dropdown-menu" aria-labelledby="post-menu-1">
-                                            <button class="dropdown-item btn repost-item" data-toggle="modal" data-target="#repost-item-post"><i class="mdi mdi-clipboard-arrow-up"></i> Repost</button>
-                                            <button class="dropdown-item btn edit-item" data-toggle="modal" data-target="#edit-item-post" disabled><i class="mdi mdi-file-edit"></i> Edit</button>
-                                            <button class="dropdown-item btn mark-as-sold" data-toggle="modal" data-target="#mark-as-sold-post" ><i class="mdi mdi-handshake"></i> Mark as Sold</button>
-                                            <button class="dropdown-item btn delete-item text-danger" data-toggle="modal" data-target="#delete-item-post"><i class="mdi mdi-trash-can"></i> Delete</button>
-                                        </div>
+            <div class="d-flex profile-listings">
+                @foreach ($data as $item)
+                <div class="col-md-3 mb-4 post-card">
+                    <div class="card shadow">
+                        <div class="card-header px-3 py-0">
+                            <a href="#" class="btn card-profile-image">
+                                <div class="row">
+                                    {{-- <div class="col-">
+                                        @if($item->AccountType == 'S')
+                                        <img src="{{ asset($item->ProfPhoto) }}" class="rounded-circle">
+                                        @elseif ($item->AccountType == 'G' || $item->AccountType == 'F')
+                                        <img src="{{ $item->ProfPhoto }}" class="rounded-circle">
+                                        @endif
+                                    </div> --}}
+                                    <div class="col posted-by">
+                                        {{-- {{ $item->FirstName }} --}}
+                                        <small class="text-muted"><p class="mb-1 posted-ago">
+                                            {{ Carbon\Carbon::parse($item->DateCreated)->diffForHumans() }}
+                                        </p></small>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
-                    </div>
-                    <div class="col mb-4 post-card">
-                        <div class="card">
-                            <img class="card-img post-card-img"
-                                src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" alt="Vans">
+                        @if ($item->PostingStatus == 'S')
                             <p class="bg-danger text-white text-center w-100 p-1 position-absolute">SOLD</p>
-                            <div class="card-body p-2">
-                                <h5 class="card-title post-title"><a href="{{ route('single-post', 1) }}" class="card-link text-danger like">Vans Sk8-Hi MTE Shoes</a></h5>
-                                <p class="card-text post-desc">
-                                    The Vans All-Weather MTE Collection features footwear and apparel designed to withstand the elements whilst still looking cool. </p>
-                            </div>
-                            <div class="card-footer bg-transparent border-success p-2">
-                                <p class="post-price mb-0">&#8369; 5000 </p>
-                                <div class="post-card-location mb-2">
-                                    <i class="mdi mdi-google-maps"></i>
-                                    <span>Baguio City</span>
-                                    <div class="dropdown dropleft post-menu-secondary float-right">
-                                        <button class="btn btn-light dropdown-toggle p-0" type="button" id="post-menu-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="mdi mdi-dots-vertical"></i>
-                                        </button>
-                                        <div class="dropdown-menu" aria-labelledby="post-menu-1">
-                                            <button class="dropdown-item btn repost-item" data-toggle="modal" data-target="#repost-item-post"><i class="mdi mdi-clipboard-arrow-up"></i> Repost</button>
-                                            <button class="dropdown-item btn edit-item" data-toggle="modal" data-target="#edit-item-post" disabled><i class="mdi mdi-file-edit"></i> Edit</button>
-                                            <button class="dropdown-item btn mark-as-sold" data-toggle="modal" data-target="#mark-as-sold-post" ><i class="mdi mdi-handshake"></i> Mark as Sold</button>
-                                            <button class="dropdown-item btn delete-item text-danger" data-toggle="modal" data-target="#delete-item-post"><i class="mdi mdi-trash-can"></i> Delete</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        @endif
+                        <a href="{{ route('single-post', $item->PostingId) }}" >
+                            @if ($item->ImageUrl)
+                                <img class="card-img post-card-img"
+                                src="{{ asset($item->ImageUrl) }}" alt="{{ $item->Posting }}">
+                            @else
+                                <img class="card-img post-card-img"
+                                src="{{ asset($noImg) }}" alt="{{ $item->Posting }}">
+                            @endif
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title post-title">
+                                <a href="{{ route('single-post', $item->PostingId) }}" class="card-link text-danger like">{{ $item->Posting }}</a>
+                            </h5>
+                            <p class="card-text post-desc">
+                                {{ $item->ShortDescription }}
+                            </p>
                         </div>
-                    </div>
-                    <div class="col mb-4 post-card">
-                        <div class="card">
-                            <img class="card-img post-card-img"
-                                src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" alt="Vans">
-                            <p class="bg-danger text-white text-center w-100 p-1 position-absolute">SOLD</p>
-                            <div class="card-body p-2">
-                                <h5 class="card-title post-title"><a href="{{ route('single-post', 1) }}" class="card-link text-danger like">Vans Sk8-Hi MTE Shoes</a></h5>
-                                <p class="card-text post-desc">
-                                    The Vans All-Weather MTE Collection features footwear and apparel designed to withstand the elements whilst still looking cool. </p>
-                            </div>
-                            <div class="card-footer bg-transparent border-success p-2">
-                                <p class="post-price mb-0">&#8369; 5000 </p>
-                                <div class="post-card-location mb-2">
-                                    <i class="mdi mdi-google-maps"></i>
-                                    <span>Baguio City</span>
-                                    <div class="dropdown dropleft post-menu-secondary float-right">
-                                        <button class="btn btn-light dropdown-toggle p-0" type="button" id="post-menu-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="mdi mdi-dots-vertical"></i>
-                                        </button>
-                                        <div class="dropdown-menu" aria-labelledby="post-menu-1">
-                                            <button class="dropdown-item btn repost-item" data-toggle="modal" data-target="#repost-item-post"><i class="mdi mdi-clipboard-arrow-up"></i> Repost</button>
-                                            <button class="dropdown-item btn edit-item" data-toggle="modal" data-target="#edit-item-post" disabled><i class="mdi mdi-file-edit"></i> Edit</button>
-                                            <button class="dropdown-item btn mark-as-sold" data-toggle="modal" data-target="#mark-as-sold-post" ><i class="mdi mdi-handshake"></i> Mark as Sold</button>
-                                            <button class="dropdown-item btn delete-item text-danger" data-toggle="modal" data-target="#delete-item-post"><i class="mdi mdi-trash-can"></i> Delete</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-4 post-card">
-                        <div class="card">
-                            <img class="card-img post-card-img"
-                                src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" alt="Vans">
-                            <p class="bg-danger text-white text-center w-100 p-1 position-absolute">SOLD</p>
-                            <div class="card-body p-2">
-                                <h5 class="card-title post-title"><a href="{{ route('single-post', 1) }}" class="card-link text-danger like">Vans Sk8-Hi MTE Shoes</a></h5>
-                                <p class="card-text post-desc">
-                                    The Vans All-Weather MTE Collection features footwear and apparel designed to withstand the elements whilst still looking cool. </p>
-                            </div>
-                            <div class="card-footer bg-transparent border-success p-2">
-                                <p class="post-price mb-0">&#8369; 5000 </p>
-                                <div class="post-card-location mb-2">
-                                    <i class="mdi mdi-google-maps"></i>
-                                    <span>Baguio City</span>
-                                    <div class="dropdown dropleft post-menu-secondary float-right">
-                                        <button class="btn btn-light dropdown-toggle p-0" type="button" id="post-menu-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="mdi mdi-dots-vertical"></i>
-                                        </button>
-                                        <div class="dropdown-menu" aria-labelledby="post-menu-1">
-                                            <button class="dropdown-item btn repost-item" data-toggle="modal" data-target="#repost-item-post"><i class="mdi mdi-clipboard-arrow-up"></i> Repost</button>
-                                            <button class="dropdown-item btn edit-item" data-toggle="modal" data-target="#edit-item-post" disabled><i class="mdi mdi-file-edit"></i> Edit</button>
-                                            <button class="dropdown-item btn mark-as-sold" data-toggle="modal" data-target="#mark-as-sold-post" ><i class="mdi mdi-handshake"></i> Mark as Sold</button>
-                                            <button class="dropdown-item btn delete-item text-danger" data-toggle="modal" data-target="#delete-item-post"><i class="mdi mdi-trash-can"></i> Delete</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="card-footer bg-transparent border-success">
+                            <p class="post-price mb-0">&#8369; {{ number_format($item->UnitPrice, 0) }} </p><span class="post-condition float-right font-weight-bolder">New</span>
+                            <p class="post-card-location mb-0"><i class="mdi mdi-google-maps"></i><span>{{ $item->City }}</span></p>
                         </div>
                     </div>
                 </div>
-
-                @for ($a = 0 ; $a < 4; $a++ )
+                @endforeach
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
-                    @for ($b = 0 ; $b < 4 ; $b++ )
-                    <div class="col mb-4 post-card">
-                        <div class="card">
-                            {{-- <div class="card-header px-3 py-0">
-                                <a href="#" class="btn card-profile-image">
-                                    <div class="row">
-                                        <div class="col-">
-                                            <img src="{{ asset('images/test.jpg') }}" class="rounded-circle">
-                                        </div>
-                                        <div class="col posted-by">
-                                            Shoesph
-                                            <small class="text-muted"><p class="mb-1 posted-ago">1 hour ago</p></small>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div> --}}
-                            <img class="card-img post-card-img"
-                                src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" alt="Vans">
-                            <div class="card-body p-2">
-                                <h5 class="card-title post-title"><a href="{{ route('single-post', 1) }}" class="card-link text-danger like">Vans Sk8-Hi MTE Shoes</a></h5>
-                                <p class="card-text post-desc">
-                                    The Vans All-Weather MTE Collection features footwear and apparel designed to withstand the elements whilst still looking cool. </p>
-                            </div>
-                            <div class="card-footer bg-transparent border-success p-2">
-                                <p class="post-price mb-0">&#8369; 5000 </p>
-                                <div class="post-card-location mb-0">
-                                    <i class="mdi mdi-google-maps"></i>
-                                    <span>Baguio City</span>
-                                    <div class="dropdown dropleft post-menu-secondary float-right">
-                                        <button class="btn btn-light dropdown-toggle p-0" type="button" id="post-menu-{{ $a }}-{{ $b }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="mdi mdi-dots-vertical"></i>
-                                        </button>
-                                        <div class="dropdown-menu" aria-labelledby="post-menu-{{ $a }}-{{ $b }}">
-                                            <button class="dropdown-item btn repost-item" data-toggle="modal" data-target="#repost-item-post" disabled><i class="mdi mdi-clipboard-arrow-up"></i> Repost</button>
-                                            <button class="dropdown-item btn edit-item" data-toggle="modal" data-target="#edit-item-post"><i class="mdi mdi-file-edit"></i> Edit</button>
-                                            <button class="dropdown-item btn mark-as-sold" data-toggle="modal" data-target="#mark-as-sold-post" ><i class="mdi mdi-handshake"></i> Mark as Sold</button>
-                                            <button class="dropdown-item btn delete-item text-danger" data-toggle="modal" data-target="#delete-item-post"><i class="mdi mdi-trash-can"></i> Delete</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    @endfor
-                </div>
-                @endfor
-                <div class="row load-more-container">
-                    <div class="col text-center">
-                        <button type="button" class="btn btn-outline-danger mx-auto load-more-listings">Load More</button>
-                    </div>
+            </div>
+            @if($data->count())
+            <div class="row">
+                <div class="col mx-auto text-center align-self-center pager">
+                    {{ $data->links() }}
                 </div>
             </div>
+        @endif
         </div>
     </div>
 

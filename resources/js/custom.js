@@ -69,23 +69,23 @@ $(document).ready(function () {
     });
     //
     // Profile Listings
-    $(function () {
-        $(".profile-listings .post-card").slice(0, 12).show();
-        $("body").on('click', '.profile-listings .load-more-listings', {
-            capture: false,
-            passive: false
-        }, function (e) {
-            e.preventDefault();
-            $(".profile-listings .post-card:hidden").slice(0, 4).slideDown();
-            if ($(".profile-listings .post-card:hidden").length == 0) {
-                $(".profile-listings .load-more-listings").css('visibility', 'hidden');
-            }
-            console.log("listings");
-            // $('html,body').animate({
-            //     scrollTop: $(this).offset().top
-            // }, 100);
-        });
-    });
+    // $(function () {
+    //     $(".profile-listings .post-card").slice(0, 12).show();
+    //     $("body").on('click', '.profile-listings .load-more-listings', {
+    //         capture: false,
+    //         passive: false
+    //     }, function (e) {
+    //         e.preventDefault();
+    //         $(".profile-listings .post-card:hidden").slice(0, 4).slideDown();
+    //         if ($(".profile-listings .post-card:hidden").length == 0) {
+    //             $(".profile-listings .load-more-listings").css('visibility', 'hidden');
+    //         }
+    //         console.log("listings");
+    //         // $('html,body').animate({
+    //         //     scrollTop: $(this).offset().top
+    //         // }, 100);
+    //     });
+    // });
     // End Load More ----------
 
 

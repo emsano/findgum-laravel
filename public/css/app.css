@@ -34858,7 +34858,7 @@ body main {
 }
 
 .post-card .card {
-  height: 30rem;
+  height: 100%;
 }
 
 .post-card-location span {
@@ -35362,8 +35362,8 @@ body main {
   border: none;
 }
 
-.profile .profile-listings .post-card {
-  display: none;
+.profile .profile-listings {
+  flex-wrap: wrap;
 }
 
 .profile .profile-reviews .card {
@@ -35371,7 +35371,7 @@ body main {
 }
 
 .profile .post-card .card {
-  height: 23rem;
+  height: 100%;
 }
 
 .profile .post-card-img {
