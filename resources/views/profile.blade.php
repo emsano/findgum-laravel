@@ -89,7 +89,7 @@
                                                 <div class="row reviewed-by">
                                                     <div class="col-2 rb-profile-img p-0">
                                                         <img src="https://via.placeholder.com/150" class="img-fluid rounded-circle d-block mx-auto" alt="profile image">
-                                                    </div> 
+                                                    </div>
                                                     <div class="col-10 rb-content">
                                                         <p class="m-0 p-0">
                                                             <span class="rb-user font-weight-bolder">reyess123</span><span class="text-muted"> 3 months ago</span>
@@ -111,7 +111,7 @@
                                                 <div class="row reviewed-by">
                                                     <div class="col-2 rb-profile-img p-0">
                                                         <img src="https://via.placeholder.com/150" class="img-fluid rounded-circle d-block mx-auto" alt="profile image">
-                                                    </div> 
+                                                    </div>
                                                     <div class="col-10 rb-content">
                                                         <p class="m-0 p-0">
                                                             <span class="rb-user font-weight-bolder">Army11</span><span class="text-muted"> 3 months ago</span>
@@ -133,7 +133,7 @@
                                                 <div class="row reviewed-by">
                                                     <div class="col-2 rb-profile-img p-0">
                                                         <img src="https://via.placeholder.com/150" class="img-fluid rounded-circle d-block mx-auto" alt="profile image">
-                                                    </div> 
+                                                    </div>
                                                     <div class="col-10 rb-content">
                                                         <p class="m-0 p-0">
                                                             <span class="rb-user font-weight-bolder">Mnet_Show</span><span class="text-muted"> 3 months ago</span>
@@ -177,7 +177,7 @@
                                 src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" alt="Vans">
                             <p class="bg-danger text-white text-center w-100 p-1 position-absolute">SOLD</p>
                             <div class="card-body p-2">
-                                <h5 class="card-title post-title"><a href="{{ route('single-post') }}" class="card-link text-danger like">Vans Sk8-Hi MTE Shoes</a></h5>
+                                <h5 class="card-title post-title"><a href="{{ route('single-post', 1) }}" class="card-link text-danger like">Vans Sk8-Hi MTE Shoes</a></h5>
                                 <p class="card-text post-desc">
                                     The Vans All-Weather MTE Collection features footwear and apparel designed to withstand the elements whilst still looking cool. </p>
                             </div>
@@ -207,7 +207,7 @@
                                 src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" alt="Vans">
                             <p class="bg-danger text-white text-center w-100 p-1 position-absolute">SOLD</p>
                             <div class="card-body p-2">
-                                <h5 class="card-title post-title"><a href="{{ route('single-post') }}" class="card-link text-danger like">Vans Sk8-Hi MTE Shoes</a></h5>
+                                <h5 class="card-title post-title"><a href="{{ route('single-post', 1) }}" class="card-link text-danger like">Vans Sk8-Hi MTE Shoes</a></h5>
                                 <p class="card-text post-desc">
                                     The Vans All-Weather MTE Collection features footwear and apparel designed to withstand the elements whilst still looking cool. </p>
                             </div>
@@ -237,7 +237,7 @@
                                 src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" alt="Vans">
                             <p class="bg-danger text-white text-center w-100 p-1 position-absolute">SOLD</p>
                             <div class="card-body p-2">
-                                <h5 class="card-title post-title"><a href="{{ route('single-post') }}" class="card-link text-danger like">Vans Sk8-Hi MTE Shoes</a></h5>
+                                <h5 class="card-title post-title"><a href="{{ route('single-post', 1) }}" class="card-link text-danger like">Vans Sk8-Hi MTE Shoes</a></h5>
                                 <p class="card-text post-desc">
                                     The Vans All-Weather MTE Collection features footwear and apparel designed to withstand the elements whilst still looking cool. </p>
                             </div>
@@ -267,7 +267,7 @@
                                 src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" alt="Vans">
                             <p class="bg-danger text-white text-center w-100 p-1 position-absolute">SOLD</p>
                             <div class="card-body p-2">
-                                <h5 class="card-title post-title"><a href="{{ route('single-post') }}" class="card-link text-danger like">Vans Sk8-Hi MTE Shoes</a></h5>
+                                <h5 class="card-title post-title"><a href="{{ route('single-post', 1) }}" class="card-link text-danger like">Vans Sk8-Hi MTE Shoes</a></h5>
                                 <p class="card-text post-desc">
                                     The Vans All-Weather MTE Collection features footwear and apparel designed to withstand the elements whilst still looking cool. </p>
                             </div>
@@ -314,7 +314,7 @@
                             <img class="card-img post-card-img"
                                 src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" alt="Vans">
                             <div class="card-body p-2">
-                                <h5 class="card-title post-title"><a href="{{ route('single-post') }}" class="card-link text-danger like">Vans Sk8-Hi MTE Shoes</a></h5>
+                                <h5 class="card-title post-title"><a href="{{ route('single-post', 1) }}" class="card-link text-danger like">Vans Sk8-Hi MTE Shoes</a></h5>
                                 <p class="card-text post-desc">
                                     The Vans All-Weather MTE Collection features footwear and apparel designed to withstand the elements whilst still looking cool. </p>
                             </div>

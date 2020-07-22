@@ -7,8 +7,11 @@
                     <img class="rounded-circle" src="{{ asset('images/test.jpg') }}" width="40" height="40">
                 </div>
                 <h5 class="modal-title" id="exampleModalLabel">
-                    <span class="seller-name font-weight-bolder">shoesph</span> is selling <span class="post-title">Vans
-                        Sk8-Hi MTE Shoes</span> for <span class="post-price text-danger">&#8369; 5000</span>
+                    <span class="seller-name font-weight-bolder">{{ $data[0]->FirstName }}</span> is selling
+                    <p class="m-0 font-weight-bolder">
+                        {{ $data[0]->Posting }}s
+                    </p>
+                    for <span class="post-price text-danger">&#8369; {{ number_format($data[0]->UnitPrice, 0) }}</span>
                 </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>

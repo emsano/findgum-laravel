@@ -34,19 +34,7 @@ $(document).ready(function () {
 
     // Load More ----------
     // Latest Finds
-    $(function () {
-        $(".latest-finds .post-card").slice(0, 12).show();
-        $("body").on('click touchstart', '.latest-finds .load-more-latest', function (e) {
-            e.preventDefault();
-            $(".latest-finds .post-card:hidden").slice(0, 4).slideDown();
-            if ($(".latest-finds .post-card:hidden").length == 0) {
-                $(".latest-finds .load-more-latest").css('visibility', 'hidden');
-            }
-            // $('html,body').animate({
-            //     scrollTop: $(this).offset().center
-            // }, 1000);
-        });
-    });
+
     // Fresh Finds
     $(function () {
         $(".fresh-finds .post-card").slice(0, 12).show();

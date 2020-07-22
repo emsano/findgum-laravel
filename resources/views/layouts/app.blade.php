@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
@@ -82,6 +82,12 @@
 
                                 <div class="dropdown-menu dropdown-menu-right animate slideIn profile-menu-drop shadow"
                                     aria-labelledby="navbarDropdownProfile">
+                                    @if (Auth::user()->is_super == 1)
+                                        <a class="dropdown-item border-bottom" href="{{ route('admin') }}"><i class="mdi mdi-monitor-dashboard"></i> Admin Dashboard</a>
+                                    @endif
+
+                                    <a class="dropdown-item border-bottom" href="{{ route('profile') }}"><i class="mdi mdi-store-outline"></i> Your Shop</a>
+
                                     <a class="dropdown-item border-bottom" href="{{ route('settings') }}"><i class="mdi mdi-cog"></i> Profile Settings</a>
 
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();

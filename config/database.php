@@ -70,6 +70,8 @@ return [
             'database'  => env('DB_DATABASE_SECOND'),
             'username'  => env('DB_USERNAME_SECOND'),
             'password'  => env('DB_PASSWORD_SECOND'),
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
         ],
 
         'pgsql' => [

@@ -34608,8 +34608,8 @@ input[type=file].file-loading,
 
 body {
   overflow-y: scroll;
-  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 body main {
@@ -34850,10 +34850,15 @@ body main {
 .finds-list .ad-carousel img {
   max-width: 100%;
   max-height: 100%;
+  border-radius: 0.5rem;
 }
 
-.finds-list .post-card {
-  display: none;
+.finds-list .latest-posts {
+  flex-wrap: wrap;
+}
+
+.post-card .card {
+  height: 30rem;
 }
 
 .post-card-location span {
@@ -34888,26 +34893,45 @@ body main {
   overflow: hidden;
 }
 
+.post-card-img {
+  height: 14rem;
+}
+
+.pager {
+  text-align: center;
+  display: inline-block;
+}
+
+.pager .pagination {
+  display: inline-flex;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
 .single-post .carousel-inner {
-  height: auto;
-  width: 100%;
+  height: 35rem;
 }
 
 .single-post .carousel-inner img {
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  height: auto;
   border-radius: 10px;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
 .single-post .carousel-item {
-  height: auto;
+  height: inherit;
   width: 100%;
+  justify-content: center;
+  transition: unset;
+}
+
+.single-post .carousel-item.active {
+  display: flex;
 }
 
 .single-post .carousel-indicators {
-  position: static;
+  position: relative !important;
 }
 
 .single-post .carousel-indicators li {
@@ -35346,6 +35370,14 @@ body main {
   border: none;
 }
 
+.profile .post-card .card {
+  height: 23rem;
+}
+
+.profile .post-card-img {
+  height: 12rem;
+}
+
 .profile .rating-cacl {
   font-size: 1.2rem;
 }
@@ -35472,6 +35504,12 @@ body main {
   cursor: pointer;
   background: #f45e71;
   border-color: #f45e71;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  body {
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
 }
 
 @media only screen and (max-width: 959px) {

@@ -1,8 +1,9 @@
 // Findgum CSS
 body {
     overflow-y: scroll;
-    -webkit-font-smoothing: antialiased;
+    // -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: subpixel-antialiased;
 
     main {
         background-color: #ffffff;
@@ -276,16 +277,20 @@ body {
         img {
             max-width: 100%;
             max-height: 100%;
+            border-radius: .5rem;
         }
     }
 
+    .latest-posts {
+        flex-wrap: wrap;
+    }
 }
 
-.finds-list .post-card {
-    display: none;
+.post-card {
+    .card{
+        height: 30rem;
+    }
 }
-
-.post-card-img {}
 
 .post-card-location {
     span {
@@ -323,27 +328,51 @@ body {
     overflow: hidden;
 }
 
+.post-card-img {
+    height: 14rem;
+}
+
+.pager {
+    text-align: center;
+    display: inline-block;
+
+    .pagination {
+        display: inline-flex;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    }
+}
+
 //
 .single-post {
+    .carousel {
+
+    }
     .carousel-inner {
-        height: auto;
-        width: 100%;
+        height: 35rem;
+
+        // width: 45rem;
+        // background-color: #ffd4da;
 
         img {
-            width: 100%;
-            height: 100%;
+            max-width: 100%;
+            height: auto;
             border-radius: 10px;
             object-fit: cover;
         }
     }
 
     .carousel-item {
-        height: auto;
+        height: inherit;
         width: 100%;
+        justify-content: center;
+        transition: unset;
+        &.active {
+            display: flex;
+        }
     }
 
     .carousel-indicators {
-        position: static;
+        position: relative !important;
 
         li {
             width: 5rem;
@@ -823,6 +852,16 @@ body {
         }
     }
 
+    .post-card {
+        .card{
+            height: 23rem;
+        }
+    }
+
+    .post-card-img {
+        height: 12rem;
+    }
+
     .rating-cacl {
         font-size: 1.2rem;
     }
@@ -959,4 +998,11 @@ body {
             border-color: #f45e71;
         }
     }
+}
+
+//
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  body {
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
 }

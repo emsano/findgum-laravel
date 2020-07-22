@@ -4,7 +4,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h3 class="modal-title" id="report-modal-label">Report <span
-                        class="report-post-title font-weight-bolder">Vans Sk8-Hi MTE Shoes</span></h3>
+                        class="report-post-title font-weight-bolder">{{ $data[0]->Posting }}</span></h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -15,19 +15,19 @@
                         <div class="list-group-item py-1 px-0 d-inline-flex">
                             <p class="mb-0 w-25">Post ID: &nbsp</p>
                             <h4 class="mb-0">
-                                <strong class="post-id">3G8733D112</strong>
+                                <strong class="post-id">{{ $data[0]->PostingKey }}</strong>
                             </h4>
                         </div>
                         <div class="list-group-item py-1 px-0 d-inline-flex">
                             <p class="mb-0 w-25">Seller: &nbsp</p>
                             <h4 class="mb-0">
-                                <span class="report-seller-name font-weight-bolder">shoesph</span>
+                                <span class="report-seller-name font-weight-bolder">{{ $data[0]->FirstName }} {{ $data[0]->LastName }}</span>
                             </h4>
                         </div>
                         <div class="list-group-item py-1 px-0 d-inline-flex">
                             <p class="mb-0 w-25">Price: &nbsp</p>
                             <h4 class="mb-0">
-                                &#8369; <span class="report-post-price font-weight-bolder text-danger">5000</span>
+                                &#8369; <span class="report-post-price font-weight-bolder text-danger">{{ number_format($data[0]->UnitPrice, 0) }}</span>
                             </h4>
                         </div>
                         <div class="list-group-item py-1 px-0 d-inline-flex">

@@ -16,16 +16,25 @@
             </div>
 
             <div class="border-success">
-                <h2 class="post-price text-danger">&#8369; 5000 </h2>
-                <h3 class="post-title"><strong>Vans Sk8-Hi MTE Shoes</strong></h3>
-                <p class="post-card-location mb-0"><i class="mdi mdi-google-maps"></i><span> Baguio City</span> <button class="btn float-right p-0 add-to-fav"><i class="mdi mdi-heart-outline"></i> Add to Favorites</button></p>
+                <h2 class="post-price text-danger">&#8369; {{ number_format($data[0]->UnitPrice, 0) }} </h2>
+                <h3 class="post-title"><strong>{{ $data[0]->Posting }}</strong></h3>
+                <p class="post-card-location mb-0"><i class="mdi mdi-google-maps"></i><span> {{ $data[0]->City }}</span>
+                <form action="#" method="" class="d-inline-flex">
+                    <button class="btn float-right p-0 add-to-fav"><i class="mdi mdi-heart-outline"></i> Add to Favorites</button></p>
+                </form>
             </div>
 
             <div class="row mt-2">
                 <div class="col">
                     <div id="post-carousel" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner" role="listbox">
-                            <div class="carousel-item active" data-interval="10000">
+                        <div class="carousel-inner mx-auto" role="listbox">
+                            @foreach ($img as $key=>$image)
+                                <div class="carousel-item @if($key==0) active @endif" data-interval="10000">
+                                    <img src="{{ asset($image->ImageUrl) }}"
+                                        alt="Product Photo" class="mx-auto d-block">
+                                </div>
+                            @endforeach
+                            {{-- <div class="carousel-item" data-interval="10000">
                                 <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png"
                                     alt="Vans" class="">
                             </div>
@@ -36,7 +45,7 @@
                             <div class="carousel-item">
                                 <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png"
                                     alt="..." class="">
-                            </div>
+                            </div> --}}
                         </div>
                         <a class="carousel-control carousel-control-prev" href="#post-carousel" role="button"
                             data-slide="prev">
@@ -51,7 +60,16 @@
 
                         <!-- Indicators -->
                         <ul class="carousel-indicators list-inline mx-auto px-2">
-                            <li class="list-inline-item active">
+                            @foreach ($img as $key=>$image)
+                                <li class="list-inline-item @if($key==0) active @endif">
+                                    <a id="carousel-selector-{{ $key }}" class="selected" data-target="#post-carousel"
+                                        data-slide-to="{{ $key }}">
+                                        <img src="{{ asset($image->ImageUrl) }}"
+                                            alt="Vans" class="img-fluid">
+                                    </a>
+                                </li>
+                            @endforeach
+                            {{-- <li class="list-inline-item active">
                                 <a id="carousel-selector-0" class="selected" data-target="#post-carousel"
                                     data-slide-to="0">
                                     <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png"
@@ -71,7 +89,7 @@
                                     <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png"
                                         class="img-fluid">
                                 </a>
-                            </li>
+                            </li> --}}
                         </ul>
                     </div>
                 </div>
@@ -82,34 +100,21 @@
                     <div class="card w-100 shadow-sm">
                         <h5 class="card-header">Description</h5>
                         <div class="card-body">
-                            <h5 class="card-title">Special title treatment</h5>
-                            <p class="card-text p-1">
-                                The Vans All-Weather MTE Collection features footwear and apparel designed to withstand
-                                the
-                                elements whilst still looking cool. <br>
-
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt ut
-                                labore et dolore magna aliqua. Condimentum id venenatis a condimentum. <br>
-
-                                Adipiscing enim eu turpis egestas pretium aenean. <br>
-
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt ut
-                                labore et dolore magna aliqua. Condimentum id venenatis a condimentum. <br>
-
-                                Adipiscing enim eu turpis egestas pretium aenean.
-                            </p>
+                            <div class="card-text p-1">
+                                {{-- {{ dd($data) }} --}}
+                                {{-- {!! Markdown::parse($data[0]->PostDesc) !!} --}}
+                                @markdown($data[0]->PostDesc)
+                            </div>
 
                             <div class="card-footer text-muted bg-transparent pb-0">
                                 <div class="row">
                                     <div class="col px-0">
-                                        <p>POST ID: <strong class="post-id"> 3G8733D112</strong></p>
+                                        <p>POST ID: <strong class="post-id"> {{ $data[0]->PostingKey }}</strong></p>
                                     </div>
                                     <div class="col px-0 text-right">
                                         <p class="py-0 my-0">Posted by: <a href="#"><strong
-                                                    class="posted-by">shoesph</strong></a></p>
-                                        <p class="py-0 my-0">Posted <span class="time-posted"> January 10, 2020 </span>
+                                                    class="posted-by">{{ $data[0]->FirstName }}</strong></a></p>
+                                        <p class="py-0 my-0">Posted: <span class="time-posted"> {{ date('d-M-Y', strtotime($data[0]->DateCreated)) }} </span>
                                         </p>
                                     </div>
                                 </div>
@@ -143,14 +148,17 @@
                         <div class="card-header border-0 bg-white">
                             <div class="row d-flex justify-content-around">
                                 <div class="col-auto">
-                                    {{-- <img class="rounded-circle" src="https://i.imgur.com/nUNhspp.jpg" width="133" height="133"> --}}
-                                    <img class="rounded-circle profile-img" src="{{ asset('images/test.jpg') }}" width="133" height="133">
+                                    @if($data[0]->AccountType == 'S')
+                                        <img class="rounded-circle profile-img" src="{{ asset($data[0]->ProfPhoto) }}" width="133" height="133">
+                                    @elseif ($data[0]->AccountType == 'G' || $data[0]->AccountType == 'F')
+                                        <img class="rounded-circle profile-img" src="{{ asset($data[0]->ProfPhoto) }}" width="133" height="133">
+                                    @endif
                                 </div>
                             </div>
                         </div>
                         <div class="card-body">
-                            <h6 class="font-weight-bold text-center seller-name">shoesph</h5>
-                                <p class="seller-membership text-muted">Member Since <span>December 2019</span></p>
+                            <h6 class="font-weight-bold text-center seller-name">{{ $data[0]->FirstName }} {{ $data[0]->LastName }}</h5>
+                                <p class="seller-membership text-muted">Member Since <span>{{ date('M-Y', strtotime($data[0]->UserCreated)) }}</span></p>
                                 <div style="text-align:center">
                                     <div class="row">
                                         <div class="star-rating col text-right">
@@ -177,11 +185,11 @@
                                                 data-toggle="modal" data-target="#make-offer-modal">
                                                 Make Offer
                                             </button>
-                                            {{-- <button type="button" class="btn seller-show-number" data-toggle="popover"
+                                            <button type="button" class="btn seller-show-number" data-toggle="popover"
                                                 title="Seller Contact Number" data-placement="bottom"
-                                                data-content="09091231233">Show Number</button> --}}
+                                                data-content="@if($data[0]->ContactNo == null) No Number Provided @else {{ $data[0]->ContactNo }} @endif">Show Number</button>
 
-                                            <button type="button" class="btn seller-show-number">Show Number</button>
+                                            {{-- <button type="button" class="btn seller-show-number">Show Number</button> --}}
                                         </div>
 
                                         {{-- <button type="button" class="btn btn-light seller-chat border font-weight-bolder">Chat</button>
