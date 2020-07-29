@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\AdminController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use PhpOffice\PhpSpreadsheet\Shared\OLE\PPS\Root;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,4 +64,5 @@ Route::prefix('/admin')->namespace('Api')->group(function () {
     Route::get('/users/{selected}', 'AdminController@userMaintenanceIndex')->name('user-maintenance');
     Route::get('/users/view/{id}', 'AdminController@viewUserIndex')->name('view-user');
 
+    Route::get('/admin-profile', 'AdminController@adminProfileIndex')->name('view-admin');
 });

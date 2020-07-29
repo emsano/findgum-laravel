@@ -63,7 +63,7 @@ class HomeController extends Controller
                     )
             ->where([
                 ['posting.StatusCode', '=', 'P'],
-                ['posting.DateCreated', '>=', Carbon::now()->subMonth(8)]
+                ['posting.DateCreated', '>=', Carbon::now()->subMonth(12)]
             ])
             ->orderBy('DateCreated', 'desc')
             ->distinct('posting.PostingId')

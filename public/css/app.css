@@ -35794,6 +35794,10 @@ body main {
   height: 8rem;
 }
 
+.admin .banner {
+  height: 12rem;
+}
+
 .admin #sidebar.active .sidebar-header h3,
 .admin #sidebar.active .CTAs {
   display: none;
