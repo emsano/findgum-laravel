@@ -119,13 +119,13 @@
                     </ul>
                 </li>
                 <li class="list-group-item p-0">
-                    <a class="sidebar-btn btn btn-outline px-4 w-100" href="#">
+                    <a class="sidebar-btn btn btn-outline px-4 w-100" href="{{ route('view-admin') }}">
                         <i class="mdi mdi-shield-account"></i>
                         Admin User Profile
                     </a>
                 </li>
                 <li class="list-group-item p-0">
-                    <a class="sidebar-btn btn btn-outline px-4 w-100" href="{{ route('profile') }}">
+                    <a class="sidebar-btn btn btn-outline px-4 w-100" href="{{ route('profile', Auth::user()->id) }}">
                         <i class="mdi mdi-account-convert"></i>
                         Your Buyer/Seller Profile
                     </a>

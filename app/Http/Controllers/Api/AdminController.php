@@ -37,6 +37,10 @@ class AdminController extends Controller
     //     $this->htmlBuilder = $htmlBuilder;
     // }
 
+    public function adminProfileIndex() {
+        return view('admin.admin-profile');
+    }
+
     public function dashboardIndex()
     {
         $admin_dashboard_active = 'active';
