@@ -2,9 +2,9 @@
 
 @section('content')
 <div class="container-fluid filtered-posts">
-    
     <div class="container mb-2 px-0">
-            <div class="row">
+        <div class="row">
+            <div class="col">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb bg-white mb-0">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -14,16 +14,17 @@
                     </ol>
                 </nav>
             </div>
-            <div class="row">
-                <div class="col">
-                    <h3><span class="bd-content-title">Buy Mens Shoes Online</span></h3>
-                </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h3><span class="bd-content-title">Buy Mens Shoes Online</span></h3>
             </div>
+        </div>
     </div>
     <div class="col-lg-12 col-md-12 mx-auto">
-        <div class="row px-lg-4 px-md-3 px-sm-auto">
+        <div class="row px-sm-auto">
             <div class="col-md-3 col-sm-12">
-                <div class="card mb-2">
+                <div class="card shadow mb-2">
                     <div class="card-header font-weight-bolder border-0">
                         <button class="btn btn-light w-100" type="button" data-toggle="collapse" data-target="#collapse-filter" aria-expanded="false">
                             Filters <i class="mdi mdi-arrow-collapse"></i>
@@ -71,7 +72,7 @@
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
                     @for ($b = 0 ; $b < 4 ; $b++ )
                     <div class="col mb-4 post-card px-md-2 px-sm-2">
-                        <div class="card">
+                        <div class="card shadow">
                             <div class="card-header px-3 py-0">
                                 <a href="#" class="btn card-profile-image">
                                     <div class="row">
@@ -88,7 +89,7 @@
                             <img class="card-img post-card-img"
                                 src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" alt="Vans">
                             <div class="card-body">
-                                <h5 class="card-title post-title"><a href="{{ route('single-post') }}" class="card-link text-danger like">Vans Sk8-Hi MTE Shoes</a></h5>
+                                <h5 class="card-title post-title"><a href="{{ route('single-post', 20) }}" class="card-link text-danger like">Vans Sk8-Hi MTE Shoes</a></h5>
                                 <p class="card-text post-desc">
                                     The Vans All-Weather MTE Collection features footwear and apparel designed to withstand the elements whilst still looking cool. </p>
                             </div>
@@ -107,7 +108,7 @@
                     </div>
                 </div>
             </div>
-        </div>	
+        </div>
     </div>
 </div>
 @endsection

@@ -30,6 +30,10 @@ Route::get('/messages', function () {
     return view('messages');
 })->name('messages');
 
+Route::get('/policies', function () {
+    return view('policies');
+})->name('policies');
+
 Route::get('/favorites', function () {
     return view('favorites');
 })->name('favorites');

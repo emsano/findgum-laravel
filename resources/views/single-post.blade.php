@@ -86,8 +86,8 @@
                         <div class="card-body">
                             <div class="card-text p-1">
                                 {{-- {{ dd($data) }} --}}
-                                {{-- {!! Markdown::parse($data[0]->PostDesc) !!} --}}
-                                @markdown($data[0]->PostDesc)
+                                {!! Markdown::parse($data[0]->PostDesc . '') !!}
+                                {{-- @markdown($data[0]->PostDesc) --}}
                             </div>
 
                             <div class="card-footer text-muted bg-transparent pb-0">

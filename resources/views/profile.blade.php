@@ -141,11 +141,11 @@
             </div>
         </div>
         {{-- {{ dd($data) }} --}}
-        <div class="col-md-9 col-sm-12 mt-2 ">
-            <h4 class="font-weight-bolder">Shop <i class="mdi mdi-store"></i></h4>
+        <div class="col-md-9 col-sm-12 mt-2 px-0">
+            <h4 class="font-weight-bolder px-3">Shop <i class="mdi mdi-store"></i></h4>
             <div class="d-flex profile-listings">
                 @foreach ($data as $item)
-                <div class="col-md-3 mb-4 post-card">
+                <div class="col-md-3 mb-3 post-card">
                     <div class="card shadow">
                         <div class="card-header px-3 py-0">
                             <a href="#" class="btn card-profile-image">

@@ -26,7 +26,9 @@
 
 <body>
     <div id="app">
+        {{-- Navigation and Search --}}
         <div class="stick-together w-100">
+            {{-- Top Bar --}}
             <nav class="navbar navbar-expand-sm top-bar navbar-light bg-white border-bottom">
                 <div class="container mx-auto px-0">
                     <a class="navbar-brand p-0" href="{{ url('/') }}">
@@ -76,7 +78,6 @@
                             <li class="nav-item dropdown list-inline-item">
                                 <a class="profile nav-link dropdown-toggle px-0 py-0" href="#" id="navbarDropdownProfile" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{-- <span>{{{ Auth::user()->fname }}}</span> --}}
                                     <i class="mdi mdi-account-box"></i>
                                 </a>
 
@@ -229,7 +230,7 @@
                 </div>
             </nav>
 
-            {{-- MegaMenu --}}
+            {{-- MegaMenu Bar--}}
             @include('sections.megamenu')
         </div>
         {{-- Main Content --}}
@@ -237,6 +238,7 @@
             @yield('content')
         </main>
 
+        {{-- Footer --}}
         <div class="container footer mx-auto">
             <footer class="pt-4 my-md-5 pt-md-5 border-top">
                 <div class="row">
@@ -245,18 +247,10 @@
                         <small class="d-block mb-3 text-muted copyright"> © 2020 Findgum</small>
                     </div>
                     <div class="col-6 col-md">
-                        <a href="#">Terms & Condition</a>
-                        {{-- <ul class="list-unstyled text-small">
-                            <li><a class="text-muted" href="#">Cool stuff</a></li>
-                            <li><a class="text-muted" href="#">Random feature</a></li>
-                            <li><a class="text-muted" href="#">Team feature</a></li>
-                            <li><a class="text-muted" href="#">Stuff for developers</a></li>
-                            <li><a class="text-muted" href="#">Another one</a></li>
-                            <li><a class="text-muted" href="#">Last time</a></li>
-                        </ul> --}}
+                        <a href="{{ route('policies') }}">Terms & Condition</a>
                     </div>
                     <div class="col-6 col-md">
-                        <a href="#">Privacy Policy</a>
+                        <a href="{{ route('policies') }}">Privacy Policy</a>
                     </div>
                     <div class="col-6 col-md">
                         <a href="#">About</a>
