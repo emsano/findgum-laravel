@@ -117,8 +117,11 @@
                     uploadExtraData: {
                         _token: "{{csrf_token()}}"
                     },
+
+                    // Temporary urls, TODO by backend devs
                     uploadUrl: "upload-images",
                     deleteUrl: "delete-images",
+
                     initialPreview: img,
                     initialPreviewAsData: true,
                     overwriteInitial: false,
@@ -139,6 +142,7 @@
                 });
             },
             decodeDesc: function () {
+                // decode long strings into readable text
                 this.postItem[0].PostDesc = Base64.decode(this.postItem[0].PostDesc);
                 this.postItem[0].City = Base64.decode(this.postItem[0].City);
             }

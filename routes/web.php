@@ -27,6 +27,8 @@ Route::namespace('Api')->group(function () {
 
 });
 
+Route::get('post-free-ad/', 'HomeController@createAd')->name('post-free-ads');
+
 Route::get('/messages', function () {
     return view('messages');
 })->name('messages');
@@ -69,4 +71,5 @@ Route::prefix('/admin')->namespace('Api')->group(function () {
     Route::get('/users/view/{id}', 'AdminController@viewUserIndex')->name('view-user');
 
     Route::get('/admin-profile', 'AdminController@adminProfileIndex')->name('view-admin');
+
 });

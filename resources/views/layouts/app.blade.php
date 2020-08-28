@@ -11,10 +11,10 @@
     <title>{{ config('app.name', 'Findgum') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}" defer ></script>
 
-    {{-- Google Places --}}
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjSPmkrniKZGHw0QXtGB31cDL36OBkmas&libraries=places"></script>
+    {{-- Geo Data --}}
+    {{-- <script src="//geodata.solutions/includes/statecity.js" defer></script> --}}
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -216,7 +216,7 @@
                             @endguest
                             <li class="nav-item list-inline-item align-self-center">
                                 <div class="sell-btn-container align-self-center">
-                                    <a href="#" type="button" class="nav-link btn btn-danger sell-item px-2">Post Free Ad</a>
+                                    <a href="{{ route('post-free-ads') }}" type="button" class="nav-link btn btn-danger sell-item px-2">Post Free Ad</a>
                                 </div>
                             </li>
                         </ul>
@@ -258,14 +258,22 @@
 
                     <div class="col-6 col-md social-media-links">
                         <ul class="list-unstyled text-small align-self-center mx-auto">
-                            <li><a href="#" class="facebook"><i class="mdi mdi-facebook"
-                                        aria-hidden="true"></i><span></span></a></li>
-                            <li><a href="#" class="ig"><i class="mdi mdi-instagram"
-                                        aria-hidden="true"></i><span></span></a></li>
-                            <li><a href="#" class="twitter"><i class="mdi mdi-twitter"
-                                        aria-hidden="true"></i><span></span></a></li>
-                            <li><a href="#" class="youtube"><i class="mdi mdi-youtube"
-                                        aria-hidden="true"></i><span></span></a></li>
+                            <li><a href="https://www.facebook.com/findgum/" class="facebook" target="_blank">
+                                <i class="mdi mdi-facebook"
+                                        aria-hidden="true"></i><span></span></a>
+                            </li>
+                            <li><a href="https://www.instagram.com/findgum/" class="ig" target="_blank">
+                                <i class="mdi mdi-instagram"
+                                        aria-hidden="true"></i><span></span></a>
+                            </li>
+                            <li><a href="https://twitter.com/findgum" class="twitter" target="_blank">
+                                <i class="mdi mdi-twitter"
+                                        aria-hidden="true"></i><span></span></a>
+                            </li>
+                            <li><a href="https://www.youtube.com/channel/UC8jQBDpc965sIz1xblB0esw" class="youtube" target="_blank">
+                                <i class="mdi mdi-youtube"
+                                        aria-hidden="true"></i><span></span></a>
+                            </li>
                         </ul>
                     </div>
                 </div>

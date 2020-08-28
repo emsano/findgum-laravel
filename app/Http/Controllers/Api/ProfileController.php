@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\DB;
-
+use Auth;
 use App\Category;
 use App\SubCategory;
 use App\User;
@@ -36,7 +36,7 @@ class ProfileController extends Controller
         ->join('cities', 'posting.CityId', '=', 'cities.CityId')
         ->join('posting_status', 'posting.StatusCode', '=', 'posting_status.StatusCode')
         ->select('Posting', 'posting.PostingId', 'posting.ShortDescription', 'posting.Description as Desc',
-                'user.FirstName', 'user.UserId', 'user.AccountType', 'user.ImageUrl as ProfPhoto',
+                'user.FirstName', 'user.LastName','user.UserId', 'user.AccountType', 'user.ImageUrl as ProfPhoto',
                 'posting.FeaturedPhoto', 'cities.City',
                 'posting_status.PostingStatus', 'posting.DateCreated', 'posting.UnitPrice',
                 DB::raw(
@@ -60,10 +60,17 @@ class ProfileController extends Controller
 
         $noImg = 'assets/images/noimage.png';
 
+        // if viewing own profile
+        if(Auth::id() == $id) {
+            $own = true;
+        } else {
+            $own = false;
+        }
+
         return view('profile')
         ->with(
             compact(
-                'data', 'noImg'
+                'data', 'noImg', 'own'
             )
         );
     }

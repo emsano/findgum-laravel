@@ -17,8 +17,6 @@
                                     <li><a href="#">Car Audio and Video</a></li>
                                     <li><a href="#">Alarm and Electronics</a></li>
                                     <li><a href="#">Stickers and Decals</a></li>
-                                    {{-- <li class="divider"></li>
-                                    <li class="dropdown-header">Fonts</li> --}}
                                     <li><a href="#">Engine Parts & Accessories</a></li>
                                     <li><a href="#">Aircon Parts</a></li>
                                     <li><a href="#">Lighting and Horns</a></li>
@@ -321,7 +319,7 @@
                         <div class="row">
                             <div class="col border-right">
                                 <ul class="sub-category-list">
-                                    <li class="dropdown-header">Babies and Kids</li>
+                                    <li class="dropdown-header">For Babies and Kids</li>
                                     <li><a href="#">Strollers, Bags and Carries</a></li>
                                     <li><a href="#">Girls Apparel</a></li>
                                     <li><a href="#">Boys Apparel</a></li>

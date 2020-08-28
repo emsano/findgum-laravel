@@ -10,14 +10,24 @@
     <div class="row">
         <div class="col-md-3 col-sm-12 card shadow">
             <div class="profile-picture p-3 d-flex">
-                <img src="{{ asset('images/test.jpg') }}" class="rounded-circle mx-auto" alt="Profile Picture">
+                @if($data[0]->AccountType == 'S')
+                <img src="{{ asset($data[0]->ProfPhoto) }}" class="rounded-circle mx-auto">
+                @elseif ($data[0]->AccountType == 'G' || $data[0]->AccountType == 'F')
+                <img src="{{ $data[0]->ProfPhoto }}" class="rounded-circle mx-auto">
+                @endif
+                {{-- <img src="{{ asset('images/test.jpg') }}" class="rounded-circle mx-auto" alt="Profile Picture"> --}}
             </div>
             <div class="row">
                 <div class="col profile-name">
-                    <h1 class="text-center mx-auto font-weight-bolder">shoesph</h1>
+                    <h1 class="text-center mx-auto font-weight-bolder">{{ $data[0]->FirstName }} {{ $data[0]->LastName }}</h1>
                     <div class="profile-handler text-muted text-center">
-                        &commat;shoesph
-                        <button type="button" class="btn btn-light btn-sm follow-btn text-muted">Follow</button>
+                        &commat;user_handler_to_be_changed
+                        @if (!$own)
+                        {{-- Hide if viewing own shop --}}
+                            <form action="#" method="post" class="d-inline-block">
+                                <button type="button" class="btn btn-light btn-sm follow-btn text-muted">Follow</button>
+                            </form>
+                        @endif
                     </div>
                     <div class="profile-rating mt-2 px-2">
                         <p class="m-0">
@@ -28,7 +38,10 @@
                         <i class="mdi mdi-google-maps"></i> <span>Baguio City</span>
                     </div>
                     <div class="profile-write-review px-2">
-                        <button type="button" class="btn btn-outline-info">Write Review</button>
+                        @if (!$own)
+                        {{-- Hide if viewing own shop --}}
+                            <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#write-review-modal">Write Review</button>
+                        @endif
                     </div>
                     <div class="profile-description mt-4 px-2">
                         <p>
@@ -187,8 +200,22 @@
                             </p>
                         </div>
                         <div class="card-footer bg-transparent border-success">
-                            <p class="post-price mb-0">&#8369; {{ number_format($item->UnitPrice, 0) }} </p><span class="post-condition float-right font-weight-bolder">New</span>
-                            <p class="post-card-location mb-0"><i class="mdi mdi-google-maps"></i><span>{{ $item->City }}</span></p>
+                            <p class="post-price mb-0">&#8369; {{ number_format($item->UnitPrice, 0) }} </p>
+                            <p class="post-card-location d-inline mb-0"><i class="mdi mdi-google-maps"></i><span>{{ $item->City }}</span></p>
+                            @if ($own)
+                            {{-- Hide if viewing own shop --}}
+                            <div class="dropdown dropleft post-menu-secondary float-right">
+                                <button class="btn btn-light dropdown-toggle p-0" type="button" id="post-menu-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="mdi mdi-dots-vertical"></i>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="post-menu-1">
+                                    <button class="dropdown-item btn repost-item" data-toggle="modal" data-target="#repost-item-post"><i class="mdi mdi-clipboard-arrow-up"></i> Repost</button>
+                                    <button class="dropdown-item btn edit-item" data-toggle="modal" data-target="#edit-item-post" disabled><i class="mdi mdi-file-edit"></i> Edit</button>
+                                    <button class="dropdown-item btn mark-as-sold" data-toggle="modal" data-target="#mark-as-sold-post" ><i class="mdi mdi-handshake"></i> Mark as Sold</button>
+                                    <button class="dropdown-item btn delete-item text-danger" data-toggle="modal" data-target="#delete-item-post"><i class="mdi mdi-trash-can"></i> Delete</button>
+                                </div>
+                            </div>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -207,10 +234,11 @@
 
     {{-- Edit Modal --}}
     @include('sections.edit-post-modal')
-    {{-- End Edit Modal --}}
 
     {{-- Repost Modal --}}
     @include('sections.repost-item-modal')
-    {{-- End Repost Modal --}}
+
+    {{-- Write Review Modal --}}
+    @include('sections.write-review-modal')
 </div>
 @endsection

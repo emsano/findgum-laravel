@@ -42,7 +42,7 @@
                 <div class="col-md-3 mb-4 post-card">
                     <div class="card shadow">
                         <div class="card-header px-3 py-0">
-                            <a href="#" class="btn card-profile-image">
+                            <a href="{{ route('profile', $item->UserId) }}" class="btn card-profile-image">
                                 <div class="row">
                                     <div class="col-">
                                         @if($item->AccountType == 'S')

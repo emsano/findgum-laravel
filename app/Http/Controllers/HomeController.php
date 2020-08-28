@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Response;
 use App\User;
 use Carbon;
-
+use Auth;
 // use Datatables;
 use Yajra\DataTables\DataTables;
 use Yajra\DataTables\Html\Builder;
@@ -73,5 +73,16 @@ class HomeController extends Controller
         ->with(
             compact('cdata', 'latestPosts')
         );
+    }
+
+    public function createAd() {
+        if (Auth::check()) {
+            // User is logged In
+
+            return view('post-free-ad');
+        } else {
+            // Not Logged In
+            return redirect()->guest(route('login'));
+        }
     }
 }

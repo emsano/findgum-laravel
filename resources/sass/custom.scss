@@ -287,7 +287,7 @@ body {
 }
 
 .post-card {
-    .card{
+    .card {
         height: 100%;
     }
 }
@@ -344,9 +344,8 @@ body {
 
 //
 .single-post {
-    .carousel {
+    .carousel {}
 
-    }
     .carousel-inner {
         height: 35rem;
 
@@ -366,6 +365,7 @@ body {
         width: 100%;
         justify-content: center;
         transition: unset;
+
         &.active {
             display: flex;
         }
@@ -533,17 +533,17 @@ body {
         display: none;
     }
 
-    .comment-wrapper{
+    .comment-wrapper {
 
         .media-list .media img {
-            width:64px;
-            height:64px;
-            border:2px solid #e5e7e8;
+            width: 64px;
+            height: 64px;
+            border: 2px solid #e5e7e8;
         }
 
         .media-list .media {
-            border-bottom:1px dashed #efefef;
-            margin-bottom:1rem;
+            border-bottom: 1px dashed #efefef;
+            margin-bottom: 1rem;
             padding-top: .5rem;
             padding-bottom: .5rem;
         }
@@ -857,7 +857,7 @@ body {
     }
 
     .post-card {
-        .card{
+        .card {
             height: 100%;
         }
     }
@@ -882,7 +882,7 @@ body {
         overflow: hidden;
     }
 
-    .item-desc-container {
+    .item-desc-container{
 
         /* ==========================================================================
    WYSIWYG
@@ -980,7 +980,60 @@ body {
     }
 }
 
+//
+.post-ad {
+    .item-desc-container {
+        #editor {
+            resize: vertical;
+            overflow: auto;
+            line-height: 1.5;
+            background-color: #fafafa;
+            background-image: none;
+            border: 0;
+            border: 1px solid #ced4da;
 
+            border-bottom: 1px solid #3b8dbd;
+            min-height: 150px;
+            box-shadow: none;
+            padding: 8px 16px;
+            margin: 0 auto;
+            font-size: 14px;
+            transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+        }
+
+        #editor:focus {
+            background-color: #f0f0f0;
+            border-color: #38af5b;
+            box-shadow: none;
+            outline: 0 none;
+        }
+
+        .btn {
+            font-family: "Raleway", sans-serif;
+            font-weight: 300;
+            font-size: 1em;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            border: none;
+            border-bottom: .15em solid black;
+            padding: 0.65em 1.3em;
+        }
+
+        .btn-xs {
+            font-size: .80em;
+            padding: .25em .75em;
+        }
+
+        .btn-default {
+            border-color: #d9d9d9;
+            background-image: linear-gradient(#ffffff, #f2f2f2);
+        }
+
+        .btn-default:hover {
+            background: linear-gradient(#f2f2f2, #e6e6e6);
+        }
+    }
+}
 
 // Settings
 .settings {
@@ -1006,7 +1059,99 @@ body {
 
 //
 @media screen and (-webkit-min-device-pixel-ratio: 2) {
-  body {
-    -webkit-font-smoothing: subpixel-antialiased;
-  }
+    body {
+        -webkit-font-smoothing: subpixel-antialiased;
+    }
+}
+
+//
+/*! Image Uploader - v1.0.0 - 15/07/2019
+ * Copyright (c) 2019 Christian Bayer; Licensed MIT */
+.image-uploader {
+    min-height: 10rem;
+    border: 1px solid #d9d9d9;
+    position: relative
+}
+
+.image-uploader.drag-over {
+    background-color: #f3f3f3
+}
+
+.image-uploader input[type="file"] {
+    width: 0;
+    height: 0;
+    position: absolute;
+    z-index: -1;
+    opacity: 0
+}
+
+.image-uploader .upload-text {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column
+}
+
+.image-uploader .upload-text i {
+    display: block;
+    font-size: 3rem;
+    margin-bottom: .5rem
+}
+
+.image-uploader .upload-text span {
+    display: block
+}
+
+.image-uploader.has-files .upload-text {
+    display: none
+}
+
+.image-uploader .uploaded {
+    padding: .5rem;
+    line-height: 0
+}
+
+.image-uploader .uploaded .uploaded-image {
+    display: inline-block;
+    width: calc(25% - 0.5rem);
+    padding-bottom: calc(16.6666667% - 1rem);
+    height: 0;
+    position: relative;
+    margin: .5rem;
+    background: #f3f3f3;
+    cursor: default
+}
+
+.image-uploader .uploaded .uploaded-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute
+}
+
+.image-uploader .uploaded .uploaded-image .delete-image {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: .2rem;
+    right: .2rem;
+    border-radius: 50%;
+    padding: .3rem;
+    background-color: rgba(0, 0, 0, .5);
+    -webkit-appearance: none;
+    border: none
+}
+
+.image-uploader .uploaded .uploaded-image:hover .delete-image {
+    display: block
+}
+
+.image-uploader .uploaded .uploaded-image .delete-image i {
+    color: #fff;
+    font-size: 1.4rem
 }
