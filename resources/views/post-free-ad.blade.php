@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container-fluid post-ad">
+<div class="container-fluid post-ad-container">
     <div class="card shadow col-md-6 col-sm-12 mx-auto p-0">
         <h5 class="card-header bg-dark text-white"><i class="mdi mdi-post-outline"></i>Post Free Ad</h5>
         <form action="#" method="POST" id="post-ad-form" enctype="multipart/form-data">

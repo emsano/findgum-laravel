@@ -191,15 +191,15 @@
                                 src="{{ asset($noImg) }}" alt="{{ $item->Posting }}">
                             @endif
                         </a>
-                        <div class="card-body">
-                            <h5 class="card-title post-title">
-                                <a href="{{ route('single-post', $item->PostingId) }}" class="card-link text-danger like">{{ $item->Posting }}</a>
+                        <div class="card-body pb-1">
+                            <h5 class="card-title post-title m-0">
+                                <a href="{{ route('single-post', $item->PostingId) }}" class="card-link text-dark like">{{ $item->Posting }}</a>
                             </h5>
                             <p class="card-text post-desc">
                                 {{ $item->ShortDescription }}
                             </p>
                         </div>
-                        <div class="card-footer bg-transparent border-success">
+                        <div class="card-footer bg-transparent border-0 pt-0">
                             <p class="post-price mb-0">&#8369; {{ number_format($item->UnitPrice, 0) }} </p>
                             <p class="post-card-location d-inline mb-0"><i class="mdi mdi-google-maps"></i><span>{{ $item->City }}</span></p>
                             @if ($own)
