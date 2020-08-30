@@ -12,7 +12,7 @@
                     <div class="form-group item-desc-container">
                         <label class="font-weight-bolder" for="item-desc">Description</label>
                         <div class="mb-2" id="editparent">
-                            <div id="editControls">
+                            <div id="editControls" class="d-none">
                                 <div class="btn-group">
                                     <a class="btn btn-xs btn-default" data-role="undo" href="#" title="Undo"><i
                                             class="mdi mdi-undo"></i></a>

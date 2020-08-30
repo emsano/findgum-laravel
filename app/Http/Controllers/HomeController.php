@@ -67,7 +67,7 @@ class HomeController extends Controller
             ])
             ->orderBy('DateCreated', 'desc')
             ->distinct('posting.PostingId')
-            ->simplePaginate(16);
+            ->simplePaginate(24);
 
         return view('home')
         ->with(

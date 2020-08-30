@@ -34607,9 +34607,21 @@ input[type=file].file-loading,
 }
 
 body {
+  min-height: 100vh;
   overflow-y: scroll;
+  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: subpixel-antialiased;
+}
+
+body main {
+  margin-top: 6rem;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 7rem;
 }
 
 .container {
@@ -34623,6 +34635,7 @@ body {
 .stick-together {
   top: 0;
   z-index: 9999;
+  position: fixed;
 }
 
 .navbar-light .navbar-nav .nav-link:hover,
@@ -34643,10 +34656,12 @@ body {
 }
 
 .navbar-collapse .nav-item a {
+  -ms-grid-row-align: center;
   align-self: center;
 }
 
 .navbar-collapse .nav-item i {
+  -ms-grid-row-align: center;
   align-self: center;
 }
 
@@ -34706,6 +34721,7 @@ body {
   font-size: 1.7rem;
   margin-left: auto;
   margin-right: auto;
+  -ms-grid-row-align: center;
   align-self: center;
 }
 
@@ -34742,6 +34758,7 @@ body {
 .megamenu .megamenu-category {
   padding-left: 0.3rem;
   padding-right: 0.3rem;
+  font-size: 15px;
 }
 
 .megamenu .megamenu-category:hover {
@@ -34768,6 +34785,13 @@ body {
   padding: 0 0 0 2px;
   text-transform: uppercase;
   border-left: 5px solid #f89b98;
+  color: #3992dd;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.megamenu .sub-category-list li a {
+  font-size: 16px;
 }
 
 .megamenu .dropdown-header {
@@ -34776,9 +34800,17 @@ body {
 
 .footer {
   bottom: 0;
-  position: static;
+  position: absolute;
   left: 0;
   right: 0;
+}
+
+.footer .all-align {
+  align-items: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+  text-align: center;
+  align-content: center;
 }
 
 .footer a {
@@ -34884,7 +34916,7 @@ body {
 }
 
 .post-card-img {
-  height: 14rem;
+  height: 10rem;
 }
 
 .pager {
@@ -34897,6 +34929,18 @@ body {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
 
+.single-post .post-description {
+  font-family: inherit !important;
+}
+
+.single-post .post-description * {
+  font-family: inherit !important;
+}
+
+.single-post .seller-profile .list-group-item {
+  border: 0;
+}
+
 .single-post .carousel-inner {
   height: 35rem;
 }
@@ -34906,7 +34950,7 @@ body {
   height: auto;
   border-radius: 10px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .single-post .carousel-item {
@@ -34926,11 +34970,14 @@ body {
 
 .single-post .carousel-indicators li {
   width: 5rem;
+  transition: none;
 }
 
 .single-post .carousel-indicators li img {
   display: block;
   opacity: 0.5;
+  height: 50px;
+  width: 50px;
 }
 
 .single-post .carousel-indicators li.active img {
@@ -35045,6 +35092,10 @@ body {
   color: transparent;
 }
 
+.single-post .form-label-group input:-ms-input-placeholder {
+  color: transparent;
+}
+
 .single-post .form-label-group input::placeholder {
   color: transparent;
 }
@@ -35089,6 +35140,13 @@ body {
   color: #4ad870;
 }
 
+.single-post .related-post {
+  width: 100%;
+  width: -moz-available;
+  width: -webkit-fill-available;
+  width: fill-available;
+}
+
 .single-post .related-post .post-card {
   display: none;
 }
@@ -35104,6 +35162,14 @@ body {
   margin-bottom: 1rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+}
+
+.single-post .related-posts {
+  flex-wrap: wrap;
+}
+
+.modal {
+  margin-top: 6rem !important;
 }
 
 .report-check {
@@ -35317,6 +35383,7 @@ body {
 .banner img {
   width: 100%;
   height: auto;
+  -ms-grid-row-align: center;
   align-self: center;
 }
 
@@ -35329,12 +35396,14 @@ body {
 .profile .banner img {
   width: 100%;
   height: auto;
+  -ms-grid-row-align: center;
   align-self: center;
 }
 
 .profile .profile-picture img {
   height: auto;
   width: 65%;
+  -ms-grid-row-align: center;
   align-self: center;
   margin-top: -5rem;
   border: solid white 5px;
@@ -35457,7 +35526,7 @@ body {
 
 .profile .dropdown-menu {
   -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
@@ -35467,13 +35536,13 @@ body {
 
 .profile .dropdown-menu button {
   -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
 .profile .dropdown-menu i {
   -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
@@ -35618,7 +35687,7 @@ body {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   position: absolute;
 }
 
@@ -35642,6 +35711,56 @@ body {
 .image-uploader .uploaded .uploaded-image .delete-image i {
   color: #fff;
   font-size: 1.4rem;
+}
+
+.jpreview-image {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  position: relative;
+  float: left;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.jpreview-container {
+  border: 1px dashed #1FB264;
+}
+
+.jpreview-container::after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  clear: both;
+}
+
+.jpreview-image img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.jpreview-remove-btn {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  background-color: red;
+  width: 10px;
+  height: 10px;
+}
+
+@media (max-width: 600px) {
+  main {
+    margin-top: 3rem !important;
+  }
+
+  .stick-together {
+    position: absolute;
+  }
+
+  .stick-together .navbar {
+    overflow: auto;
+  }
 }
 
 @media only screen and (max-width: 959px) {
@@ -35726,6 +35845,7 @@ body {
   .profile .profile-picture img {
     height: auto;
     width: 50%;
+    -ms-grid-row-align: center;
     align-self: center;
     margin-top: -7rem;
     border: solid white 5px;
@@ -35738,6 +35858,7 @@ body {
   .settings .file-upload-label {
     margin-left: auto;
     margin-right: auto;
+    -ms-grid-row-align: center;
     align-self: center;
     width: 100%;
   }

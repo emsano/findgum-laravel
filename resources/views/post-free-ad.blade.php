@@ -364,7 +364,7 @@
                 <div class="form-group item-desc-container">
                     <label class="font-weight-bolder" for="item-desc">Description</label>
                     <div class="mb-2" id="editparent">
-                        <div id="editControls">
+                        <div id="editControls" class="d-none">
                             <div class="btn-group">
                                 <a class="btn btn-xs btn-default" data-role="undo" href="#" title="Undo"><i
                                         class="mdi mdi-undo"></i></a>
@@ -439,8 +439,11 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="post-ad-images" class="font-weight-bolder">Images</label>
-                    <div class="input-images" id="post-ad-images" name="post-ad-images"></div>
+                    <label for="post-ad-images" class="font-weight-bolder"><button type="button" class="btn btn-primary" onclick="document.getElementById('post-ad-images').click()"> Select Photos</button></label>
+                    {{-- <div class="input-images" id="post-ad-images" name="post-ad-images"></div> --}}
+                    <input type="file" class="demo d-none" id="post-ad-images" multiple accept="image/*" max="5" data-jpreview-container="#preview-container">
+                    <div id="preview-container"class="jpreview-container rounded">
+                    </div>
                 </div>
             </div>
             <div class="card-footer">

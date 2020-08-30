@@ -33,6 +33,7 @@
                 <div class="container mx-auto px-0">
                     <a class="navbar-brand p-0" href="{{ url('/') }}">
                         <img alt="{{ config('app.name', 'Home') }}" src="{{ asset('images/findgum_logo.png') }}">
+                        <img src="{{ asset('./images/flag.jpg') }}" class="img-fluid" width="50" height="40">
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -44,20 +45,20 @@
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav search-bar mx-auto mt-1">
                             <li class="mx-auto">
+                                <form action="#" method="post">
                                 <div class="input-group">
                                     <!-- Search form -->
-                                    <input class="form-control mx-auto rounded" id="search" type="text" placeholder="Search" aria-label="Search">
+                                    <input class="form-control mx-auto rounded-left" id="search" type="text" placeholder="Search" aria-label="Search">
                                     <div class="input-group-append p-0 border-0 bg-white">
-                                        <span class="input-group-text py-0  border-0 bg-white" id="basic-addon2">
-                                            <img src="{{ asset('./images/flag.jpg') }}" class="img-fluid" width="50" height="40">
-                                        </span>
+                                        <button class="btn btn-secondary rounded-right border-0" type="submit" id="search-button"><i class="mdi mdi-magnify"></i></button>
                                     </div>
                                 </div>
+                                </form>
                             </li>
                         </ul>
 
                         <!-- Right Side Of Navbar -->
-                        <ul class="navbar-nav right-nav d-inline-flex flex-row mx-auto list-inline">
+                        <ul class="navbar-nav right-nav d-inline-flex flex-row list-inline">
                             <!-- Authentication Links -->
                             @guest
                             <li class="nav-item list-inline-item">
@@ -114,7 +115,12 @@
 
                                 <div class="dropdown-menu dropdown-menu-right animate slideIn shadow"
                                     aria-labelledby="navbarDropdownProfile">
-                                    <p class="align-self-center text-center m-0 bg-danger text-light">Favorites</p>
+                                    <p class="align-self-center text-center py-2 bg-danger text-light">
+                                        Favorites
+                                        <a class="btn btn-light text-center" href="/favorites">
+                                            View All
+                                        </a>
+                                    </p>
                                     <a class="dropdown-item border-bottom" href="/favorites">
                                         <div class="row">
                                             <div class="col pl-0 d-flex flex-row align-items-center">
@@ -174,7 +180,12 @@
 
                                 <div class="dropdown-menu dropdown-menu-right animate slideIn shadow"
                                     aria-labelledby="navbarDropdownMsg">
-                                    <p class="align-self-center text-center m-0 bg-info text-light">Messages</p>
+                                    <p class="align-self-center text-center py-2 bg-info text-light">
+                                        Messages
+                                        <a class="btn btn-secondary text-center" href="{{ route('messages') }}">
+                                            View All
+                                        </a>
+                                    </p>
                                     <a class="dropdown-item border-bottom" href="{{ route('messages') }}">
                                         <div class="wrap row">
                                             <div class="col-auto px-2">
@@ -234,52 +245,50 @@
             @include('sections.megamenu')
         </div>
         {{-- Main Content --}}
-        <main class="py-3">
+        <main class="py-3 flex-fill">
             @yield('content')
         </main>
 
-        {{-- Footer --}}
-        <div class="container footer mx-auto">
-            <footer class="pt-4 my-md-5 pt-md-5 border-top">
-                <div class="row">
-                    <div class="col-12 col-md logo-nc">
+
+    </div>
+    {{-- Footer --}}
+        <footer class="footer w-100">
+            <div class="row pt-2">
+                <div class="col logo-nc all-align">
+                    <div class="mx-auto">
                         <img class="mb-2" src="{{ asset('images/logo-no-text-2.png') }}" alt="Findgum Logo">
                         <small class="d-block mb-3 text-muted copyright"> © 2020 Findgum</small>
                     </div>
-                    <div class="col-6 col-md">
-                        <a href="{{ route('policies') }}">Terms & Condition</a>
-                    </div>
-                    <div class="col-6 col-md">
-                        <a href="{{ route('policies') }}">Privacy Policy</a>
-                    </div>
-                    <div class="col-6 col-md">
-                        <a href="#">About</a>
-                    </div>
-
-                    <div class="col-6 col-md social-media-links">
-                        <ul class="list-unstyled text-small align-self-center mx-auto">
-                            <li><a href="https://www.facebook.com/findgum/" class="facebook" target="_blank">
-                                <i class="mdi mdi-facebook"
-                                        aria-hidden="true"></i><span></span></a>
-                            </li>
-                            <li><a href="https://www.instagram.com/findgum/" class="ig" target="_blank">
-                                <i class="mdi mdi-instagram"
-                                        aria-hidden="true"></i><span></span></a>
-                            </li>
-                            <li><a href="https://twitter.com/findgum" class="twitter" target="_blank">
-                                <i class="mdi mdi-twitter"
-                                        aria-hidden="true"></i><span></span></a>
-                            </li>
-                            <li><a href="https://www.youtube.com/channel/UC8jQBDpc965sIz1xblB0esw" class="youtube" target="_blank">
-                                <i class="mdi mdi-youtube"
-                                        aria-hidden="true"></i><span></span></a>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
-            </footer>
-        </div>
-    </div>
+                <div class="col all-align">
+                    <a href="{{ route('policies') }}">Terms & Condition</a>
+                </div>
+                <div class="col all-align">
+                    <a href="{{ route('policies') }}">Privacy Policy</a>
+                </div>
+
+                <div class="col social-media-links all-align">
+                    <ul class="list-unstyled text-small align-self-center mx-auto">
+                        <li><a href="https://www.facebook.com/findgum/" class="facebook" target="_blank">
+                            <i class="mdi mdi-facebook"
+                                    aria-hidden="true"></i><span></span></a>
+                        </li>
+                        <li><a href="https://www.instagram.com/findgum/" class="ig" target="_blank">
+                            <i class="mdi mdi-instagram"
+                                    aria-hidden="true"></i><span></span></a>
+                        </li>
+                        <li><a href="https://twitter.com/findgum" class="twitter" target="_blank">
+                            <i class="mdi mdi-twitter"
+                                    aria-hidden="true"></i><span></span></a>
+                        </li>
+                        <li><a href="https://www.youtube.com/channel/UC8jQBDpc965sIz1xblB0esw" class="youtube" target="_blank">
+                            <i class="mdi mdi-youtube"
+                                    aria-hidden="true"></i><span></span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
 </body>
 
 </html>

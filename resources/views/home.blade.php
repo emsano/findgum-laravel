@@ -11,13 +11,19 @@
 			  </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="https://via.placeholder.com/1110x200?text=Example+Banner+Image+1" alt="First slide">
+                    <a href="#">
+                        <img class="d-block w-100" src="{{ asset('images/Banner1.jpg') }}" alt="First slide">
+                    </a>
                 </div>
                 <div class="carousel-item">
-					<img class="d-block w-100" src="https://via.placeholder.com/1110x200?text=Example+Banner+Image+2" alt="Second slide">
+                    <a href="#">
+                        <img class="d-block w-100" src="{{ asset('images/Banner2.jpg') }}" alt="Second slide">
+                    </a>
                 </div>
                 <div class="carousel-item">
-					<img class="d-block w-100" src="https://via.placeholder.com/1110x200?text=Example+Banner+Image+3" alt="Third slide">
+                    <a href="#">
+                        <img class="d-block w-100" src="{{ asset('images/Banner3.jpg') }}" alt="Third slide">
+                    </a>
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carousel-banners" role="button" data-slide="prev">
@@ -34,7 +40,7 @@
 	<div class="latest-finds mb-2">
 		<div class="row">
 			<div class="col">
-				<h3 class="mt-2"><span class="bd-content-title">Latest Finds</span></h3>
+				<h3 class="mt-4"><span class="bd-content-title">Latest Finds</span></h3>
 			</div>
         </div>
         <div class="d-flex latest-posts">

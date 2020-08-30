@@ -31,7 +31,7 @@
                                     <li><a href="#" class="btn btn-primary cars-for-sale">Cars for Sale</a></li>
                                 </ul>
                             </div>
-                            <div class="col border-right">
+                            <div class="col">
                                 <ul class="sub-category-list">
                                     <li class="dropdown-header">...</li>
                                     <li><a href="#">Electrical parts & Accessories</a></li>
@@ -69,7 +69,7 @@
                     <div class="dropdown-menu dropdown-menu-left animate slideIn megamenu-item shadow"
                         aria-labelledby="mega-2">
                         <div class="row">
-                            <div class="col border-right">
+                            <div class="col">
                                 <ul class="sub-category-list">
                                     <li class="dropdown-header">Mobile Phones</li>
                                     <li><a href="#">iPhone</a></li>
@@ -84,7 +84,7 @@
                                     <li><a href="#">Others</a></li>
                                 </ul>
                             </div>
-                            <div class="col border-right">
+                            <div class="col">
                                 <ul class="sub-category-list">
                                     <li class="dropdown-header">Electronics</li>
                                     <li><a href="#">Audio</a></li>
@@ -119,7 +119,7 @@
                     <div class="dropdown-menu animate slideIn50 megamenu-item shadow a"
                         aria-labelledby="mega-3">
                         <div class="row">
-                            <div class="col border-right">
+                            <div class="col">
                                 <ul class="sub-category-list">
                                     <li class="dropdown-header">Jobs and Opportunities</li>
                                     <li><a href="#">Admin, Office Staff and Finance</a></li>
@@ -144,7 +144,7 @@
                                     <li><a href="#">Family Diner and Other</a></li>
                                 </ul>
                             </div>
-                            <div class="col border-right">
+                            <div class="col">
                                 <ul class="sub-category-list">
                                     <li class="dropdown-header">Home Services</li>
                                     <li><a href="#">Home Cleaning</a></li>
@@ -193,7 +193,7 @@
                     <div class="dropdown-menu dropdown-menu-right animate slideIn megamenu-item shadow"
                         aria-labelledby="mega-4">
                         <div class="row">
-                            <div class="col border-right">
+                            <div class="col">
                                 <ul class="sub-category-list">
                                     <li class="dropdown-header">For Rent</li>
                                     <li><a href="#">Rooms</a></li>
@@ -230,7 +230,7 @@
                     <div class="dropdown-menu dropdown-menu-right animate slideIn megamenu-item shadow"
                         aria-labelledby="mega-5">
                         <div class="row">
-                            <div class="col border-right">
+                            <div class="col">
                                 <ul class="sub-category-list">
                                     <li class="dropdown-header">Womens</li>
                                     <li><a href="#"><strong>Shoes</strong></a></li>
@@ -317,7 +317,7 @@
                     <div class="dropdown-menu dropdown-menu-right animate slideIn megamenu-item shadow"
                         aria-labelledby="mega-4">
                         <div class="row">
-                            <div class="col border-right">
+                            <div class="col">
                                 <ul class="sub-category-list">
                                     <li class="dropdown-header">For Babies and Kids</li>
                                     <li><a href="#">Strollers, Bags and Carries</a></li>
@@ -346,7 +346,7 @@
                                     <li><a href="#">Others</a></li>
                                 </ul>
                             </div>
-                            <div class="col border-right">
+                            <div class="col">
                                 <ul class="sub-category-list">
                                     <li class="dropdown-header">Sports</li>
                                     <li><a href="#">Bicycles</a></li>
@@ -375,7 +375,7 @@
                                     <li><a href="#">Paintings and Designs</a></li>
                                 </ul>
                             </div>
-                            <div class="col border-right">
+                            <div class="col">
                                 <ul class="sub-category-list">
                                     <li class="dropdown-header">Books</li>
                                     <li><a href="#">Books</a></li>

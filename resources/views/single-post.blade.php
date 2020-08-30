@@ -16,7 +16,7 @@
             </div>
 
             <div class="border-success">
-                <h2 class="post-price text-danger">&#8369; {{ number_format($data[0]->UnitPrice, 0) }} </h2>
+                <h2 class="post-price text-dark">&#8369; {{ number_format($data[0]->UnitPrice, 0) }} </h2>
                 <h3 class="post-title"><strong>{{ $data[0]->Posting }}</strong></h3>
                 <p class="post-card-location mb-0"><i class="mdi mdi-google-maps"></i><span> {{ $data[0]->City }}</span>
                 <form action="#" method="" class="d-inline-flex">
@@ -26,7 +26,7 @@
 
             <div class="row mt-2">
                 <div class="col">
-                    <div id="post-carousel" class="carousel slide" data-ride="carousel">
+                    <div id="post-carousel" class="carousel" data-ride="carousel" data-interval="false">
                         <div class="carousel-inner mx-auto" role="listbox">
                             @if (!$img->isEmpty())
                                 @foreach ($img as $key=>$image)
@@ -90,25 +90,21 @@
                                 {{-- @markdown($data[0]->PostDesc) --}}
                             </div>
 
-                            <div class="card-footer text-muted bg-transparent pb-0">
+                            <div class="card-footer border-0 text-muted bg-transparent pb-0">
                                 <div class="row">
                                     <div class="col px-0">
-                                        <p>POST ID: <strong class="post-id"> {{ $data[0]->PostingKey }}</strong></p>
-                                    </div>
-                                    <div class="col px-0 text-right">
-                                        <p class="py-0 my-0">Posted by: <a href="#"><strong
-                                                    class="posted-by">{{ $data[0]->FirstName }}</strong></a></p>
-                                        <p class="py-0 my-0">Posted: <span class="time-posted"> {{ date('d-M-Y', strtotime($data[0]->DateCreated)) }} </span>
+                                        <p class="py-0 my-0">POST ID: <strong class="post-id"> {{ $data[0]->PostingKey }}</strong></p>
+                                        <p class="py-0 my-0"><span class="time-posted"> {{ date('d-M-Y', strtotime($data[0]->DateCreated)) }} </span>
                                         </p>
                                     </div>
                                 </div>
-                                <div class="row border-top">
-                                    <div class="col pt-3 px-0 share-post"> Share on:
-                                        <span class="twitter-share p-2 my-1" data-js="twitter-share">
-                                            <i class="mdi mdi-twitter" aria-hidden="true"></i> Twitter
+                                <div class="row">
+                                    <div class="col pt-3 px-0 share-post d-inline-flex">
+                                        <span class="twitter-share p-2 m-1 text-center" data-js="twitter-share">
+                                            <i class="mdi mdi-twitter" aria-hidden="true"></i><span class="d-sm-none d-md-none d-lg-block"> Twitter </span>
                                         </span>
-                                        <span class="facebook-share p-2 my-1" data-js="facebook-share">
-                                            <i class="mdi mdi-facebook" aria-hidden="true"></i> Facebook
+                                        <span class="facebook-share p-2 m-1 text-center" data-js="facebook-share">
+                                            <i class="mdi mdi-facebook" aria-hidden="true"></i><span class="d-sm-none d-md-none d-lg-block"> Facebook </span>
                                         </span>
                                     </div>
                                     <div class="col pt-3 px-0 report-post text-right">
@@ -238,19 +234,11 @@
                                             <li class="list-group-item"><i class="mdi mdi-shield-check-outline"></i>
                                                 Pay only after collecting the item/s</li>
                                             <li class="list-group-item"><i class="mdi mdi-shield-check-outline"></i>
-                                                Vestibulum at eros</li>
+                                                Do not carry large amount of money when meeting up</li>
                                             <li class="list-group-item"><i class="mdi mdi-shield-check-outline"></i>
-                                                Cras justo odio</li>
-                                            <li class="list-group-item"><i class="mdi mdi-shield-check-outline"></i>
-                                                Dapibus ac facilisis in</li>
-                                            <li class="list-group-item"><i class="mdi mdi-shield-check-outline"></i>
-                                                Morbi leo risus</li>
-                                            <li class="list-group-item"><i class="mdi mdi-shield-check-outline"></i>
-                                                Porta ac consectetur ac</li>
-                                            <li class="list-group-item"><i class="mdi mdi-shield-check-outline"></i>
-                                                Vestibulum at eros</li>
+                                               It's better to bring a friend/relative with you before meeting someone</li>
                                         </ul>
-                                        <div class="text-right">
+                                        <div class="text-right d-none">
                                             <button class="btn btn-outline-secondary next-tips mx-auto mt-2">Show
                                                 More</button>
                                         </div>
@@ -279,8 +267,7 @@
                             </div>
                             <button type="button" class="btn btn-info pull-right">Post</button>
                         </form>
-                        <div class="clearfix"></div>
-                        <hr>
+                        <div class="clearfix mb-3"></div>
                         <ul class="media-list p-0">
                             <li class="media">
                                 <a href="#" class="pull-left mr-2">
@@ -333,62 +320,69 @@
         </div>
     </div>
     <div class="row mt-4">
-        <div class="col">
-            <div class="related-post">
-                <div class="row">
-                    <div class="col-lg-2 col-md-2 col-sm">
-                        <h3><span class="bd-content-title">Related Posts</span></h3>
-                    </div>
-                    <div class="col">
-                        <hr>
-                    </div>
+        <div class="related-post">
+            <div class="row">
+                <div class="col px-4">
+                    <h3><span class="bd-content-title">Related Posts</span></h3>
                 </div>
-                @for ($a = 0 ; $a < 4; $a++ ) <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
-                    @for ($b = 0 ; $b < 4 ; $b++ ) <div class="col mb-4 post-card">
-                        <div class="card">
-                            <div class="card-header px-3 py-0">
-                                <a href="#" class="btn card-profile-image">
-                                    <div class="row">
-                                        <div class="col-">
-                                            <img src="{{ asset('images/2p9VXAn.jpg') }}" class="rounded-circle">
+            </div>
+            <div class="d-flex related-posts">
+                    @foreach ($relatedPosts as $item)
+                        <div class="col-md-3 mb-4 post-card">
+                            <div class="card shadow">
+                                <div class="card-header px-3 py-0">
+                                    <a href="{{ route('profile', $item->UserId) }}" class="btn card-profile-image">
+                                        <div class="row">
+                                            <div class="col-">
+                                                @if($item->AccountType == 'S')
+                                                <img src="{{ asset($item->ProfPhoto) }}" class="rounded-circle">
+                                                @elseif ($item->AccountType == 'G' || $item->AccountType == 'F')
+                                                <img src="{{ $item->ProfPhoto }}" class="rounded-circle">
+                                                @endif
+                                            </div>
+                                            <div class="col posted-by">
+                                                {{ $item->FirstName }}
+                                                <small class="text-muted"><p class="mb-1 posted-ago">
+                                                    {{ Carbon\Carbon::parse($item->DateCreated)->diffForHumans() }}
+                                                </p></small>
+                                            </div>
                                         </div>
-                                        <div class="col posted-by">
-                                            HUSTLER PH Branch
-                                            <small class="text-muted">
-                                                <p class="mb-1 posted-ago"><i
-                                                        class="mdi mdi-chevron-double-up text-info"></i> Spotlight </p>
-                                            </small>
-                                        </div>
-                                    </div>
+                                    </a>
+                                </div>
+                                <a href="{{ route('single-post', $item->PostingId) }}" >
+                                <img class="card-img post-card-img"
+                                    src="{{ asset($item->ImageUrl) }}" alt="{{ $item->Posting }}">
                                 </a>
-                            </div>
-                            <img class="card-img post-card-img" src="http://i.imgur.com/I5ABT2v.jpg" alt="Vans">
-                            <div class="card-body">
-                                <h5 class="card-title post-title"><a href="#"
-                                        class="card-link text-danger like">Vanguard Power</a></h5>
-                                <p class="card-text post-desc">
-                                    If you need a tough, commercial grade engine that makes you more productive, look to
-                                    Vanguard.</p>
-                            </div>
-                            <div class="card-footer bg-transparent border-success">
-                                <p class="post-price mb-0">&#8369; 999999 </p>
-                                <p class="post-card-location mb-0"><i class="mdi mdi-google-maps"></i><span>
-                                        Pampanga</span></p>
+                                <div class="card-body pb-1">
+                                    <h6 class="card-title post-title m-0">
+                                        <a href="{{ route('single-post', $item->PostingId) }}" class="card-link text-dark like">{{ $item->Posting }}</a>
+                                    </h6>
+                                    <p class="card-text post-desc">
+                                        {{ $item->ShortDescription }}
+                                    </p>
+                                </div>
+                                <div class="card-footer bg-transparent border-0 pt-0">
+                                    <p class="post-price mb-0">&#8369; {{ number_format($item->UnitPrice, 0) }} </p><span class="post-condition float-right">New</span>
+                                    <p class="post-card-location mb-0"><i class="mdi mdi-google-maps"></i><span>{{ $item->City }}</span></p>
+                                </div>
                             </div>
                         </div>
+                    @endforeach
             </div>
-            @endfor
-        </div>
-        @endfor
-
-        <div class="row load-more-container">
-            <div class="col text-center">
-                <button type="button" class="btn btn-outline-danger mx-auto load-more-related">Load More</button>
+                {{-- @if($relatedPosts->count())
+                    <div class="row">
+                        <div class="col mx-auto text-center align-self-center pager">
+                            {{ $relatedPosts->links() }}
+                        </div>
+                    </div>
+                @endif --}}
+            <div class="row load-more-container">
+                <div class="col text-center">
+                    <button type="button" class="btn btn-outline-danger mx-auto load-more-related">Load More</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
-</div>
 </div>
 
 <!-- Make Offer Modal -->
